@@ -1,0 +1,9 @@
+{
+    "require": {},
+    "autoload-dev": {
+        "psr-4": {
+            "ROBOAMP\\URL\\": "Package/URL/src/"
+        }
+    }
+
+}
