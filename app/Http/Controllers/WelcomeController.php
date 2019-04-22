@@ -3,18 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ROBOAMP\URL;
-use ROBOAMP\MyClass;
 
-
+use ROBOAMP\Strings;
 class WelcomeController extends Controller{
 
 
     public function main(){
-        $class='App\Http\Controllers\WelcomeController';
 
-        MyClass::call_method($class,'bananas');
+        $str=new Strings();
 
+        dd($str::)
 
 
     }
