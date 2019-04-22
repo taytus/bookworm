@@ -1,8 +1,7 @@
 <?php
-namespace ROBOAMP\MyClass;
+namespace ROBOAMP\Strings;
 use Illuminate\Support\ServiceProvider;
 
-use ROBOAMP\MyClass;
 
 class StringsServiceProvider extends ServiceProvider{
     public function boot(){

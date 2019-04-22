@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9b0af2923406f158314efe06f4a6519",
+    "content-hash": "40bb74533dda297fe96d94e3181b8a70",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -3546,16 +3546,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.2.0",
+            "version": "v6.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707"
+                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707",
-                "reference": "6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
+                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
                 "shasum": ""
             },
             "require": {
@@ -3604,7 +3604,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2019-03-10T07:52:41+00:00"
+            "time": "2019-04-21T09:21:45+00:00"
         },
         {
             "name": "symfony/console",
@@ -5072,6 +5072,105 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "ROBOAMP/Strings",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/strings.git",
+                "reference": "8564a1d5715883ea6d35a1e3243121b4da28f44f"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ROBOAMP\\Strings\\StringsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ROBOAMP\\": "src/"
+                }
+            },
+            "license": [
+                "ROBOAMP"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Inetti",
+                    "email": "roberto@roboamp.com"
+                }
+            ],
+            "description": "Library to work everything related to Strings Manipulations",
+            "time": "2019-04-22T07:33:39+00:00"
+        },
+        {
+            "name": "ROBOAMP/myclass",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/robo_myclass.git",
+                "reference": "48ebcfd36aad4fdb3c2a0f0be59d289b46591320"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ROBOAMP\\MyClass\\MyClassServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ROBOAMP\\": "src/"
+                }
+            },
+            "license": [
+                "ROBOAMP"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Inetti",
+                    "email": "roberto@roboamp.com"
+                }
+            ],
+            "description": "Library to work everything related to class and method instances",
+            "time": "2019-04-20 04:06:25"
+        },
+        {
+            "name": "ROBOAMP/url",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/robo_url.git",
+                "reference": "431623d9ed92892d81c66a3211f20028c43c74ea"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ROBOAMP\\URL\\URLServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ROBOAMP\\": "src/"
+                }
+            },
+            "license": [
+                "ROBOAMP"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Inetti",
+                    "email": "roberto@roboamp.com"
+                }
+            ],
+            "description": "Library to work everything related to URLs handling",
+            "time": "2019-03-28 07:12:22"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.2.0",
@@ -6827,7 +6926,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "roboamp/url": 20,
+        "roboamp/myclass": 20,
+        "roboamp/strings": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

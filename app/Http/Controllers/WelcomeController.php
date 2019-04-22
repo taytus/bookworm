@@ -12,7 +12,7 @@ class WelcomeController extends Controller{
 
         $str=new Strings();
 
-        dd($str::)
+        dd($str::get_string_between('<nothing>','<','>'));
 
 
     }

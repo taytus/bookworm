@@ -29,10 +29,10 @@
             "url":"git@github.com:taytus/robo_myclass.git"},
 
         {   "type":"git",
-            "url":"git@github.com:taytus/strings.git"},
+            "url":"git@github.com:taytus/robo_url.git"},
 
         {   "type":"git",
-            "url":"git@bitbucket.org:Taytus/url.git"}
+            "url":"git@github.com:taytus/strings.git"}
 
 
 
@@ -59,8 +59,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/",
-            "ROBOAMP\\": "Package/"
+            "Tests\\": "tests/"
         }
     },
     "scripts": {
