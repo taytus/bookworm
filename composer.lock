@@ -5103,7 +5103,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-04-22T07:33:39+00:00"
+            "time": "2019-04-22 07:33:39"
         },
         {
             "name": "ROBOAMP/myclass",
@@ -5144,7 +5144,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_url.git",
-                "reference": "431623d9ed92892d81c66a3211f20028c43c74ea"
+                "reference": "b8a7714468f03b4cb0bbcfefae6cea8e8daf876d"
             },
             "type": "library",
             "extra": {
@@ -5169,7 +5169,7 @@
                 }
             ],
             "description": "Library to work everything related to URLs handling",
-            "time": "2019-03-28 07:12:22"
+            "time": "2019-04-22T14:39:13+00:00"
         },
         {
             "name": "doctrine/instantiator",
