@@ -651,16 +651,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "v1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "c0f1c17602afc18b4cbd8e1c8125f264c9cf7d38"
+                "reference": "3da7c9d125591ca83944f477e65ed3d7b4617c48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/c0f1c17602afc18b4cbd8e1c8125f264c9cf7d38",
-                "reference": "c0f1c17602afc18b4cbd8e1c8125f264c9cf7d38",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/3da7c9d125591ca83944f477e65ed3d7b4617c48",
+                "reference": "3da7c9d125591ca83944f477e65ed3d7b4617c48",
                 "shasum": ""
             },
             "require": {
@@ -729,7 +729,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2018-11-21T00:33:13+00:00"
+            "time": "2019-04-23T08:28:24+00:00"
         },
         {
             "name": "doctrine/reflection",
@@ -3060,16 +3060,16 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.27.0",
+            "version": "3.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "94c184461dd72f09c7a03ee0fdf00ec190e8bd7a"
+                "reference": "94e104cff2b970cd87aeaf86c59d7a45113bf89e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/94c184461dd72f09c7a03ee0fdf00ec190e8bd7a",
-                "reference": "94c184461dd72f09c7a03ee0fdf00ec190e8bd7a",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/94e104cff2b970cd87aeaf86c59d7a45113bf89e",
+                "reference": "94e104cff2b970cd87aeaf86c59d7a45113bf89e",
                 "shasum": ""
             },
             "require": {
@@ -3112,7 +3112,7 @@
                 "screenshot",
                 "webpage"
             ],
-            "time": "2019-03-11T10:56:24+00:00"
+            "time": "2019-04-24T18:28:14+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -4804,7 +4804,7 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.8.13",
+            "version": "v5.8.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
@@ -5111,7 +5111,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_myclass.git",
-                "reference": "48ebcfd36aad4fdb3c2a0f0be59d289b46591320"
+                "reference": "2d517524e2d2a17c07d9745b187a782cb8a045d9"
             },
             "type": "library",
             "extra": {
@@ -5136,7 +5136,7 @@
                 }
             ],
             "description": "Library to work everything related to class and method instances",
-            "time": "2019-04-20 04:06:25"
+            "time": "2019-04-25T15:46:47+00:00"
         },
         {
             "name": "ROBOAMP/url",
@@ -5144,7 +5144,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_url.git",
-                "reference": "b8a7714468f03b4cb0bbcfefae6cea8e8daf876d"
+                "reference": "911b5f1b17b4504640f60266b2d1509df8348792"
             },
             "type": "library",
             "extra": {
@@ -5169,7 +5169,7 @@
                 }
             ],
             "description": "Library to work everything related to URLs handling",
-            "time": "2019-04-22T14:39:13+00:00"
+            "time": "2019-04-22T15:33:14+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -6433,16 +6433,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "4.1.0",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6fda8ce1974b62b14935adc02a9ed38252eca656"
+                "reference": "3095910f0f0fb155ac4021fc51a4a7a39ac04e8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6fda8ce1974b62b14935adc02a9ed38252eca656",
-                "reference": "6fda8ce1974b62b14935adc02a9ed38252eca656",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/3095910f0f0fb155ac4021fc51a4a7a39ac04e8a",
+                "reference": "3095910f0f0fb155ac4021fc51a4a7a39ac04e8a",
                 "shasum": ""
             },
             "require": {
@@ -6457,7 +6457,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -6482,7 +6482,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2019-02-01T05:27:49+00:00"
+            "time": "2019-04-25T07:55:20+00:00"
         },
         {
             "name": "sebastian/exporter",
