@@ -6,7 +6,6 @@ namespace ROBOAMP;
 class Strings {
 
     public function diff_between_two_strings($string1,$string2,$separator="\t",$debug=0){
-
         $first_array = explode($separator, $string1);
         $second_array = explode($separator, $string2);
         $result_array = array_merge(array_diff($first_array, $second_array), array_diff($second_array, $first_array));

@@ -25,18 +25,19 @@
         "zendframework/zend-diactoros": "^2.0"
     },
     "repositories": [
-        {   "type":"git",
+        {   "type":"vcs",
             "url":"git@github.com:taytus/robo_myclass.git"},
 
-        {   "type":"git",
+        {   "type":"vcs",
             "url":"git@github.com:taytus/robo_url.git"},
 
-        {   "type":"git",
-            "url":"git@github.com:taytus/strings.git"}
+        {   "type":"vcs",
+            "url":"git@github.com:taytus/strings.git"},
 
+        {   "type":"vcs",
+            "url":"git@github.com:taytus/robo_validator.git"}
 
-
-],
+    ],
     "require-dev": {
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
@@ -46,7 +47,8 @@
         "phpunit/phpunit": "^7.0",
         "roboamp/url":"dev-master",
         "roboamp/myclass":"dev-master",
-        "roboamp/strings":"dev-master"
+        "roboamp/validator":"dev-master"
+
     },
     "autoload": {
         "classmap": [

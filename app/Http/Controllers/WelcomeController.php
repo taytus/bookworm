@@ -3,14 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ROBOAMP\MyClass;
-
 use ROBOAMP\URL;
+use ROBOAMP\Validator;
+use ROBOAMP\Strings;
 
 class WelcomeController extends Controller{
 
 
     public function main(){
+
+        $str=new Strings();
+        $res=$str::get_string_between("<hola lola>","<",">");
+        dd($res);
+
+        $val=new Validator();
+
+
+
 
         $class='App\Http\Controllers\WelcomeController';
         $method='bananas';

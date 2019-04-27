@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "40bb74533dda297fe96d94e3181b8a70",
+    "content-hash": "2c83b4aed322fedcde08f3d4e3c46f3d",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -4213,7 +4213,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -5074,11 +5074,17 @@
     "packages-dev": [
         {
             "name": "ROBOAMP/Strings",
-            "version": "dev-master",
+            "version": "v1.8",
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/strings.git",
-                "reference": "8564a1d5715883ea6d35a1e3243121b4da28f44f"
+                "reference": "872d885919a38764d6846f54b34b7c90d615bc73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/taytus/strings/zipball/872d885919a38764d6846f54b34b7c90d615bc73",
+                "reference": "872d885919a38764d6846f54b34b7c90d615bc73",
+                "shasum": ""
             },
             "type": "library",
             "extra": {
@@ -5103,7 +5109,11 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-04-22 07:33:39"
+            "support": {
+                "source": "https://github.com/taytus/strings/tree/v1.8",
+                "issues": "https://github.com/taytus/strings/issues"
+            },
+            "time": "2019-04-27T03:35:26+00:00"
         },
         {
             "name": "ROBOAMP/myclass",
@@ -5111,7 +5121,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_myclass.git",
-                "reference": "2d517524e2d2a17c07d9745b187a782cb8a045d9"
+                "reference": "3a7b2a361a171a154730708ff8ae470018b54159"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/taytus/robo_myclass/zipball/3a7b2a361a171a154730708ff8ae470018b54159",
+                "reference": "3a7b2a361a171a154730708ff8ae470018b54159",
+                "shasum": ""
             },
             "type": "library",
             "extra": {
@@ -5136,7 +5152,11 @@
                 }
             ],
             "description": "Library to work everything related to class and method instances",
-            "time": "2019-04-25T15:46:47+00:00"
+            "support": {
+                "source": "https://github.com/taytus/robo_myclass/tree/master",
+                "issues": "https://github.com/taytus/robo_myclass/issues"
+            },
+            "time": "2019-04-26 03:31:44"
         },
         {
             "name": "ROBOAMP/url",
@@ -5145,6 +5165,12 @@
                 "type": "git",
                 "url": "git@github.com:taytus/robo_url.git",
                 "reference": "911b5f1b17b4504640f60266b2d1509df8348792"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/taytus/robo_url/zipball/911b5f1b17b4504640f60266b2d1509df8348792",
+                "reference": "911b5f1b17b4504640f60266b2d1509df8348792",
+                "shasum": ""
             },
             "type": "library",
             "extra": {
@@ -5169,7 +5195,57 @@
                 }
             ],
             "description": "Library to work everything related to URLs handling",
-            "time": "2019-04-22T15:33:14+00:00"
+            "support": {
+                "source": "https://github.com/taytus/robo_url/tree/master",
+                "issues": "https://github.com/taytus/robo_url/issues"
+            },
+            "time": "2019-04-22 15:33:14"
+        },
+        {
+            "name": "ROBOAMP/validator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/robo_validator.git",
+                "reference": "a65b66ec377d7d49bc5709b69d8ec08af8ba5d06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/taytus/robo_validator/zipball/a65b66ec377d7d49bc5709b69d8ec08af8ba5d06",
+                "reference": "a65b66ec377d7d49bc5709b69d8ec08af8ba5d06",
+                "shasum": ""
+            },
+            "require": {
+                "roboamp/strings": "1.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ROBOAMP\\Validator\\ValidatorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ROBOAMP\\": "src/"
+                }
+            },
+            "license": [
+                "ROBOAMP"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Inetti",
+                    "email": "roberto@roboamp.com"
+                }
+            ],
+            "description": "All type of string validations",
+            "support": {
+                "source": "https://github.com/taytus/robo_validator/tree/master",
+                "issues": "https://github.com/taytus/robo_validator/issues"
+            },
+            "time": "2019-04-27T03:39:47+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -6929,7 +7005,7 @@
     "stability-flags": {
         "roboamp/url": 20,
         "roboamp/myclass": 20,
-        "roboamp/strings": 20
+        "roboamp/validator": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

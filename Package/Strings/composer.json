@@ -9,7 +9,6 @@
             "email": "roberto@roboamp.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {},
     "autoload": {
 

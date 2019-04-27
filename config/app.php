@@ -176,7 +176,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         ROBOAMP\URL\URLServiceProvider::class,
         ROBOAMP\MyClass\MyClassServiceProvider::class,
-        ROBOAMP\Strings\StringsServiceProvider::class
 
     ],
 
