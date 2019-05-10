@@ -5,18 +5,39 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use ROBOAMP\URL;
 use ROBOAMP\Validator;
-use ROBOAMP\Strings;
+use ROBOAMP\Strings as myStrings;
 
 class WelcomeController extends Controller{
 
 
     public function main(){
-
-        $str=new Strings();
-        $res=$str::get_string_between("<hola lola>","<",">");
+        //$res=$str::get_string_between("<hola lola>","<",">");
+        $file_path=base_path('taytus.txt');
+        //$res=myStrings::string_in_file("hello",$file_path);
+        $res=myStrings::find_string_in_file('haha',$file_path);
         dd($res);
 
+
+        dd();
+
         $val=new Validator();
+
+        $str=['aa44aa','aa44','44aa',44,'44','aa'];
+
+        foreach($str as $item){
+            $res=$val->validation_rules_alphabetic($item);
+            echo $item."    ".$res['error']."<br>";
+        }
+
+        dd();
+
+
+
+
+
+
+
+
 
 
 

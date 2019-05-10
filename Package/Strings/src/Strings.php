@@ -1,7 +1,7 @@
 <?php
 namespace ROBOAMP;
 
-
+use Illuminate\Filesystem\Filesystem;
 
 class Strings {
 
@@ -17,9 +17,33 @@ class Strings {
         return  implode($separator, $result_array);
     }
 
+    public static function get_file_content($file_path){
+        $file_content= new Filesystem();
+        return $file_content->get($file_path);
+    }
+
+    //returns an object with the file content and a boolean flag
+    public static function find_string_in_file($string,$file_path){
+        $obj= new \stdClass();
+        $obj->file_content=self::get_file_content($file_path);
+        $obj->status=self::find_string_in_string($obj->file_content,$string);
+        return $obj;
+    }
+
+
+    public function minify($input_file,$output_file=null){
+
+        $options =" --remove-tag-whitespace --collapse-whitespace -o ".$output_file;
+        $command="html-minifier ".$input_file." ".$options;
+        $res=shell_exec($command);
+    }
+
+
     // returns true if $needle is a substring of $haystack
-    public static function string_in_string($haystack,$needle){
-        return strpos($haystack, $needle) !== false;
+    public static function find_string_in_string($haystack,$needle){
+        $obj= new \stdClass();
+        $obj->status=strpos($haystack, $needle) !== false;
+        return $obj->status;
     }
     public function valid_email($email){
         return !!filter_var($email, FILTER_VALIDATE_EMAIL);
