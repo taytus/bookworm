@@ -35,6 +35,9 @@
             "url":"git@github.com:taytus/robo_validator.git"},
 
         {   "type":"vcs",
+            "url":"git@github.com:taytus/robo_db.git"},
+
+        {   "type":"vcs",
             "url":"git@github.com:taytus/axton.git"}
 
     ],
@@ -63,6 +66,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
+
         }
     },
     "scripts": {
