@@ -25,8 +25,14 @@ class Strings {
     //returns an object with the file content and a boolean flag
     public static function find_string_in_file($string,$file_path){
         $obj= new \stdClass();
-        $obj->file_content=self::get_file_content($file_path);
-        $obj->status=self::find_string_in_string($obj->file_content,$string);
+        if(file_exists($file_path)) {
+            $obj->file_content = self::get_file_content($file_path);
+            $obj->status = self::find_string_in_string($obj->file_content, $string);
+        }else{
+            $obj->status="error";
+            $obj->error="File Not Found";
+            $obj->error_message="File not found on path: ".$file_path;
+        }
         return $obj;
     }
 

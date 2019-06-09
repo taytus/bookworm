@@ -11,14 +11,11 @@
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.4",
         "ixudra/curl": "6.*",
-        "laravel/cashier": "~7.0",
-        "laravel/dusk": "^4.0",
-        "laravel/framework": "5.6.*",
+        "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
-        "nunomaduro/laravel-console-menu": "^1.0",
+        "nesbot/carbon": "^2.0",
         "spatie/laravel-newsletter": "^4.2",
-        "spatie/laravel-sitemap": "4.0",
         "sunra/php-simple-html-dom-parser": "1.5.2",
         "symfony/psr-http-message-bridge": "^1.1",
         "webpatser/laravel-uuid": "^3.0",
@@ -35,7 +32,10 @@
             "url":"git@github.com:taytus/strings.git"},
 
         {   "type":"vcs",
-            "url":"git@github.com:taytus/robo_validator.git"}
+            "url":"git@github.com:taytus/robo_validator.git"},
+
+        {   "type":"vcs",
+            "url":"git@github.com:taytus/axton.git"}
 
     ],
     "require-dev": {
@@ -47,7 +47,8 @@
         "phpunit/phpunit": "^7.0",
         "roboamp/url":"dev-master",
         "roboamp/myclass":"dev-master",
-        "roboamp/validator":"dev-master"
+        "roboamp/validator":"dev-master",
+        "roboamp/axton":"dev-master"
 
     },
     "autoload": {
