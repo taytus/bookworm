@@ -91,6 +91,27 @@ class Strings {
 
     }
 
+    public static function insert_string_in_file_after_string($string,$target_string,$file_path){
+        $target_string_exist= self::find_string_in_file($target_string,$file_path);
+
+        if(!$target_string_exist->status)dd("Target string:",$target_string,"coudln't be found in file",$file_path);
+
+        $new_string=$target_string." \n".$string;
+
+        $res=str_replace($target_string,$new_string,$target_string_exist->file_content);
+
+        return $res;
+    }
+    //receives how many words and what's the string to pull the words from
+    public static function get_X_first_words_from_string($string,$number_of_words,$second_half=0){
+        $pieces = explode(" ", $string);
+        $first_part = implode(" ", array_splice($pieces, 0, $number_of_words));
+        $second_half = ($second_half?$other_part = implode(" ", array_splice($pieces, 0)):null);
+        return (is_null($second_half)?$first_part:[$first_part,$second_half]);
+
+
+    }
+
 
 
 
