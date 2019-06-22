@@ -22,37 +22,31 @@
         "zendframework/zend-diactoros": "^2.0"
     },
     "repositories": [
-        {   "type":"vcs",
-            "url":"git@github.com:taytus/robo_myclass.git"},
+        {   "type":"git","url":"git@github.com:taytus/robo_Directory.git"},
+        {   "type":"git","url":"git@github.com:taytus/robo_MyArray.git"},
+        {   "type":"git","url":"git@github.com:taytus/robo_files.git"},
+        {   "type":"git","url":"git@github.com:taytus/robo_myclass.git"},
+        {   "type":"git","url":"git@github.com:taytus/robo_url.git"},
+        {   "type":"git","url":"git@github.com:taytus/strings.git"},
+        {   "type":"git","url":"git@github.com:taytus/robo_validator.git"},
+        {   "type":"git","url":"git@github.com:taytus/robo_db.git"},
+        {   "type":"git","url":"git@github.com:taytus/axton.git"}
 
-        {   "type":"vcs",
-            "url":"git@github.com:taytus/robo_url.git"},
-
-        {   "type":"vcs",
-            "url":"git@github.com:taytus/strings.git"},
-
-        {   "type":"vcs",
-            "url":"git@github.com:taytus/robo_validator.git"},
-
-        {   "type":"vcs",
-            "url":"git@github.com:taytus/robo_db.git"},
-
-        {   "type":"vcs",
-            "url":"git@github.com:taytus/axton.git"}
 
     ],
     "require-dev": {
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "laravel/browser-kit-testing": "^4.0",
+        "laravel/dusk": "^5.1",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^2.0",
         "phpunit/phpunit": "^7.0",
-        "roboamp/url":"dev-master",
-        "roboamp/myclass":"dev-master",
-        "roboamp/validator":"dev-master",
-        "roboamp/axton":"dev-master"
-
+        "roboamp/axton": "dev-master",
+        "roboamp/files": "dev-master",
+        "roboamp/myclass": "dev-master",
+        "roboamp/url": "dev-master",
+        "roboamp/validator": "dev-master"
     },
     "autoload": {
         "classmap": [
