@@ -4327,13 +4327,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/axton.git",
-                "reference": "72b1d3c25abcdba9ed9c54a75861bc826eca980b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/taytus/axton/zipball/72b1d3c25abcdba9ed9c54a75861bc826eca980b",
-                "reference": "72b1d3c25abcdba9ed9c54a75861bc826eca980b",
-                "shasum": ""
+                "reference": "d30c87800fa1a5e91088e0ae5d7c9678ea0e3b48"
             },
             "require": {
                 "roboamp/db": "@dev"
@@ -4361,11 +4355,7 @@
                 }
             ],
             "description": "Control Panel",
-            "support": {
-                "source": "https://github.com/taytus/axton/tree/master",
-                "issues": "https://github.com/taytus/axton/issues"
-            },
-            "time": "2019-06-09T20:53:21+00:00"
+            "time": "2019-06-23T01:08:11+00:00"
         },
         {
             "name": "ROBOAMP/DB",
@@ -4374,12 +4364,6 @@
                 "type": "git",
                 "url": "git@github.com:taytus/robo_db.git",
                 "reference": "2ed617a603fae9a76b694e147430e6d4f69026bf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/taytus/robo_db/zipball/2ed617a603fae9a76b694e147430e6d4f69026bf",
-                "reference": "2ed617a603fae9a76b694e147430e6d4f69026bf",
-                "shasum": ""
             },
             "type": "library",
             "extra": {
@@ -4404,10 +4388,6 @@
                 }
             ],
             "description": "Basic DB Operations",
-            "support": {
-                "source": "https://github.com/taytus/robo_db/tree/master",
-                "issues": "https://github.com/taytus/robo_db/issues"
-            },
             "time": "2019-06-09T15:19:15+00:00"
         },
         {
@@ -4523,13 +4503,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_myclass.git",
-                "reference": "47e23c726ee91612e61b0a31f6a474012f48fe55"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/taytus/robo_myclass/zipball/47e23c726ee91612e61b0a31f6a474012f48fe55",
-                "reference": "47e23c726ee91612e61b0a31f6a474012f48fe55",
-                "shasum": ""
+                "reference": "ca35f8552e859471c72af1a3a326ff9a14cb0fa2"
             },
             "type": "library",
             "extra": {
@@ -4554,11 +4528,7 @@
                 }
             ],
             "description": "Library to work everything related to class and method instances",
-            "support": {
-                "source": "https://github.com/taytus/robo_myclass/tree/master",
-                "issues": "https://github.com/taytus/robo_myclass/issues"
-            },
-            "time": "2019-06-11 16:02:17"
+            "time": "2019-06-22T23:15:20+00:00"
         },
         {
             "name": "ROBOAMP/Strings",
@@ -4635,13 +4605,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_validator.git",
-                "reference": "a0117b1edaf9f9eedd25806553e2d1c0de53ce53"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/taytus/robo_validator/zipball/a0117b1edaf9f9eedd25806553e2d1c0de53ce53",
-                "reference": "a0117b1edaf9f9eedd25806553e2d1c0de53ce53",
-                "shasum": ""
+                "reference": "deb03e13b078be4d3d473af1e174347f0f044a77"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -4669,11 +4633,7 @@
                 }
             ],
             "description": "All type of string validations",
-            "support": {
-                "source": "https://github.com/taytus/robo_validator/tree/master",
-                "issues": "https://github.com/taytus/robo_validator/issues"
-            },
-            "time": "2019-05-10T06:29:09+00:00"
+            "time": "2019-06-22 22:36:15"
         },
         {
             "name": "doctrine/instantiator",
