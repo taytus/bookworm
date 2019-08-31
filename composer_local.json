@@ -32,9 +32,6 @@
         {   "type":"git","url":"git@github.com:taytus/strings.git"},
         {   "type":"git","url":"git@github.com:taytus/robo_validator.git"},
         {   "type":"git","url":"git@github.com:taytus/robo_db.git"},
-        {   "type":"git","url":"git@github.com:taytus/robo_server.git"},
-        {   "type":"git","url":"git@github.com:taytus/robo_seeder.git"},
-
         {
             "type": "path",
             "url": "Package/Axton",
@@ -55,10 +52,7 @@
         "roboamp/files": "dev-master",
         "roboamp/myclass": "dev-master",
         "roboamp/url": "dev-master",
-        "roboamp/validator": "dev-master",
-        "roboamp/Server": "dev-master",
-        "roboamp/Seeder": "dev-master"
-
+        "roboamp/validator": "dev-master"
     },
     "autoload": {
         "classmap": [

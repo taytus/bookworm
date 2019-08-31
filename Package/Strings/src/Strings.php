@@ -5,6 +5,20 @@ use Illuminate\Filesystem\Filesystem;
 
 class Strings {
 
+
+    public static function hex2dec($hex,$format=null){
+        list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+        if (is_null($format)){
+            return "(".$r.",".$g.",".$b.")";
+        }
+    }
+    public static function delete_tabs($string){
+        if(is_string($string)) {
+            return trim(preg_replace('/\t+/', '', $string));
+        }
+        return $string;
+    }
+
     public function diff_between_two_strings($string1,$string2,$separator="\t",$debug=0){
         $first_array = explode($separator, $string1);
         $second_array = explode($separator, $string2);
