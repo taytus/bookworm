@@ -82,6 +82,7 @@ class Strings {
     }
 
     //take a separator string, breaks the string and make every word uppercase
+    //"alpha_charlie_bravo" will return "Alpha Charlie Bravo"
     public static function uppercase_separator($string,$separator){
         $words= str_replace($separator," ",$string);
         return ucwords($words);
