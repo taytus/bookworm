@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use ROBOAMP\DB;
+use ROBOAMP\ROBOCORE;
 
 class CreateWCommentsTable extends Migration
 {
@@ -37,6 +37,6 @@ class CreateWCommentsTable extends Migration
      */
     public function down()
     {
-        DB::drop($this->table);
+        ROBOCORE::drop($this->table);
     }
 }

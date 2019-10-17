@@ -2,8 +2,56 @@
 namespace ROBOAMP;
 
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Str;
 
-class Strings {
+class Strings extends Str{
+
+
+
+
+    public static function delete_tabs($string){
+        if(is_string($string)) {
+            return trim(preg_replace('/\t+/', '', $string));
+        }
+        return $string;
+    }
+
+    //returns an object with the file content and a boolean flag
+    public static function find_string_in_file($string,$file_path,$case_sensitive=true){
+        $obj= new \stdClass();
+        if(file_exists($file_path)) {
+            $obj->file_content = self::get_file_content($file_path);
+            $obj->status = self::find_string_in_string($obj->file_content, $string,$case_sensitive);
+        }else{
+            $obj->status="error";
+            $obj->error="File Not Found";
+            $obj->error_message="File not found on path: ".$file_path;
+        }
+        return $obj;
+    }
+
+    public static function remove_non_aphanumeric_chars($string){
+        return preg_replace("/[^A-Za-z0-9 ]/", '', $string);
+    }
+
+    //replace one of the spaces with the separator or
+    //if no separator is passed, remove all the spaces
+    public static function remove_multiple_spaces($string,$separator=""){
+        return preg_replace('/\s\s+/', $separator, $string);
+    }
+
+    // "de*m()()o" will return "demo"
+    // "d e       mo" will return "d_e_mo"
+
+    public static function get_method_name($string){
+        $string=strtolower(trim($string));
+        $string=self::remove_non_aphanumeric_chars($string);
+        $string=self::remove_multiple_spaces($string,"_");
+        $string=str_replace(" ","_",$string);
+        return $string;
+    }
+
+    //NON tested Methods
 
 
     public static function hex2dec($hex,$format=null){
@@ -12,43 +60,15 @@ class Strings {
             return "(".$r.",".$g.",".$b.")";
         }
     }
-    public static function delete_tabs($string){
-        if(is_string($string)) {
-            return trim(preg_replace('/\t+/', '', $string));
-        }
-        return $string;
-    }
-
-    public function diff_between_two_strings($string1,$string2,$separator="\t",$debug=0){
-        $first_array = explode($separator, $string1);
-        $second_array = explode($separator, $string2);
-        $result_array = array_merge(array_diff($first_array, $second_array), array_diff($second_array, $first_array));
-        if($debug===89) {
-            dd($string1,$string2);
-
-        }
-
-        return  implode($separator, $result_array);
-    }
 
     public static function get_file_content($file_path){
         $file_content= new Filesystem();
         return $file_content->get($file_path);
     }
 
-    //returns an object with the file content and a boolean flag
-    public static function find_string_in_file($string,$file_path){
-        $obj= new \stdClass();
-        if(file_exists($file_path)) {
-            $obj->file_content = self::get_file_content($file_path);
-            $obj->status = self::find_string_in_string($obj->file_content, $string);
-        }else{
-            $obj->status="error";
-            $obj->error="File Not Found";
-            $obj->error_message="File not found on path: ".$file_path;
-        }
-        return $obj;
-    }
+
+
+
 
 
     public function minify($input_file,$output_file=null){
@@ -60,9 +80,15 @@ class Strings {
 
 
     // returns true if $needle is a substring of $haystack
-    public static function find_string_in_string($haystack,$needle){
+    public static function find_string_in_string($haystack,$needle,$case_sensitive=true){
         $obj= new \stdClass();
-        $obj->status=strpos($haystack, $needle) !== false;
+
+        if($case_sensitive){
+            $obj->status=strpos($haystack, $needle) !== false;
+        }else{
+            $obj->status=stripos($haystack, $needle) !== false;
+        }
+
         return $obj->status;
     }
     public function valid_email($email){
@@ -94,6 +120,21 @@ class Strings {
 
         return true;
     }
+
+    //str_to_method_name("This IS spartA") will return this_is_sparta
+    public static function str_to_method_name($str){
+
+    }
+
+    // is_string_between("lol","l","l") ==> true
+    // is_string_between("lol","l","a") ==> false
+    public static function is_string_between_strings($string,$init_str,$end_str){
+        $first=substr($string,0,1);
+        $last=substr($string,-1);
+        if($first===$init_str && $last===$end_str)return true;
+    }
+
+    //get_string_between("thisawesomeday","this","day") will return "awesome"
     public static function get_string_between($string, $start, $end){
         $string = ' ' . $string;
         $ini = strpos($string, $start);
