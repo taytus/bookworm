@@ -15,6 +15,7 @@
         "laravel/framework": "^6",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^6.0",
+        "nunomaduro/laravel-console-menu": "^2.2",
         "spatie/laravel-newsletter": "^4.2",
         "sunra/php-simple-html-dom-parser": "1.5.2",
         "symfony/psr-http-message-bridge": "^1.1",
@@ -50,6 +51,7 @@
         "laravel/dusk": "^5.1",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^2.0",
+        "ROBOAMP/Strings":"dev-master",
         "phpunit/phpunit": "^7.0",
         "roboamp/files": "dev-master",
         "roboamp/myclass": "dev-master",
@@ -65,8 +67,12 @@
 
     },
     "autoload": {
+        "files": [
+            "Package/Validator/tests/Feature/Validator_test.php"
+        ],
         "classmap": [
-            "database"
+            "database",
+            "Package/Validator"
         ],
         "psr-4": {
             "App\\": "app/"
