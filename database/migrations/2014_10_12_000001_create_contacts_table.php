@@ -8,7 +8,7 @@ class CreateContactsTable extends Migration{
     private $table='contacts';
 
     public function up(){
-
+        return;
         DB::create($this->table, function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name', 70);

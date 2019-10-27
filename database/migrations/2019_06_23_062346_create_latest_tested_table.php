@@ -12,7 +12,6 @@ class CreateLatestTestedTable extends Migration{
         DB::create($this->table, function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('package');
-            $table->timestamps();
         });
     }
 

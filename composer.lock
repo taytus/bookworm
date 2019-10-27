@@ -85,7 +85,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_MyArray.git",
-                "reference": "0fde35f70065dac58b544ec40a4b8665408ad625"
+                "reference": "d69bb6d7d0777a167e74a2f5d5259cef95882646"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -113,7 +113,7 @@
                 }
             ],
             "description": "All type of string validations",
-            "time": "2019-10-05 07:29:26"
+            "time": "2019-10-27 06:41:26"
         },
         {
             "name": "ROBOAMP/Strings",
@@ -4721,11 +4721,11 @@
     "packages-dev": [
         {
             "name": "ROBOAMP/Directory",
-            "version": "v1.0.4",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_Directory.git",
-                "reference": "8d86bc572ae3eb49c87c2fbbe4466c4f567bc40c"
+                "reference": "3c0fe242c9938bbf835a34b6a96bc75657272ed6"
             },
             "type": "library",
             "extra": {
@@ -4750,7 +4750,7 @@
                 }
             ],
             "description": "Move, copy, update, etc. Everything Directory related",
-            "time": "2019-06-22T22:05:02+00:00"
+            "time": "2019-10-27T07:31:29+00:00"
         },
         {
             "name": "ROBOAMP/Files",
@@ -4829,7 +4829,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/ROBOCORE.git",
-                "reference": "3d5a4dc2a6a0319d46604efa312447cb22c2e9ff"
+                "reference": "75b4bb713d7c583c39446da7d808798625748b4f"
             },
             "type": "library",
             "extra": {
@@ -4854,7 +4854,7 @@
                 }
             ],
             "description": "Shared Models for ROBOAMP",
-            "time": "2019-10-27 03:56:41"
+            "time": "2019-10-27 05:48:21"
         },
         {
             "name": "ROBOAMP/Seeder",
