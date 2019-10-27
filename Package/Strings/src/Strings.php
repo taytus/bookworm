@@ -91,9 +91,7 @@ class Strings extends Str{
 
         return $obj->status;
     }
-    public function valid_email($email){
-        return !!filter_var($email, FILTER_VALIDATE_EMAIL);
-    }
+
 
     public function empty_string($string){
         if (!is_null($string)){

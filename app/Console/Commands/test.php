@@ -55,16 +55,9 @@ class test extends Command
 
         $this->update_testing_file();
 
-
-        $test_path=$selected_menu['full_path']."/tests/Feature/Test.php";
-
-        //$res=exec('vendor/bin/phpunit --filter '.$test_path);
-
         $res=exec('vendor/bin/phpunit Package/'.$this->class_name);
 
-        //vendor/bin/phpunit --filter testBasicTest /Users/taytus/Projects/bookworm/Package/Validator/tests/Feature/Test.php
        dd($res);
-
 
     }
     private function clone_package_class_into_test($selected_menu){
@@ -76,7 +69,6 @@ class test extends Command
         $origin_file=$package_full_path."/src/".$this->class_name.".php";
         $this->testing_file_path=$package_full_path."/tests/Feature/".$this->class_name."_test.php";
 
-        ///Users/taytus/Projects/bookworm/Package/Validator
         $files->copy_file($origin_file,$this->testing_file_path);
     }
     private function update_testing_file(){

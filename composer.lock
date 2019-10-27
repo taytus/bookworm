@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "Package/Axton",
-                "reference": "e78e800faaeed37d5882879b701172a1e8f9fbfc",
+                "reference": "a715fd620486d38205adb30f587eb42e4e90a3d1",
                 "shasum": null
             },
             "require": {
@@ -52,7 +52,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_db.git",
-                "reference": "9ef2e33084f5feebe980f9bd1c0bbbc8e13e96b5"
+                "reference": "0404b719e9c1b7a1e9bef2b1e0ad779b07655bbe"
             },
             "type": "library",
             "extra": {
@@ -77,7 +77,7 @@
                 }
             ],
             "description": "Basic DB Operations",
-            "time": "2019-10-19 04:25:34"
+            "time": "2019-10-27 04:25:36"
         },
         {
             "name": "ROBOAMP/MyArray",
@@ -121,7 +121,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/strings.git",
-                "reference": "cd047701ea6f130ef87dfe798ed41a8b3408887e"
+                "reference": "bbf5ee6f2f79ff88084b398c5b212194ef376e50"
             },
             "type": "library",
             "extra": {
@@ -146,7 +146,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-10-14 16:21:41"
+            "time": "2019-10-26 22:58:51"
         },
         {
             "name": "beberlei/assert",
@@ -2132,16 +2132,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.4",
+            "version": "v4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4"
+                "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/97e59c7a16464196a8b9c77c47df68e4a39a45c4",
-                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
+                "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
                 "shasum": ""
             },
             "require": {
@@ -2149,6 +2149,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
+                "ircmaxell/php-yacc": "0.0.4",
                 "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
             },
             "bin": [
@@ -2179,7 +2180,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-09-01T07:51:21+00:00"
+            "time": "2019-10-25T18:33:07+00:00"
         },
         {
             "name": "nunomaduro/laravel-console-menu",
@@ -2655,16 +2656,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
+                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
+                "reference": "bf73deb2b3b896a9d9c75f3f0d88185d2faa27e2",
                 "shasum": ""
             },
             "require": {
@@ -2673,7 +2674,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -2698,7 +2699,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2018-11-20T15:27:04+00:00"
+            "time": "2019-10-25T08:06:51+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -4828,7 +4829,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/ROBOCORE.git",
-                "reference": "c9e675955a0be9115cbed163153f6711a818bff4"
+                "reference": "3d5a4dc2a6a0319d46604efa312447cb22c2e9ff"
             },
             "type": "library",
             "extra": {
@@ -4853,7 +4854,7 @@
                 }
             ],
             "description": "Shared Models for ROBOAMP",
-            "time": "2019-10-06 02:49:06"
+            "time": "2019-10-27 03:56:41"
         },
         {
             "name": "ROBOAMP/Seeder",
@@ -4969,7 +4970,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_validator.git",
-                "reference": "deb03e13b078be4d3d473af1e174347f0f044a77"
+                "reference": "d06b808fa42ab31dc872b9dc6a9a5b1e8d655064"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -4997,7 +4998,7 @@
                 }
             ],
             "description": "All type of string validations",
-            "time": "2019-06-22 22:36:15"
+            "time": "2019-10-26 23:20:23"
         },
         {
             "name": "doctrine/instantiator",
