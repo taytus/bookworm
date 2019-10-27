@@ -71,6 +71,9 @@ class test extends Command
         $test->package=$selected_menu['basename'];
         $test->save();
 
+        $test->deleteUntil($test->id);
+
+
         $this->clone_package_class_into_test($selected_menu);
         $this->update_testing_file();
 
@@ -80,8 +83,7 @@ class test extends Command
 
         $res=exec('vendor/bin/phpunit Package/'.$this->class_name);
 
-       dd($res);
-
+        dd($res);
     }
     private function clone_package_class_into_test($selected_menu){
         $directory=new Directory();
