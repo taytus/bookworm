@@ -73,7 +73,8 @@
         "classmap": [
             "database",
             "Package/Validator/tests",
-            "Package/MyArray/tests"
+            "Package/MyArray/tests",
+            "Package/Strings/tests"
         ],
         "psr-4": {
             "App\\": "app/"

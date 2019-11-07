@@ -8,6 +8,7 @@ use App\MyClasses\Directory;
 use ROBOAMP\Files;
 use App\Test as test_class;
 use ROBOAMP\MyArray;
+use ROBOAMP\Strings;
 
 class test extends Command
 {
@@ -67,23 +68,56 @@ class test extends Command
         $selected_menu=$this->dirs[$option];
 
 
-        $test=new test_class();
-        $test->package=$selected_menu['basename'];
-        $test->save();
 
-        $test->deleteUntil($test->id);
+        $this->save_latest_used_option($selected_menu['basename']);
 
 
         $this->clone_package_class_into_test($selected_menu);
+
         $this->update_testing_file();
 
+
+        $this->run_test($selected_menu['full_path']);
+
+    }
+    private function commit($full_path_to_package){
+        chdir($full_path_to_package."/src");
+        $res=shell_exec("git add -A;git commit -m 'update'; git push origin; ./tag.sh");
+        chdir(base_path());
+
+        echo "\n".$res."\n";
+
+
+    }
+    private function run_test($full_path_to_package){
+        $str=new Strings();
+
         if(!file_exists($this->feature_path."Test.php")){
+
+            $this->commit($full_path_to_package);
+
             dd("there is no testing file for package ".$this->class_name);
+
         }
 
-        $res=exec('vendor/bin/phpunit Package/'.$this->class_name);
+        $res=shell_exec('vendor/bin/phpunit Package/'.$this->class_name);
+        $str_res=strpos($res,"OK");
 
-        dd($res);
+
+        if($str_res==false){
+            echo $res;
+            dd("Commit has been canceled");
+        }
+        $this->commit($full_path_to_package);
+
+        echo $res;
+    }
+    private function save_latest_used_option($package_name){
+        $test=new test_class();
+        $test->package=$package_name;
+        $test->save();
+
+        $test->deleteUntil($test->id);
     }
     private function clone_package_class_into_test($selected_menu){
         $directory=new Directory();
@@ -110,8 +144,15 @@ class test extends Command
         $content=$files->get_file_content($this->testing_file_path);
 
         $str=str_replace("namespace ROBOAMP;","",$content);
-        $str=str_replace("class ".$this->class_name."{","class ".$this->class_name."_test{",$str);
 
+
+        if(strpos($str,"class ".$this->class_name." extends")!=false){
+            $str=str_replace("class ".$this->class_name." extends",
+                "class ".$this->class_name."_test extends",$str);
+        }else{
+            $str=str_replace("class ".$this->class_name."{",
+                "class ".$this->class_name."_test{",$str);
+        }
 
         $files->re_write_file($str,$this->testing_file_path);
     }
@@ -122,10 +163,12 @@ class test extends Command
         $test=test_class::all()->last();
         $my_array=new MyArray();
 
-        $position=$my_array->check_for_string_in_array($test->package,$this->dir_labels,true);
+        if($test!=null) {
+            $position = $my_array->check_for_string_in_array($test->package, $this->dir_labels, true);
 
-        $this->dir_labels=$my_array->move_to_top_by_index($this->dir_labels,$position);
-        $this->dirs=$my_array->move_to_top_by_index($this->dirs,$position);
+            $this->dir_labels = $my_array->move_to_top_by_index($this->dir_labels, $position);
+            $this->dirs = $my_array->move_to_top_by_index($this->dirs, $position);
+        }
     }
 
 

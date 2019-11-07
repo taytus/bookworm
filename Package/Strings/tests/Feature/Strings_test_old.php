@@ -4,30 +4,10 @@
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 
-class Strings_test extends Str{
+class Strings extends Str{
 
 
-    public function get_x_last_chars($strings,$limit=null){
 
-        if(!$limit || $limit==1) return substr($strings, -1);
-
-        return substr($strings, $limit);
-
-    }
-
-    public function get_uuid(){
-        return (string) self::uuid();
-    }
-
-    public function has_special_chars($string, $allow_spaces=true){
-
-        $pattern=($allow_spaces)? '/[^a-zA-Z0-9 ]/':'/[^a-zA-Z0-9]/';
-
-        $clean_string= preg_replace($pattern, '', $string);
-        if($string!=$clean_string) return true;
-
-        return false;
-    }
 
     public static function delete_tabs($string){
         if(is_string($string)) {
@@ -119,7 +99,10 @@ class Strings_test extends Str{
                 return false;
             }
         }
+
         return true;
+
+
     }
 
     //take a separator string, breaks the string and make every word uppercase
