@@ -11,7 +11,7 @@ class WelcomeController extends Controller{
 
 
     public function main(){
-        //$res=$str::get_string_between("<hola lola>","<",">");
+     /*   //$res=$str::get_string_between("<hola lola>","<",">");
         $file_path=base_path('taytus.txt');
         //$res=myStrings::string_in_file("hello",$file_path);
         $res=myStrings::find_string_in_file('haha',$file_path);
@@ -53,7 +53,7 @@ class WelcomeController extends Controller{
 
         $res=URL::get_property_info_from_roboamp_install_code($res);
 
-        dd($res);
+        dd($res);*/
     }
     public function lol(){
         dd("LOL");

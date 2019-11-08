@@ -1,10 +1,10 @@
 <?php
-namespace ROBOAMP;
+
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 
-class Strings extends Str{
+class Strings_test extends Str{
 
 
     public function get_x_last_chars($strings,$limit=null){
