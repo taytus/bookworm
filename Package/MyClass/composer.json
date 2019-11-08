@@ -1,0 +1,29 @@
+{
+    "name": "ROBOAMP/MyClass",
+    "description": "Library to work everything related to class and method instances",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src/"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\MyClass\\MyClassServiceProvider"
+            ]
+        }
+    }
+
+}
