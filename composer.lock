@@ -4,27 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "8d546dc8f852a59656633419025c1e9f",
-=======
-    "content-hash": "bf02af3a53b52d89b7dfb3c5ed72f2aa",
->>>>>>> master
+    "content-hash": "ad316ee04d282cb40fe6e29a4be6a6c8",
     "packages": [
         {
             "name": "ROBOAMP/Axton",
             "version": "dev-master",
-<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/axton.git",
                 "reference": "44ca0ab3bd4fd94152eb200b3992d4c3164260cb"
-=======
-            "dist": {
-                "type": "path",
-                "url": "Package/Axton",
-                "reference": "a715fd620486d38205adb30f587eb42e4e90a3d1",
-                "shasum": null
->>>>>>> master
             },
             "require": {
                 "roboamp/db": "@dev",
@@ -61,7 +49,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_db.git",
-                "reference": "e7012b23ab91287f3070aee4f5c7d6c1f127ff33"
+                "reference": "36805fb67e860e2b74be15e7170fb0a9cda3e478"
             },
             "type": "library",
             "extra": {
@@ -86,7 +74,7 @@
                 }
             ],
             "description": "Basic DB Operations",
-            "time": "2019-10-28 07:43:17"
+            "time": "2019-11-07T06:41:21+00:00"
         },
         {
             "name": "ROBOAMP/MyArray",
@@ -94,7 +82,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_MyArray.git",
-                "reference": "d69bb6d7d0777a167e74a2f5d5259cef95882646"
+                "reference": "547deed8092da3023246675df5977b7f3803aec3"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -122,7 +110,7 @@
                 }
             ],
             "description": "All type of string validations",
-            "time": "2019-10-27 06:41:26"
+            "time": "2019-11-07T06:31:57+00:00"
         },
         {
             "name": "ROBOAMP/Strings",
@@ -130,7 +118,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/strings.git",
-                "reference": "c7edc320b4d9ac45f052ba112c0e78c078ead946"
+                "reference": "46c4d540ff438c67d258b17b8dac015cf712c922"
             },
             "type": "library",
             "extra": {
@@ -155,7 +143,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-10-28 07:50:08"
+            "time": "2019-11-07T06:20:27+00:00"
         },
         {
             "name": "beberlei/assert",
@@ -1632,16 +1620,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.4.1",
+            "version": "v6.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ebd8fcc038effa8c5f8791346c48047f7d0ed320"
+                "reference": "6d120a21ef0c69630e92dec67932ef434c746019"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ebd8fcc038effa8c5f8791346c48047f7d0ed320",
-                "reference": "ebd8fcc038effa8c5f8791346c48047f7d0ed320",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6d120a21ef0c69630e92dec67932ef434c746019",
+                "reference": "6d120a21ef0c69630e92dec67932ef434c746019",
                 "shasum": ""
             },
             "require": {
@@ -1774,7 +1762,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-10-29T14:30:39+00:00"
+            "time": "2019-11-05T14:32:58+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2074,16 +2062,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.25.3",
+            "version": "2.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d07636581795383e2fea2d711212d30f941f2039"
+                "reference": "e01ecc0b71168febb52ae1fdc1cfcc95428e604e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d07636581795383e2fea2d711212d30f941f2039",
-                "reference": "d07636581795383e2fea2d711212d30f941f2039",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e01ecc0b71168febb52ae1fdc1cfcc95428e604e",
+                "reference": "e01ecc0b71168febb52ae1fdc1cfcc95428e604e",
                 "shasum": ""
             },
             "require": {
@@ -2137,7 +2125,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-10-20T11:05:44+00:00"
+            "time": "2019-10-21T21:32:25+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2464,28 +2452,28 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.5.0",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "94e644f7d2051a5f0fcf77d81605f152eecff0ed"
+                "reference": "2ba2586380f8d2b44ad1b9feb61c371020b27793"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/94e644f7d2051a5f0fcf77d81605f152eecff0ed",
-                "reference": "94e644f7d2051a5f0fcf77d81605f152eecff0ed",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/2ba2586380f8d2b44ad1b9feb61c371020b27793",
+                "reference": "2ba2586380f8d2b44ad1b9feb61c371020b27793",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.7.*"
+                "phpunit/phpunit": "^4.7|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -2495,7 +2483,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Apache2"
+                "Apache-2.0"
             ],
             "authors": [
                 {
@@ -2510,7 +2498,7 @@
                 "php",
                 "type"
             ],
-            "time": "2015-07-25T16:39:46+00:00"
+            "time": "2019-11-06T22:27:00+00:00"
         },
         {
             "name": "psr/container",
@@ -3000,9 +2988,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
-                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://murze.be"
+                    "homepage": "https://murze.be",
+                    "role": "Developer"
                 }
             ],
             "description": "Manage newsletters in Laravel",
@@ -4540,8 +4528,8 @@
             "authors": [
                 {
                     "name": "Tijs Verkoyen",
-                    "role": "Developer",
-                    "email": "css_to_inline_styles@verkoyen.eu"
+                    "email": "css_to_inline_styles@verkoyen.eu",
+                    "role": "Developer"
                 }
             ],
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
@@ -4730,11 +4718,11 @@
     "packages-dev": [
         {
             "name": "ROBOAMP/Directory",
-            "version": "v1.0.6",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_Directory.git",
-                "reference": "3c0fe242c9938bbf835a34b6a96bc75657272ed6"
+                "reference": "5a7fcf16479a2af1113f8ec6ea51d71fe98b1645"
             },
             "type": "library",
             "extra": {
@@ -4759,7 +4747,7 @@
                 }
             ],
             "description": "Move, copy, update, etc. Everything Directory related",
-            "time": "2019-10-27T07:31:29+00:00"
+            "time": "2019-11-07T06:43:56+00:00"
         },
         {
             "name": "ROBOAMP/Files",
@@ -4767,7 +4755,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_files.git",
-                "reference": "c305d0655f979baf913bf2797bf57b63e50552f9"
+                "reference": "82a841c4b9a76c15395107b4e50b3a9e9fcfd7fe"
             },
             "require": {
                 "roboamp/directory": "@dev",
@@ -4797,11 +4785,7 @@
                 }
             ],
             "description": "Move, copy, update, etc. Everything Files related",
-<<<<<<< HEAD
-            "time": "2019-06-12T01:16:07+00:00"
-=======
-            "time": "2019-11-04T16:51:19+00:00"
->>>>>>> master
+            "time": "2019-11-06T03:23:46+00:00"
         },
         {
             "name": "ROBOAMP/MyClass",
@@ -4834,10 +4818,7 @@
                 }
             ],
             "description": "Library to work everything related to class and method instances",
-<<<<<<< HEAD
-            "time": "2019-07-02T23:21:41+00:00"
-=======
-            "time": "2019-10-11 13:33:00"
+            "time": "2019-10-11T13:33:00+00:00"
         },
         {
             "name": "ROBOAMP/ROBOCORE",
@@ -4871,7 +4852,6 @@
             ],
             "description": "Shared Models for ROBOAMP",
             "time": "2019-10-30T17:37:18+00:00"
->>>>>>> master
         },
         {
             "name": "ROBOAMP/Seeder",
@@ -4907,7 +4887,7 @@
                 }
             ],
             "description": "Provides Server info used for debugging",
-            "time": "2019-10-06 07:14:56"
+            "time": "2019-10-06T07:14:56+00:00"
         },
         {
             "name": "ROBOAMP/Server",
@@ -4943,11 +4923,7 @@
                 }
             ],
             "description": "Provides Server info used for debugging",
-<<<<<<< HEAD
-            "time": "2019-08-07T14:00:13+00:00"
-=======
-            "time": "2019-10-06 07:31:33"
->>>>>>> master
+            "time": "2019-10-06T07:31:33+00:00"
         },
         {
             "name": "ROBOAMP/URL",
@@ -4983,51 +4959,7 @@
                 }
             ],
             "description": "Library to work everything related to URLs handling",
-<<<<<<< HEAD
-            "time": "2019-06-19T17:32:56+00:00"
-=======
-            "time": "2019-10-11 12:33:50"
->>>>>>> master
-        },
-        {
-            "name": "ROBOAMP/Validator",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:taytus/robo_validator.git",
-                "reference": "f09489de30f707e7944b89f306a870b43e90438b"
-            },
-            "require": {
-                "roboamp/strings": "@dev"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "ROBOAMP\\Validator\\ValidatorServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ROBOAMP\\": "src/"
-                }
-            },
-            "license": [
-                "ROBOAMP"
-            ],
-            "authors": [
-                {
-                    "name": "Roberto Inetti",
-                    "email": "roberto@roboamp.com"
-                }
-            ],
-            "description": "All type of string validations",
-<<<<<<< HEAD
-            "time": "2019-06-22T22:36:15+00:00"
-=======
-            "time": "2019-10-27 18:20:51"
->>>>>>> master
+            "time": "2019-10-11T12:33:50+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -6972,7 +6904,6 @@
         "roboamp/files": 20,
         "roboamp/myclass": 20,
         "roboamp/url": 20,
-        "roboamp/validator": 20,
         "roboamp/server": 20,
         "roboamp/seeder": 20,
         "roboamp/robocore": 20,
