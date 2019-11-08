@@ -83,8 +83,11 @@ class test extends Command
         if($result){
             chdir(base_path());
 
-            $res=shell_exec("git add -A;git commit -m 'auto update'; git push origin;");
-            dd($res,"tetas");
+            $command="git add -A;git commit -m 'auto update for package ".$selected_menu['basename']."'; git push origin;";
+
+            $res=shell_exec($command);
+
+            echo "\n$res";
         }
             
 
