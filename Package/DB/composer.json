@@ -1,0 +1,27 @@
+{
+    "name": "ROBOAMP/DB",
+    "description": "Basic DB Operations",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\DB\\DBServiceProvider"
+            ]
+        }
+    }
+
+}

@@ -1,18 +1,19 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad316ee04d282cb40fe6e29a4be6a6c8",
+    "content-hash": "bf02af3a53b52d89b7dfb3c5ed72f2aa",
     "packages": [
         {
             "name": "ROBOAMP/Axton",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:taytus/axton.git",
-                "reference": "44ca0ab3bd4fd94152eb200b3992d4c3164260cb"
+            "dist": {
+                "type": "path",
+                "url": "Package/Axton",
+                "reference": "a715fd620486d38205adb30f587eb42e4e90a3d1",
+                "shasum": null
             },
             "require": {
                 "roboamp/db": "@dev",
@@ -41,7 +42,9 @@
                 }
             ],
             "description": "Control Panel",
-            "time": "2019-07-02T23:21:31+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "ROBOAMP/DB",
@@ -74,7 +77,7 @@
                 }
             ],
             "description": "Basic DB Operations",
-            "time": "2019-11-07T06:41:21+00:00"
+            "time": "2019-11-07 06:41:21"
         },
         {
             "name": "ROBOAMP/MyArray",
@@ -110,7 +113,7 @@
                 }
             ],
             "description": "All type of string validations",
-            "time": "2019-11-07T06:31:57+00:00"
+            "time": "2019-11-07 06:31:57"
         },
         {
             "name": "ROBOAMP/Strings",
@@ -143,7 +146,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-11-07T06:20:27+00:00"
+            "time": "2019-11-07 06:20:27"
         },
         {
             "name": "beberlei/assert",
@@ -574,9 +577,9 @@
             "authors": [
                 {
                     "name": "Jonathan Wage",
-                    "role": "Creator",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -4818,7 +4821,7 @@
                 }
             ],
             "description": "Library to work everything related to class and method instances",
-            "time": "2019-10-11T13:33:00+00:00"
+            "time": "2019-10-11 13:33:00"
         },
         {
             "name": "ROBOAMP/ROBOCORE",
@@ -4851,7 +4854,7 @@
                 }
             ],
             "description": "Shared Models for ROBOAMP",
-            "time": "2019-10-30T17:37:18+00:00"
+            "time": "2019-10-30 17:37:18"
         },
         {
             "name": "ROBOAMP/Seeder",
@@ -4923,7 +4926,7 @@
                 }
             ],
             "description": "Provides Server info used for debugging",
-            "time": "2019-10-06T07:31:33+00:00"
+            "time": "2019-10-06 07:31:33"
         },
         {
             "name": "ROBOAMP/URL",
@@ -4959,7 +4962,43 @@
                 }
             ],
             "description": "Library to work everything related to URLs handling",
-            "time": "2019-10-11T12:33:50+00:00"
+            "time": "2019-10-11 12:33:50"
+        },
+        {
+            "name": "ROBOAMP/Validator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/robo_validator.git",
+                "reference": "f09489de30f707e7944b89f306a870b43e90438b"
+            },
+            "require": {
+                "roboamp/strings": "@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ROBOAMP\\Validator\\ValidatorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ROBOAMP\\": "src/"
+                }
+            },
+            "license": [
+                "ROBOAMP"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Inetti",
+                    "email": "roberto@roboamp.com"
+                }
+            ],
+            "description": "All type of string validations",
+            "time": "2019-10-27 18:20:51"
         },
         {
             "name": "doctrine/instantiator",
@@ -5565,18 +5604,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "Developer",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "role": "Developer",
-                    "email": "sebastian@phpeople.de"
+                    "email": "sebastian@phpeople.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "Developer",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "Developer"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -5892,8 +5931,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -5943,8 +5982,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -5985,8 +6024,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Simple template engine.",
@@ -6034,8 +6073,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Utility class for timing",
@@ -6736,8 +6775,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -6838,8 +6877,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "Developer",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",

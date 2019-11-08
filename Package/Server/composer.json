@@ -1,0 +1,30 @@
+{
+    "name": "ROBOAMP/Server",
+    "description": "Provides Server info used for debugging",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+        "ROBOAMP/MyArray":"@dev"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src/"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\Server\\ServerServiceProvider"
+            ]
+        }
+    }
+
+}

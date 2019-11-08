@@ -1,0 +1,35 @@
+{
+    "name": "ROBOAMP/ROBOCORE",
+    "description": "Shared Models for ROBOAMP",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+        "ROBOAMP/Strings":"@dev",
+        "ROBOAMP/MyArray":"@dev",
+        "ROBOAMP/Directory":"@dev",
+        "ROBOAMP/URL":"@dev",
+        "ROBOAMP/DB":"@dev"
+
+    },
+
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\ROBOCORE\\RobocoreServiceProvider"
+            ]
+        }
+    }
+
+}
