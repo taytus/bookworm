@@ -59,11 +59,15 @@
         "roboamp/validator": "dev-master",
         "roboamp/Server": "dev-master",
         "roboamp/Seeder": "dev-master",
+<<<<<<< HEAD
+        "roboamp/Axton": "dev-master"
+=======
         "roboamp/ROBOCORE": "dev-master",
         "roboamp/MyArray": "dev-master",
         "roboamp/DB": "dev-master"
 
 
+>>>>>>> master
 
     },
     "autoload": {

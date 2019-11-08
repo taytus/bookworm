@@ -1,19 +1,30 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
+    "content-hash": "8d546dc8f852a59656633419025c1e9f",
+=======
     "content-hash": "bf02af3a53b52d89b7dfb3c5ed72f2aa",
+>>>>>>> master
     "packages": [
         {
             "name": "ROBOAMP/Axton",
             "version": "dev-master",
+<<<<<<< HEAD
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/axton.git",
+                "reference": "44ca0ab3bd4fd94152eb200b3992d4c3164260cb"
+=======
             "dist": {
                 "type": "path",
                 "url": "Package/Axton",
                 "reference": "a715fd620486d38205adb30f587eb42e4e90a3d1",
                 "shasum": null
+>>>>>>> master
             },
             "require": {
                 "roboamp/db": "@dev",
@@ -42,9 +53,7 @@
                 }
             ],
             "description": "Control Panel",
-            "transport-options": {
-                "symlink": true
-            }
+            "time": "2019-07-02T23:21:31+00:00"
         },
         {
             "name": "ROBOAMP/DB",
@@ -577,9 +586,9 @@
             "authors": [
                 {
                     "name": "Jonathan Wage",
+                    "role": "Creator",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
+                    "homepage": "http://www.jwage.com/"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -2991,9 +3000,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
+                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
+                    "homepage": "https://murze.be"
                 }
             ],
             "description": "Manage newsletters in Laravel",
@@ -4531,8 +4540,8 @@
             "authors": [
                 {
                     "name": "Tijs Verkoyen",
-                    "email": "css_to_inline_styles@verkoyen.eu",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "css_to_inline_styles@verkoyen.eu"
                 }
             ],
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
@@ -4788,7 +4797,11 @@
                 }
             ],
             "description": "Move, copy, update, etc. Everything Files related",
+<<<<<<< HEAD
+            "time": "2019-06-12T01:16:07+00:00"
+=======
             "time": "2019-11-04T16:51:19+00:00"
+>>>>>>> master
         },
         {
             "name": "ROBOAMP/MyClass",
@@ -4821,6 +4834,9 @@
                 }
             ],
             "description": "Library to work everything related to class and method instances",
+<<<<<<< HEAD
+            "time": "2019-07-02T23:21:41+00:00"
+=======
             "time": "2019-10-11 13:33:00"
         },
         {
@@ -4855,6 +4871,7 @@
             ],
             "description": "Shared Models for ROBOAMP",
             "time": "2019-10-30T17:37:18+00:00"
+>>>>>>> master
         },
         {
             "name": "ROBOAMP/Seeder",
@@ -4926,7 +4943,11 @@
                 }
             ],
             "description": "Provides Server info used for debugging",
+<<<<<<< HEAD
+            "time": "2019-08-07T14:00:13+00:00"
+=======
             "time": "2019-10-06 07:31:33"
+>>>>>>> master
         },
         {
             "name": "ROBOAMP/URL",
@@ -4962,7 +4983,11 @@
                 }
             ],
             "description": "Library to work everything related to URLs handling",
+<<<<<<< HEAD
+            "time": "2019-06-19T17:32:56+00:00"
+=======
             "time": "2019-10-11 12:33:50"
+>>>>>>> master
         },
         {
             "name": "ROBOAMP/Validator",
@@ -4998,7 +5023,11 @@
                 }
             ],
             "description": "All type of string validations",
+<<<<<<< HEAD
+            "time": "2019-06-22T22:36:15+00:00"
+=======
             "time": "2019-10-27 18:20:51"
+>>>>>>> master
         },
         {
             "name": "doctrine/instantiator",
@@ -5604,18 +5633,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -5931,8 +5960,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -5982,8 +6011,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -6024,8 +6053,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Simple template engine.",
@@ -6073,8 +6102,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Utility class for timing",
@@ -6775,8 +6804,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -6877,8 +6906,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
