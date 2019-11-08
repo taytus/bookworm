@@ -34,14 +34,7 @@
         {   "type":"git","url":"git@github.com:taytus/robo_db.git"},
         {   "type":"git","url":"git@github.com:taytus/robo_server.git"},
         {   "type":"git","url":"git@github.com:taytus/robo_seeder.git"},
-
-        {
-            "type": "path",
-            "url": "Package/Axton",
-            "options": {
-                "symlink": true
-            }
-        }
+        {   "type":"git","url":"git@github.com:taytus/axton.git"}
 
     ],
     "require-dev": {
@@ -57,7 +50,8 @@
         "roboamp/url": "dev-master",
         "roboamp/validator": "dev-master",
         "roboamp/Server": "dev-master",
-        "roboamp/Seeder": "dev-master"
+        "roboamp/Seeder": "dev-master",
+        "roboamp/Axton": "dev-master"
 
     },
     "autoload": {
