@@ -33,9 +33,6 @@
         {   "type":"git","url":"git@github.com:taytus/robo_db.git"},
         {   "type":"git","url":"git@github.com:taytus/robo_server.git"},
         {   "type":"git","url":"git@github.com:taytus/robo_seeder.git"},
-<<<<<<< HEAD
-        {   "type":"git","url":"git@github.com:taytus/axton.git"}
-=======
         {   "type":"git","url":"git@github.com:taytus/ROBOCORE.git"},
 
         {
@@ -45,7 +42,6 @@
                 "symlink": true
             }
         }
->>>>>>> master
 
     ],
     "require-dev": {
