@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "Package/Axton",
-                "reference": "a715fd620486d38205adb30f587eb42e4e90a3d1",
+                "reference": "a5e0262ba6f1456d1ccdcf7efbd4f00819c65551",
                 "shasum": null
             },
             "require": {
@@ -2132,16 +2132,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.5",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2"
+                "reference": "9a9981c347c5c49d6dfe5cf826bb882b824080dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
-                "reference": "b76bbc3c51f22c570648de48e8c2d941ed5e2cf2",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/9a9981c347c5c49d6dfe5cf826bb882b824080dc",
+                "reference": "9a9981c347c5c49d6dfe5cf826bb882b824080dc",
                 "shasum": ""
             },
             "require": {
@@ -2149,7 +2149,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "ircmaxell/php-yacc": "0.0.4",
+                "ircmaxell/php-yacc": "0.0.5",
                 "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
             },
             "bin": [
@@ -2158,7 +2158,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.3-dev"
                 }
             },
             "autoload": {
@@ -2180,7 +2180,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-10-25T18:33:07+00:00"
+            "time": "2019-11-08T13:50:10+00:00"
         },
         {
             "name": "nunomaduro/laravel-console-menu",
@@ -4758,7 +4758,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_files.git",
-                "reference": "82a841c4b9a76c15395107b4e50b3a9e9fcfd7fe"
+                "reference": "4a15f5343f61f87f1e1064f57be3ee765c96778a"
             },
             "require": {
                 "roboamp/directory": "@dev",
@@ -4788,7 +4788,7 @@
                 }
             ],
             "description": "Move, copy, update, etc. Everything Files related",
-            "time": "2019-11-06T03:23:46+00:00"
+            "time": "2019-11-08T14:59:58+00:00"
         },
         {
             "name": "ROBOAMP/MyClass",
@@ -4829,7 +4829,14 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/ROBOCORE.git",
-                "reference": "6267c8cb6c2adf364849ec1bd0efadbb6b554eb9"
+                "reference": "d42c16122970f0d5075c04ec551f42c68ddefeae"
+            },
+            "require": {
+                "roboamp/db": "@dev",
+                "roboamp/directory": "@dev",
+                "roboamp/myarray": "@dev",
+                "roboamp/strings": "@dev",
+                "roboamp/url": "@dev"
             },
             "type": "library",
             "extra": {
@@ -4854,7 +4861,7 @@
                 }
             ],
             "description": "Shared Models for ROBOAMP",
-            "time": "2019-10-30 17:37:18"
+            "time": "2019-11-08 04:20:54"
         },
         {
             "name": "ROBOAMP/Seeder",
@@ -4862,7 +4869,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_seeder.git",
-                "reference": "4aa0d7e8c80ead66cf4e24e6d0af1e5c7d25f3de"
+                "reference": "afe8042caca640775be2fe0d699d77ab0dbd6e15"
             },
             "require": {
                 "roboamp/myarray": "@dev"
@@ -4890,7 +4897,7 @@
                 }
             ],
             "description": "Provides Server info used for debugging",
-            "time": "2019-10-06 07:14:56"
+            "time": "2019-11-08 04:23:08"
         },
         {
             "name": "ROBOAMP/Server",
@@ -4898,7 +4905,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_server.git",
-                "reference": "1a0ae4e4932adf8c04c5f7499f7f40aae81f28ee"
+                "reference": "47ab8137ce4d806e7f9f875f371941a49fdd2630"
             },
             "require": {
                 "roboamp/myarray": "@dev"
@@ -4926,7 +4933,7 @@
                 }
             ],
             "description": "Provides Server info used for debugging",
-            "time": "2019-10-06 07:31:33"
+            "time": "2019-11-08 04:24:21"
         },
         {
             "name": "ROBOAMP/URL",
@@ -4970,7 +4977,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_validator.git",
-                "reference": "f09489de30f707e7944b89f306a870b43e90438b"
+                "reference": "9145a3d2219f179c466af191ba461922cec0ee55"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -4998,7 +5005,7 @@
                 }
             ],
             "description": "All type of string validations",
-            "time": "2019-10-27 18:20:51"
+            "time": "2019-11-08 04:24:53"
         },
         {
             "name": "doctrine/instantiator",

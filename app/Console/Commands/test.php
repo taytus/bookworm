@@ -77,7 +77,16 @@ class test extends Command
         $this->update_testing_file();
 
 
-        $this->run_test($selected_menu['full_path']);
+        $result=$this->run_test($selected_menu['full_path']);
+
+
+        if($result){
+            chdir(base_path());
+
+            $res=shell_exec("git add -A;git commit -m 'auto update'; git push origin;");
+            dd($res,"tetas");
+        }
+            
 
     }
     private function commit($full_path_to_package){
@@ -85,18 +94,26 @@ class test extends Command
         $res=shell_exec("git add -A;git commit -m 'update'; git push origin; ./tag.sh");
         chdir(base_path());
 
+        $result=Strings::find_string_in_string($res,"nothing to commit, working tree clean");
         echo "\n".$res."\n";
 
+        return $result;
 
     }
     private function run_test($full_path_to_package){
+
+        $result=false;
+
         $str=new Strings();
 
         if(!file_exists($this->feature_path."Test.php")){
 
-            $this->commit($full_path_to_package);
+            $res=$this->commit($full_path_to_package);
 
-            dd("there is no testing file for package ".$this->class_name);
+            echo "\nThere is no testing file for package ".$this->class_name."\n";
+
+
+            return $res;
 
         }
 
@@ -106,11 +123,14 @@ class test extends Command
 
         if($str_res==false){
             echo $res;
-            dd("Commit has been canceled");
+            echo "\nCommit has been canceled\n";
+            return $result;
         }
         $this->commit($full_path_to_package);
 
         echo $res;
+
+        return true;
     }
     private function save_latest_used_option($package_name){
         $test=new test_class();
