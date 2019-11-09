@@ -110,7 +110,7 @@ class Files_test{
         fclose($handle);
     }
     private  function extract_method(){
-
+        //demo
         dd($this->cursor,"HERE COMES THE MAGIC");
         //$search_result=self::check_for_string_in_array($first_line_of_method, $arrayOfLines,$debug
 
