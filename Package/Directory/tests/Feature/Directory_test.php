@@ -167,7 +167,7 @@ class Directory_test{
             File::makeDirectory($path,$mode,true);
 
         }
-        //debug
+
         if(php_sapi_name()=="cli") Log::info("\nFolder ".$path." has been created");
 
     }
