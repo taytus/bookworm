@@ -11,8 +11,14 @@ class Test extends TestCase
     public function testBasicTest(){
 
 
-        $directory_class=new Directory_test();
 
+
+    }
+
+    private function create_directory(){
+        $directory_class=new Directory_test();
+        $directory_path=base_path('/test');
+        dd($directory_path);
 
     }
 
