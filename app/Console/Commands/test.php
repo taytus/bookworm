@@ -84,6 +84,8 @@ class test extends Command
 
         Log::info($this->testing_message);
 
+        dd("DONE TESTING!! ALL GOOD");
+
     }
     private function commit($package_path,$package_name){
 
