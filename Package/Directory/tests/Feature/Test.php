@@ -17,17 +17,12 @@ class Test extends TestCase
     }
 
     public function create_directory(){
-        $directory_path=base_path('popopo');
+        $directory_path=base_path('testing_directory_package');
         $directory_class=new Directory_test();
 
-        if($this->assertDirectoryNotExists($directory_path)){
-            $directory_class->create_folder($directory_path);
-            $this->assertDirectoryExists($directory_path);
-            $this->assertEquals("a",$directory_path);
-
-
-        }
-
+        $this->assertDirectoryNotExists($directory_path);
+        $directory_class->create_folder($directory_path);
+        $this->assertDirectoryExists($directory_path);
 
     }
 
