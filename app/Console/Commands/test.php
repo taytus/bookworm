@@ -82,7 +82,8 @@ class test extends Command
 
         if($res)$this->commit($package_path,$package_name);
 
-        Log::info($this->testing_message);
+
+        $this->info($this->testing_message);
 
 
     }
