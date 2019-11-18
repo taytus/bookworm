@@ -66,10 +66,10 @@ class test extends Command
         $option = $this->menu('Select Package',$this->dir_labels)->open();
 
         $selected_menu=$this->dirs[$option];
+        $package_name=$selected_menu['basename'];
+        $package_path=$selected_menu['full_path'];
 
-
-
-        $this->save_latest_used_option($selected_menu['basename']);
+        $this->save_latest_used_option($package_name);
 
         $this->clone_package_class_into_test($selected_menu);
 
@@ -77,11 +77,13 @@ class test extends Command
 
         $res=$this->run_test();
 
-        if($res)$this->commit($selected_menu['full_path']);
+        if($res)$this->commit($package_path,$package_name);
 
     }
-    private function commit($full_path_to_package){
-        chdir($full_path_to_package."/src");
+    private function commit($package_path,$package_name){
+
+
+        chdir($package_path."/src");
         $res=shell_exec("git add -A;git commit -m 'update'; git push origin; ./tag.sh");
         chdir(base_path());
 
@@ -90,15 +92,15 @@ class test extends Command
 
         //everything is OK, now commit bookworm
         if($result){
-            return $this->commit_bookworm($full_path_to_package);
+            return $this->commit_bookworm($package_name);
         }
         return $result;
 
     }
-    private function commit_bookworm($full_path_to_package){
+    private function commit_bookworm($package_name){
         chdir(base_path());
 
-        $command="git add -A;git commit -m 'auto update for package ". $full_path_to_package."'; git push origin;";
+        $command="git add -A;git commit -m 'auto update for package ". $package_name."'; git push origin;";
 
         $res=shell_exec($command);
 
