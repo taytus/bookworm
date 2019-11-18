@@ -83,7 +83,7 @@ class test extends Command
         if($res)$this->commit($package_path,$package_name);
 
 
-        $this->info($this->testing_message);
+        $this->warn($this->testing_message);
 
 
     }
