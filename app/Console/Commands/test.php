@@ -94,13 +94,13 @@ class test extends Command
     }
     private function commit_bookworm($package_name){
 
-        echo "\n-------------------------------------------\n";
+        echo "\n---------------------------------------------\n";
         echo "|                                            |\n";
         echo "|                                            |\n";
         echo "|                                            |\n";
         echo "|                                            |\n";
         echo "|                                            |\n";
-        echo "-------------------------------------------\n";
+        echo "---------------------------------------------\n";
 
 
 
