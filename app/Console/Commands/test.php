@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use function GuzzleHttp\Psr7\str;
 use Illuminate\Console\Command;
 use App\MyClasses\Directory;
+use Illuminate\Support\Facades\Log;
 use ROBOAMP\Files;
 use App\Test as test_class;
 use ROBOAMP\MyArray;
@@ -30,6 +31,7 @@ class test extends Command
     private $dir_labels;
     private $dirs;
     private $feature_path;
+    private $testing_message="";
     /**
      * Create a new command instance.
      *
@@ -80,6 +82,8 @@ class test extends Command
 
         if($res)$this->commit($package_path,$package_name);
 
+        Log::info($this->testing_message);
+
     }
     private function commit($package_path,$package_name){
 
@@ -120,12 +124,12 @@ class test extends Command
         $res=shell_exec('vendor/bin/phpunit Package/'.$this->class_name);
         $str_res=strpos($res,"OK");
 
-
         if($str_res==false){
             echo $res;
             echo "\nCommit has been canceled\n";
             return $result;
         }
+        $this->testing_message=$res;
 
         return true;
     }
