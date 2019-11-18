@@ -84,7 +84,7 @@ class test extends Command
 
         Log::info($this->testing_message);
 
-        dd("DONE TESTING!! ALL GOOD");
+        dd("DONE TESTING!! ALL GOOD",$this->testing_message);
 
     }
     private function commit($package_path,$package_name){
@@ -124,6 +124,7 @@ class test extends Command
         }
 
         $res=shell_exec('vendor/bin/phpunit Package/'.$this->class_name);
+
         $str_res=strpos($res,"OK");
 
         if($str_res==false){
