@@ -19,7 +19,7 @@ class Test extends TestCase
     public function create_directory(){
         $directory_class=new Directory_test();
         $directory_path=base_path('/test');
-        dd($directory_path);
+        $this->assertFileExists($directory_path);
 
     }
 
