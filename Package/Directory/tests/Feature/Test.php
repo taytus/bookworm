@@ -17,7 +17,7 @@ class Test extends TestCase
     }
 
     public function create_directory(){
-        $directory_path=base_path('BATMAN');
+        $directory_path=base_path('popopo');
         $directory_class=new Directory_test();
 
         if($this->assertDirectoryNotExists($directory_path)){
