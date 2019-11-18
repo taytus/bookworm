@@ -93,6 +93,17 @@ class test extends Command
 
     }
     private function commit_bookworm($package_name){
+
+        echo "\n-------------------------------------------\n";
+        echo "|                                            |\n";
+        echo "|                                            |\n";
+        echo "|                                            |\n";
+        echo "|                                            |\n";
+        echo "|                                            |\n";
+        echo "-------------------------------------------\n";
+
+
+
         chdir(base_path());
 
         $command="git add -A;git commit -m 'auto update for package ". $package_name."'; git push origin;";
