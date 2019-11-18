@@ -106,7 +106,6 @@ class test extends Command
         echo "|                                                                 |\n";
         echo "|                                                                 |\n";
         echo "|                                                                 |\n";
-        echo "|                                                                 |\n";
         echo "\n----------------------------------------------------------------\n";
 
 
