@@ -84,7 +84,6 @@ class test extends Command
 
         Log::info($this->testing_message);
 
-        dd("DONE TESTING!! ALL GOOD",$this->testing_message);
 
     }
     private function commit($package_path,$package_name){
@@ -132,9 +131,13 @@ class test extends Command
             echo "\nCommit has been canceled\n";
             return $result;
         }
-        $this->testing_message=$res;
+        $this->testing_message=$this->get_last_line_of_test_output($res);
 
         return true;
+    }
+    private function get_last_line_of_test_output($res){
+        $res=explode("\n",$res);
+        return $res[6];
     }
     private function save_latest_used_option($package_name){
         $test=new test_class();
