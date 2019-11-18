@@ -77,6 +77,7 @@ class test extends Command
 
         $res=$this->run_test();
 
+
         if($res)$this->commit($package_path,$package_name);
 
     }
@@ -85,16 +86,10 @@ class test extends Command
 
         chdir($package_path."/src");
         $res=shell_exec("git add -A;git commit -m 'update'; git push origin; ./tag.sh");
-        chdir(base_path());
 
-        $result=Strings::find_string_in_string($res,"nothing to commit, working tree clean");
-        echo "\n".$res."\n";
+        //$result=Strings::find_string_in_string($res,"nothing to commit, working tree clean");
+        return $this->commit_bookworm($package_name);
 
-        //everything is OK, now commit bookworm
-        if($result){
-            return $this->commit_bookworm($package_name);
-        }
-        return $result;
 
     }
     private function commit_bookworm($package_name){
@@ -104,7 +99,6 @@ class test extends Command
 
         $res=shell_exec($command);
 
-        echo "\n$res\n".__METHOD__."\nBATMAN";
         return true;
     }
 

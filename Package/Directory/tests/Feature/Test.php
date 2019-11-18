@@ -10,9 +10,10 @@ class Test extends TestCase
      */
     public function testBasicTest(){
 
-        $array=new Directory_test();
 
-        $this->assertEquals("a","a");
+        $directory_class=new Directory_test();
+
 
     }
+
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;
 
 
@@ -155,17 +155,6 @@ class Directory_test{
 
     public function create_folder($folder_name,$type=null,$mode=0775,$delete_if_exist=false){
 
-        /*
-         * public static function create($directory_path,$cli=null){
-        $result=false;
-        if(!is_dir($directory_path)) {
-            $res=File::makeDirectory($directory_path, 0775, true);
-        }
-        return $result;
-    }
-         */
-
-        dd(php_sapi_name(),"Taytus");
         $path=$this->get_path_to_folder($folder_name,$type);
 
 
@@ -178,8 +167,8 @@ class Directory_test{
             File::makeDirectory($path,$mode,true);
 
         }
-
-        if($cli) $cli->show_error("\nFolder ".$directory_path." has been created");
+        //debug
+        if(php_sapi_name()=="cli") Log::info("\nFolder ".$path." has been created");
 
     }
     public function folder_exist($folder,$type=null,$debug=null){
