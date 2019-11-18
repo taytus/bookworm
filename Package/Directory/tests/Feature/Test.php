@@ -23,6 +23,14 @@ class Test extends TestCase
         $this->assertDirectoryNotExists($directory_path);
         $directory_class->create_folder($directory_path);
         $this->assertDirectoryExists($directory_path);
+        $this->delete_directory($directory_path);
+
+    }
+    public function delete_directory($directory_path){
+
+        $directory_class=new Directory_test();
+        $directory_class->delete_directory($directory_path);
+        $this->assertDirectoryNotExists($directory_path);
 
     }
 
