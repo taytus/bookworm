@@ -71,25 +71,13 @@ class test extends Command
 
         $this->save_latest_used_option($selected_menu['basename']);
 
-
         $this->clone_package_class_into_test($selected_menu);
 
         $this->update_testing_file();
 
+        $res=$this->run_test();
 
-        $result=$this->run_test($selected_menu['full_path']);
-
-
-        if($result){
-            chdir(base_path());
-
-            $command="git add -A;git commit -m 'auto update for package ".$selected_menu['basename']."'; git push origin;";
-
-            $res=shell_exec($command);
-
-            echo "\n$res";
-        }
-            
+        if($res)$this->commit($selected_menu['full_path']);
 
     }
     private function commit($full_path_to_package){
@@ -100,24 +88,33 @@ class test extends Command
         $result=Strings::find_string_in_string($res,"nothing to commit, working tree clean");
         echo "\n".$res."\n";
 
+        //everything is OK, now commit bookworm
+        if($result){
+            return $this->commit_bookworm($full_path_to_package);
+        }
         return $result;
 
     }
-    private function run_test($full_path_to_package){
+    private function commit_bookworm($full_path_to_package){
+        chdir(base_path());
+
+        $command="git add -A;git commit -m 'auto update for package ". $full_path_to_package."'; git push origin;";
+
+        $res=shell_exec($command);
+
+        echo "\n$res\n".__METHOD__."\nBATMAN";
+        return true;
+    }
+
+    private function run_test(){
 
         $result=false;
 
         $str=new Strings();
 
         if(!file_exists($this->feature_path."Test.php")){
-
-            $res=$this->commit($full_path_to_package);
-
             echo "\nThere is no testing file for package ".$this->class_name."\n";
-
-
-            return $res;
-
+            return $result;
         }
 
         $res=shell_exec('vendor/bin/phpunit Package/'.$this->class_name);
@@ -129,9 +126,6 @@ class test extends Command
             echo "\nCommit has been canceled\n";
             return $result;
         }
-        $this->commit($full_path_to_package);
-
-        echo $res;
 
         return true;
     }

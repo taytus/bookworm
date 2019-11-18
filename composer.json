@@ -74,7 +74,9 @@
             "database",
             "Package/Validator/tests",
             "Package/MyArray/tests",
-            "Package/Strings/tests"
+            "Package/Strings/tests",
+            "Package/Files/tests",
+            "Package/Directory/tests"
         ],
         "psr-4": {
             "App\\": "app/"

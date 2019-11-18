@@ -69,14 +69,7 @@ class Directory{
         }
     }
 
-    public static function create($directory_path,$cli=null){
-        $result=false;
-        if(!is_dir($directory_path)) {
-            if($cli) $cli->show_error("\nFolder ".$directory_path." has been created");
-            $res=File::makeDirectory($directory_path, 0775, true);
-        }
-        return $result;
-    }
+
     public function delete_directory($path){
         File::deleteDirectory($path, false);
     }
@@ -91,7 +84,18 @@ class Directory{
         File::deleteDirectory($path, true);
     }
 
-    public function get_path(){
+    public function get_path_to_folder($folder_name,$type){
+        if(!is_null($type)){
+            $paths=new Paths();
+            $path=$paths->path_to_folder($type)."/".$folder_name;
+        }else{
+            $path=$folder_name;
+        }
+
+        return $path;
+    }
+
+    /*public function get_path(){
 
         switch($this->short_path){
             case 'footer':
@@ -106,7 +110,7 @@ class Directory{
 
         return $path;
 
-    }
+    }*/
 
     public function get_current_directory($file_path){
         $res=pathinfo($file_path);
@@ -147,6 +151,48 @@ class Directory{
         }
 
     }
+
+
+    public function create_folder($folder_name,$type=null,$mode=0775,$delete_if_exist=false){
+
+        /*
+         * public static function create($directory_path,$cli=null){
+        $result=false;
+        if(!is_dir($directory_path)) {
+            $res=File::makeDirectory($directory_path, 0775, true);
+        }
+        return $result;
+    }
+         */
+
+        dd(php_sapi_name(),"Taytus");
+        $path=$this->get_path_to_folder($folder_name,$type);
+
+
+        if(is_dir($folder_name)){
+            if($delete_if_exist){
+                File::deleteDirectory($path);
+                File::makeDirectory($path,$mode,true);
+            }
+        }else{
+            File::makeDirectory($path,$mode,true);
+
+        }
+
+        if($cli) $cli->show_error("\nFolder ".$directory_path." has been created");
+
+    }
+    public function folder_exist($folder,$type=null,$debug=null){
+        $paths=new Paths();
+
+        $path=(!is_null($type)?$paths->path_to_folder($type)."/".$folder:$folder);
+
+        if(!is_null($debug))echo ("\nPath:   ".$path."\n  Type:    ".$type."\n    Folder: ".$folder);
+
+        return  $this->myFile->isDirectory($path);
+
+    }
+
 
     /*
      * Recives a list of directory and a list of records, delete orphan directories

@@ -184,33 +184,7 @@ class Files{
 
 
     }
-    public function create_folder($folder_name,$type,$delete_if_exist=false){
-        $paths=new Paths();
 
-        $path=$paths->path_to_folder($type)."/".$folder_name;
-
-        if($this->myFile->isDirectory($path)){
-            if($delete_if_exist){
-                $this->myFile->deleteDirectory($path);
-                $this->myFile->makeDirectory($path,0777);
-            }
-        }else{
-            $this->myFile->makeDirectory($path,0777);
-
-        }
-
-
-    }
-    public function folder_exist($folder,$type=null,$debug=null){
-        $paths=new Paths();
-
-        $path=(!is_null($type)?$paths->path_to_folder($type)."/".$folder:$folder);
-
-        if(!is_null($debug))echo ("\nPath:   ".$path."\n  Type:    ".$type."\n    Folder: ".$folder);
-
-        return  $this->myFile->isDirectory($path);
-
-    }
 
 
 
