@@ -79,7 +79,6 @@ class test extends Command
 
         $res=$this->run_test();
 
-
         if($res)$this->commit($package_path,$package_name);
 
 
@@ -118,27 +117,37 @@ class test extends Command
         return true;
     }
 
-    private function run_test(){
+    private function run_test($forced=false){
+
+        if($forced) return true;
 
         $result=false;
 
         $str=new Strings();
 
-        if(!file_exists($this->feature_path."Test.php")){
-            echo "\nThere is no testing file for package ".$this->class_name."\n";
-            return $result;
-        }
+            if (!file_exists($this->feature_path . "Test.php")) {
+                echo "\nThere is no testing file for package " . $this->class_name . "\n";
+
+                if ($this->confirm("Do you still want to commit changes?", false)) {
+                    return $this->run_test(true);
+                }
+                return $result;
+            }
+
 
         $res=shell_exec('vendor/bin/phpunit Package/'.$this->class_name);
 
         $str_res=strpos($res,"OK");
 
-        if($str_res==false){
-            echo $res;
-            echo "\nCommit has been canceled\n";
-            return $result;
-        }
-        $this->testing_message=$this->get_last_line_of_test_output($res);
+            if ($str_res == false) {
+                $no_tests = $this->get_last_line_of_test_output($res);
+                if ($no_tests == "No tests executed!" && force)
+                    echo $res;
+                echo "\nCommit has been canceled\n";
+                return $result;
+            }
+            $this->testing_message=$this->get_last_line_of_test_output($res);
+
 
         return true;
     }

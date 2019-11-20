@@ -18,6 +18,9 @@ class DB_test extends Command {
 
     }
 
+    //this method first check if there is a connection passed to it
+    //and if so, uses that connection
+    //it also checks if the table exists before trying to create it
     public static function create($table,$callable,$connection=null){
 
         if(!is_null($connection)) {
