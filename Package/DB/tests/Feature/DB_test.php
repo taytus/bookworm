@@ -7,7 +7,7 @@ use PDO;
 use PDOException;
 use Symfony\Component\Console\Command\Command;
 use Eloquent;
-use Doctrine\DBAL\Query\Expression;
+use Illuminate\Database\Query\Expression;
 
 
 class DB_test extends Command {
