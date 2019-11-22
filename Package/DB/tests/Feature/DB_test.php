@@ -7,6 +7,7 @@ use PDO;
 use PDOException;
 use Symfony\Component\Console\Command\Command;
 use Eloquent;
+use Doctrine\DBAL\Query\Expression;
 
 
 class DB_test extends Command {
@@ -25,7 +26,7 @@ class DB_test extends Command {
 
         $table_name=$model_table->get_table_name();
         $db_name=$model_table->getConnection()->getDatabaseName();
-        return $db_name.'.'.$table_name;
+        return new Expression($db_name.'.'.$table_name);
     }
 
     //this method first check if there is a connection passed to it
