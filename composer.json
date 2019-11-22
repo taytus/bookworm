@@ -34,6 +34,7 @@
         {   "type":"git","url":"git@github.com:taytus/robo_server.git"},
         {   "type":"git","url":"git@github.com:taytus/robo_seeder.git"},
         {   "type":"git","url":"git@github.com:taytus/ROBOCORE.git"},
+        {   "type":"git","url":"git@github.com:taytus/ROBO_CLI.git"},
 
         {
             "type": "path",

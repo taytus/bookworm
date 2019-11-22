@@ -48,7 +48,7 @@ class Directory{
 
         $assets=['js','img','css','fonts','json'];
 
-        $domain=URL::get_domain($url);
+        $domain=CLI::get_domain($url);
 
         $assets_path=base_path()."/public/properties/".$domain;
         $test_assets_path=base_path()."/public/properties/".$domain."/test";

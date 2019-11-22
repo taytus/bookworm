@@ -97,7 +97,7 @@ class Validator{
             $this->display_error_message('required',$error_message);
         }else{
 
-            return (URL::is_valid_url($string)?$string:$this->display_error_message('url',$error_message));
+            return (CLI::is_valid_url($string)?$string:$this->display_error_message('url',$error_message));
 
         }
     }

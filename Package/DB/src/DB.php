@@ -19,13 +19,13 @@ class DB extends Command {
 
     //this is used primarily on migrations. It's a shortcut to get
     //the connection and table name
+    //it assumes the model is under App folder
     public static function get_table_name_from_model($model){
         $model=ucfirst(strtolower($model));
         $class="App\\".$model;
         $model_table=new $class();
-
-        $table_name=$model_table->get_table_name();
         $db_name=$model_table->getConnection()->getDatabaseName();
+        $table_name=$model_table->get_table_name();
         return new Expression($db_name.'.'.$table_name);
     }
 
