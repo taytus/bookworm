@@ -1,0 +1,30 @@
+{
+    "name": "ROBOAMP/CLI",
+    "description": "CLI Styling,Logging errors and other tools",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+        "ROBOAMP/Strings":"@dev"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src/"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\CLI\\CLIServiceProvider"
+            ]
+        }
+    }
+
+}
