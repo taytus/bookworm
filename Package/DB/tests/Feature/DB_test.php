@@ -19,7 +19,7 @@ class DB_test extends Command {
     //this is used primarily on migrations. It's a shortcut to get
     //the connection and table name
     public static function get_table_name_from_model($model){
-
+        $model=ucfirst(strtolower($model));
         $class="App\\".$model;
         $model_table=new $class();
 
