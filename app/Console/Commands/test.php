@@ -176,7 +176,7 @@ class test extends Command
         $this->testing_file_path=$this->feature_path.$this->class_name."_test.php";
 
         //make sure the directory exists
-        $directory::create($directory->get_current_directory($this->testing_file_path));
+        $directory->create_directory($directory->get_current_directory($this->testing_file_path));
 
         $files->copy_file($origin_file,$this->testing_file_path);
     }

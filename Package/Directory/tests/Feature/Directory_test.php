@@ -153,12 +153,12 @@ class Directory_test{
     }
 
 
-    public function create_folder($folder_name,$type=null,$mode=0775,$delete_if_exist=false){
+    public function create_directory($directory_name,$type=null,$mode=0775,$delete_if_exist=false){
 
-        $path=$this->get_path_to_folder($folder_name,$type);
+        $path=$this->get_path_to_folder($directory_name,$type);
 
 
-        if(is_dir($folder_name)){
+        if(is_dir($directory_name)){
             if($delete_if_exist){
                 File::deleteDirectory($path);
                 File::makeDirectory($path,$mode,true);

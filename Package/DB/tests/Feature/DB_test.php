@@ -18,6 +18,16 @@ class DB_test extends Command {
 
     }
 
+    //this is used primarily on migrations. It's a shortcut to get
+    //the connection and table name
+    public function get_table_name_from_model($model){
+
+        $model_table=new 'App\\'.$model();
+        $table_name=$model_table->get_table_name();
+        $db_name=$model_table->getConnection()->getDatabaseName();
+        return $db_name.'.'.$table_name;
+    }
+
     //this method first check if there is a connection passed to it
     //and if so, uses that connection
     //it also checks if the table exists before trying to create it
