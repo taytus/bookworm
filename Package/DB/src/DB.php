@@ -22,7 +22,9 @@ class DB extends Command {
     //the connection and table name
     public function get_table_name_from_model($model){
 
-        $model_table=new 'App\\'.$model();
+        $class="App\\".$model;
+        $model_table=new $class();
+        
         $table_name=$model_table->get_table_name();
         $db_name=$model_table->getConnection()->getDatabaseName();
         return $db_name.'.'.$table_name;
