@@ -14,17 +14,15 @@ class DB extends Command {
     private $error_manager;
     public function __construct(){
         parent::__construct();
-        $this->error_manager=new Errors();
-
     }
 
     //this is used primarily on migrations. It's a shortcut to get
     //the connection and table name
-    public function get_table_name_from_model($model){
+    public static function get_table_name_from_model($model){
 
         $class="App\\".$model;
         $model_table=new $class();
-        
+
         $table_name=$model_table->get_table_name();
         $db_name=$model_table->getConnection()->getDatabaseName();
         return $db_name.'.'.$table_name;
