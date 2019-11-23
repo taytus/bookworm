@@ -36,9 +36,7 @@ class Debug   {
         $cliStyle->log_message($message);
         $cliStyle->log_message($triggered_from);
 
-        dd($tabs,strlen($triggered_from),strlen($message));
     }
-
 
 
 }
