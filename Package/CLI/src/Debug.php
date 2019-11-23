@@ -24,7 +24,7 @@ class Debug   {
         dd();
     }
     public static function log($message){
-        $tabs=count($message)/4;
+        $tabs=strlen($message)/4;
         $max_tabs=13-$tabs;
         $str="";
         for ($i=0;$i<$max_tabs;$i++){
