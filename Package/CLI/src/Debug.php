@@ -31,7 +31,7 @@ class Debug   {
         $message=$message.$tabs;
         $triggered_from="Message triggered on Method: ".$res[1]['function']."\t | Class: ".$res[1]["class"];
         $tabs=$string_class->get_total_tabs($triggered_from);
-        $triggered_from.=$tabs;
+        $triggered_from=$triggered_from.$tabs;
 
         $cliStyle->log_message($message);
         $cliStyle->log_message($triggered_from);
