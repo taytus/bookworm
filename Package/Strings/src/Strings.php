@@ -180,7 +180,19 @@ class Strings extends Str{
         $second_half = ($second_half?$other_part = implode(" ", array_splice($pieces, 0)):null);
         return (is_null($second_half)?$first_part:[$first_part,$second_half]);
 
+    }
 
+
+    //depending on how long a string is, returns how many tabs needs
+    //to be added to the line. This is used for CLI applications
+    public function get_total_tabs( $string, $max_tabs=19, $tabs_size=4){
+        $tabs=strlen($string)/$tabs_size;
+        $max_tabs=19-$tabs;
+        $str="";
+        for ($i=0;$i<$max_tabs;$i++){
+            $str.="\t";
+        }
+        return $str;
     }
 
 

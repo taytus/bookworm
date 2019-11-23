@@ -24,16 +24,14 @@ class Debug   {
         dd();
     }
     public static function log($message){
-        $tabs=strlen($message)/4;
-        $max_tabs=18-$tabs;
-        $str="";
-        for ($i=0;$i<$max_tabs;$i++){
-            $str.="\t";
-        }
+        $string_class=new Strings();
         $res=debug_backtrace();
         $cliStyle=new CliStyle();
-        $message=$message.$str;
-        $triggered_from="Message triggered on Method: ".$res[1]['function']."\t | Class: ".$res[1]["class"]."\t\t\t\t\t\t\t\t\t";
+        $tabs=$string_class->get_total_tabs($message);
+        $message=$message.$tabs;
+        $triggered_from="Message triggered on Method: ".$res[1]['function']."\t | Class: ".$res[1]["class"];
+        $tabs=$string_class->get_total_tabs($triggered_from);
+        $triggered_from.=$tabs;
 
         $cliStyle->log_message($message);
         $cliStyle->log_message($triggered_from);
