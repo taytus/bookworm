@@ -3,6 +3,7 @@
 namespace ROBOAMP\CLI;
 
 use ROBOAMP\CLI\CliStyle;
+use ROBOAMP\Strings;
 
 class Debug   {
 
@@ -23,9 +24,15 @@ class Debug   {
         dd();
     }
     public static function log($message){
+        $tabs=count($message)/4;
+        $max_tabs=13-$tabs;
+        $str="";
+        for ($i=0;$<$max_tabs;$i++){
+            $str.="\t";
+        }
         $res=debug_backtrace();
         $cliStyle=new CliStyle();
-        $message=$message."\t\t\t\t\t\t\t\t\t\t\t";
+        $message=$message.$str;
         $triggered_from="Message triggered on Method: ".$res[1]['function']."\t | Class: ".$res[1]["class"]."\t\t\t\t\t\t\t\t\t";
 
         $cliStyle->log_message($message);
