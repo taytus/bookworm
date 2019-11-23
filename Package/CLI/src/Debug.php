@@ -7,7 +7,7 @@ use ROBOAMP\CLI\CliStyle;
 class Debug   {
 
 
-    public static function log($error_message){
+    public static function error($error_message){
         $res=debug_backtrace();
         $cliStyle=new CliStyle();
         //the [0] position is the one calling this method, the one alarming of an error
@@ -21,6 +21,15 @@ class Debug   {
         $cliStyle->error_message($called_from);
 
         dd();
+    }
+    public static function log($message){
+        $res=debug_backtrace();
+        $cliStyle=new CliStyle();
+        $message=$message."\t\t\t\t\t\t\t\t\t\t\t";
+        $triggered_from="Message triggered on Method: ".$res[1]['function']."\t | Class: ".$res[1]["class"]."\t\t\t\t\t\t\t\t\t";
+
+        $cliStyle->log_message($message);
+        $cliStyle->log_message($triggered_from);
     }
 
 

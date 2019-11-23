@@ -37,6 +37,9 @@ class CliStyle extends Command {
     public function success_message($message){
         $this->output_text($message,'success');
     }
+    public function log_message($message){
+        $this->output_text($message,'log');
+    }
 
 
     private function output_text($message,$style='success'){
@@ -52,6 +55,10 @@ class CliStyle extends Command {
 
         }
 
+    }
+    public function style_text_log_message($message=null){
+        $message=(is_null($message)?'Log':$message);
+        return "<bg=blue;fg=white;options=bold>".$message."</>";
     }
     public function style_text_success_message($message=null){
         $message=(is_null($message)?'Success':$message);
