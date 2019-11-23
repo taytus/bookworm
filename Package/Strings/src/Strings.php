@@ -187,7 +187,7 @@ class Strings extends Str{
     //to be added to the line. This is used for CLI applications
     public function get_total_tabs( $string, $max_tabs=20, $tabs_size=4){
         $tabs=strlen($string)/$tabs_size;
-        $max_tabs=19-$tabs;
+        $max_tabs=$max_tabs-$tabs;
         $str="";
         for ($i=0;$i<$max_tabs;$i++){
             $str.="\t";
