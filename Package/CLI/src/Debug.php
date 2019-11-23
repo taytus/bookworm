@@ -27,7 +27,7 @@ class Debug   {
         $tabs=count($message)/4;
         $max_tabs=13-$tabs;
         $str="";
-        for ($i=0;$<$max_tabs;$i++){
+        for ($i=0;$i<$max_tabs;$i++){
             $str.="\t";
         }
         $res=debug_backtrace();
