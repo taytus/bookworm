@@ -31,10 +31,12 @@ class Debug   {
         $message=$message.$tabs;
         $triggered_from="Message triggered on Method: ".$res[1]['function']."\t | Class: ".$res[1]["class"];
         $tabs=$string_class->get_total_tabs($triggered_from);
+        dd("Tabs from second message = ".$tabs,strlen($triggered_from),19-strlen($triggered_from));
         $triggered_from=$triggered_from.$tabs;
 
         $cliStyle->log_message($message);
         $cliStyle->log_message($triggered_from);
+
         dd($tabs,strlen($triggered_from),strlen($message));
     }
 
