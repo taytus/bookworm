@@ -197,15 +197,12 @@ class Strings_test extends Str{
 
         $total_tabs=floor($total_chars/$tabs_size);
 
-        //return $total_tabs ."   |   ".$extra_chars;
-
-
         $str="";
         for ($i=0;$i<$total_tabs;$i++){
             $str.="\t";
         }
         for($j=$extra_chars;$j>0;$j--){
-            $str.="0";
+            $str=rtrim($str);
         }
         return $str;
     }
