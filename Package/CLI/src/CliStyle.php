@@ -51,7 +51,7 @@ class CliStyle extends Command {
             $handler = array( $this, $style_type);
             $params = array($message);
             $message=call_user_func_array($handler , $params);
-            $this->output->write($message,true);
+            $this->output->writeln($message);
 
         }
 
