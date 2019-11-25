@@ -182,6 +182,18 @@ class Strings extends Str{
 
     }
 
+    public function create_string($char,$length){
+        $str="";
+        for($i=0;$i<$length;$i++){
+            $str.=$char;
+        }
+        return $char;
+    }
+    //creates a string with the same length but with spaces instead of characters
+    public function create_empty_string_from_string($string){
+        $length=strlen($string);
+        return $this->create_string(" ",$length);
+    }
 
     //depending on how long a string is, returns how many tabs needs
     //to be added to the line. This is used for CLI applications
@@ -191,49 +203,18 @@ class Strings extends Str{
 
         $string_size=strlen($string);
 
-        $total_chars=$max_chars_per_line-$string_size;
+        $new_string=$this->create_empty_string_from_string($string);
 
+        $total_chars=$max_chars_per_line-$string_size;
+        $string="";
         $spaces=0;
-        while(strlen($string)<$total_chars){
+        while($spaces<$total_chars){
             $string.=" ";
             $spaces++;
         }
 
         return $string;
-        //return $string_size." | ".strlen($string)." | ".$spaces;
-
-
-
-        $extra_chars=$total_chars%$tabs_size;
-
-        $total_tabs=floor($total_chars/$tabs_size);
-
-        $str="";
-
-
-        if($extra_chars==0) {
-            for ($i = 0; $i < $total_tabs; $i++) {
-                for ($j = 0; $j < $tabs_size; $j++) {
-                    $str .= " ";
-                }
-            }
-            $str_val=strlen($str);
-        }else{
-            $total_tabs--;
-            for ($i = 0; $i < $total_tabs; $i++) {
-                for ($j = 0; $j < $tabs_size; $j++) {
-                    $str .= " ";
-                }
-            }
-            for($j=0;$j<$extra_chars;$j++){
-                $str.=" ";
-            }
-            $str_val=strlen($str);
-
-        }
-
-       return $total_tabs." | ".$extra_chars." | ".strlen($str)." | ".($string_size - $str_val)." | ".$string_size." | ".$string;
-        return $str;
+        
     }
 
 
