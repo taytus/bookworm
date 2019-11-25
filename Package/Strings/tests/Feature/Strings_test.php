@@ -199,7 +199,7 @@ class Strings_test extends Str{
 
         $str="";
         for ($i=0;$i<$total_tabs;$i++){
-           for ($j=0;$j<$tabs_size;$j++){
+           for ($j=0;$j<$tabs_size-1;$j++){
                $str.=" ";
             }
         }
