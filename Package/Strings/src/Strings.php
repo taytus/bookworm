@@ -203,12 +203,10 @@ class Strings extends Str{
 
         $string_size=strlen($string);
 
-        $new_string=$this->create_empty_string_from_string($string);
-
         $total_chars=$max_chars_per_line-$string_size;
         $string="";
         $spaces=0;
-        while($spaces<$total_chars){
+        while(($spaces<$total_chars) && (strlen($string)<$total_chars)){
             $string.=" ";
             $spaces++;
         }
