@@ -199,16 +199,27 @@ class Strings_test extends Str{
 
         $str="";
 
-        return $total_tabs."   |   ".$extra_chars;
 
-        for ($i=0;$i<$total_tabs;$i++){
-           for ($j=0;$j<$tabs_size;$j++){
-               $str.=" ";
+        if($extra_chars==0) {
+            for ($i = 0; $i < $total_tabs; $i++) {
+                for ($j = 0; $j < $tabs_size; $j++) {
+                    $str .= " ";
+                }
+            }
+        }else{
+            for ($i = 0; $i < $total_tabs-1; $i++) {
+                for ($j = 0; $j < $tabs_size; $j++) {
+                    $str .= " ";
+                }
+            }
+            for($j=$extra_chars;$j>0;$j--){
+                $str.=" ";
             }
         }
-        for($j=$extra_chars;$j>0;$j--){
-            $str=rtrim($str);
-        }
+
+        //return $total_tabs."   |   ".$extra_chars;
+
+
         return $str;
     }
 
