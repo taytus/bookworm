@@ -198,8 +198,11 @@ class Strings extends Str{
         $total_tabs=floor($total_chars/$tabs_size);
 
         $str="";
+
+        return $total_tabs."   |   ".$extra_chars;
+
         for ($i=0;$i<$total_tabs;$i++){
-           for ($j=0;$j<$tabs_size-1;$j++){
+           for ($j=0;$j<$tabs_size;$j++){
                $str.=" ";
             }
         }
