@@ -56,7 +56,7 @@ class test extends Command
 
             $str_class = new Strings();
             $strs = ["0"];
-            for ($i = 0; $i < 20; $i++) {
+            for ($i = 0; $i < 10; $i++) {
                 $string = $strs[$i] . strval($i + 1);
                 $strs[] = $string;
             }
