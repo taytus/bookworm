@@ -195,6 +195,11 @@ class Strings_test extends Str{
         return $this->create_string(" ",$length);
     }
 
+    public function multi_line($string){
+        $res=explode("\n");
+
+        return (count($res>0)?true:false);
+    }
     //depending on how long a string is, returns how many tabs needs
     //to be added to the line. This is used for CLI applications
     public function get_total_tabs( $string, $max_tabs=18, $tabs_size=5){
