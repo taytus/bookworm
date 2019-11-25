@@ -199,7 +199,9 @@ class Strings_test extends Str{
 
         $str="";
         for ($i=0;$i<$total_tabs;$i++){
-            $str.="\t";
+           for ($j=0;$j<$tabs_size;$j++){
+               $str.=" ";
+            }
         }
         for($j=$extra_chars;$j>0;$j--){
             $str=rtrim($str);
