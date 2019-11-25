@@ -193,6 +193,15 @@ class Strings extends Str{
 
         $total_chars=$max_chars_per_line-$string_size;
 
+
+        while(strlen($string)<$total_chars){
+            $string.=" ";
+        }
+
+        return $string;
+
+
+
         $extra_chars=$total_chars%$tabs_size;
 
         $total_tabs=floor($total_chars/$tabs_size);
