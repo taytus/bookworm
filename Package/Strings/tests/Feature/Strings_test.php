@@ -197,8 +197,7 @@ class Strings_test extends Str{
 
     public function multi_line($string){
         $res=explode("\n",$string);
-
-        return (count($res>0)?true:false);
+        return is_array($res);
     }
     //depending on how long a string is, returns how many tabs needs
     //to be added to the line. This is used for CLI applications
