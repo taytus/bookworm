@@ -206,6 +206,7 @@ class Strings_test extends Str{
                     $str .= " ";
                 }
             }
+            $str_val=strlen($str);
         }else{
             $total_tabs--;
             for ($i = 0; $i < $total_tabs; $i++) {
@@ -213,12 +214,13 @@ class Strings_test extends Str{
                     $str .= " ";
                 }
             }
+            $str_val=strlen($str);
             for($j=$extra_chars;$j>0;$j--){
                 $str=rtrim($str);
             }
         }
 
-       return $total_tabs." | ".$extra_chars." | ".strlen($str)." | ".$string_size." | ".$string;
+       return $total_tabs." | ".$extra_chars." | ".strlen($str)." | ".$str_val." | ".$string_size." | ".$string;
         return $str;
     }
 
