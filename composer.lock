@@ -121,7 +121,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/strings.git",
-                "reference": "17caf85c50a39ea207c38600b5bb42daedfdf839"
+                "reference": "039e4e7fd33c5e6c7c26f1d9d5d3fbf427aa243f"
             },
             "type": "library",
             "extra": {
@@ -146,7 +146,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-11-25 20:32:40"
+            "time": "2019-11-25 21:29:15"
         },
         {
             "name": "beberlei/assert",

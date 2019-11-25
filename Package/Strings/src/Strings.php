@@ -193,12 +193,13 @@ class Strings extends Str{
 
         $total_chars=$max_chars_per_line-$string_size;
 
-
+        $spaces=0;
         while(strlen($string)<$total_chars){
             $string.=" ";
+            $spaces++;
         }
 
-        return $string;
+        return $string_size." | ".strlen($string)." | ".$spaces;
 
 
 
