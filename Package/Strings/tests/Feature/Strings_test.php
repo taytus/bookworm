@@ -187,6 +187,11 @@ class Strings_test extends Str{
     //to be added to the line. This is used for CLI applications
     public function get_total_tabs( $string, $max_tabs=10, $tabs_size=6){
         $tabs=floor(strlen($string)/$tabs_size);
+
+        $total_chars=floor($tabs_size*$max_tabs/strlen($string));
+
+        return $total_chars;
+
         $max_tabs=$max_tabs-$tabs;
         $str="";
         for ($i=0;$i<$max_tabs;$i++){
