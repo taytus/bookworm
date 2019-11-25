@@ -197,7 +197,7 @@ class Strings_test extends Str{
 
     //depending on how long a string is, returns how many tabs needs
     //to be added to the line. This is used for CLI applications
-    public function get_total_tabs( $string, $max_tabs=20, $tabs_size=5){
+    public function get_total_tabs( $string, $max_tabs=18, $tabs_size=5){
 
         $max_chars_per_line=$tabs_size*$max_tabs;
 
