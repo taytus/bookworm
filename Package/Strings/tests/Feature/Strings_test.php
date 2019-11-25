@@ -214,10 +214,11 @@ class Strings_test extends Str{
                     $str .= " ";
                 }
             }
-            $str_val=strlen($str);
             for($j=0;$j<$extra_chars;$j++){
                 $str.=" ";
             }
+            $str_val=strlen($str);
+
         }
 
        return $total_tabs." | ".$extra_chars." | ".strlen($str)." | ".$str_val." | ".$string_size." | ".$string;
