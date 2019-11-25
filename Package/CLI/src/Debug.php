@@ -26,13 +26,13 @@ class Debug   {
     }
     public static function log($message){
 
-        die($message);
 
         $string_class=new Strings();
         $res=debug_backtrace();
         $cliStyle=new CliStyle();
         $tabs=$string_class->get_total_tabs($message);
         $message=$message.$tabs;
+        die($message);
 
         //next dd;
         $class=(isset($res[1]['class'])? "| Class: ".$res[1]["class"]:"");
