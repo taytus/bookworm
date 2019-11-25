@@ -121,7 +121,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/strings.git",
-                "reference": "0abf3ef7bf8e7c97c56c053aaae5ae6e4e2db7a5"
+                "reference": "197658757c5377069f24db41a831efb3f38b26e9"
             },
             "type": "library",
             "extra": {
@@ -146,7 +146,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-11-25 22:18:03"
+            "time": "2019-11-25 22:25:53"
         },
         {
             "name": "beberlei/assert",
@@ -4824,7 +4824,7 @@
                 }
             ],
             "description": "CLI Styling,Logging errors and other tools",
-            "time": "2019-11-25T22:24:10+00:00"
+            "time": "2019-11-25 22:24:10"
         },
         {
             "name": "ROBOAMP/Directory",
