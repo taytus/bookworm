@@ -197,20 +197,15 @@ class Strings_test extends Str{
 
         $total_tabs=floor($total_chars/$tabs_size);
 
-        return $total_tabs ."   |   ".$extra_chars;
+        //return $total_tabs ."   |   ".$extra_chars;
 
 
-
-        $tabs=floor(strlen($string)/$tabs_size);
-
-        $total_chars=floor($tabs_size*$max_tabs/strlen($string));
-
-        return $total_chars;
-
-        $max_tabs=$max_tabs-$tabs;
         $str="";
-        for ($i=0;$i<$max_tabs;$i++){
+        for ($i=0;$i<$total_tabs;$i++){
             $str.="\t";
+        }
+        for($j=$extra_chars;$j>0;$j--){
+            $str.="0";
         }
         return $str;
     }
