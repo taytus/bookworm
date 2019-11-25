@@ -193,7 +193,11 @@ class Strings extends Str{
 
         $total_chars=$max_chars_per_line-$string_size;
 
-        return $total_chars."  |  ".$total_chars%$tabs_size;
+        $extra_chars=$total_chars%$tabs_size;
+
+        $total_tabs=$total_chars/$tabs_size;
+
+        return $total_tabs ."   |   ".$extra_chars;
 
 
 
