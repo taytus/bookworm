@@ -33,6 +33,8 @@ class Debug   {
         //check if messages is multiline
         if($string_class->multi_line($message)){
             $lines=explode("\n",$message);
+            $message="";
+            dd($lines);
             foreach ($lines as $item){
                 $tabs=$string_class->get_total_tabs($item)."\n";
                 $message.=$message.$tabs;

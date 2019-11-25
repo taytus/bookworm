@@ -4796,7 +4796,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/ROBO_CLI.git",
-                "reference": "78cb750436ea31d93a905f5e7f5ac44fd6ccbec1"
+                "reference": "59511a99f7e4431f5b1b9f1a29c926274fd16d34"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -4824,7 +4824,7 @@
                 }
             ],
             "description": "CLI Styling,Logging errors and other tools",
-            "time": "2019-11-25 23:05:03"
+            "time": "2019-11-25T23:10:54+00:00"
         },
         {
             "name": "ROBOAMP/Directory",
