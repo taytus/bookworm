@@ -62,7 +62,7 @@ class test extends Command
             }
 
             foreach ($strs as $item) {
-                echo "\n" . $str_class->get_total_tabs($item) . "\t" . strlen($item) . "\t" . $item . "\n";
+                echo "\n" . $str_class->get_total_tabs($item).$item."\n";
 
             }
 
