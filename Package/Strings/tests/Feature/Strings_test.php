@@ -213,13 +213,11 @@ class Strings_test extends Str{
                 }
             }
             for($j=$extra_chars;$j>0;$j--){
-                $str.=" ";
+                $str=rtrim($str);
             }
         }
 
-        //return $total_tabs."   |   ".$extra_chars;
-
-
+        return $total_tabs." | ".$extra_chars." | ".strlen($str);
         return $str;
     }
 
