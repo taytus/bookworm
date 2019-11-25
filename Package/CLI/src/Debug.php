@@ -32,8 +32,6 @@ class Debug   {
         $cliStyle=new CliStyle();
         $tabs=$string_class->get_total_tabs($message);
         $message=$message.$tabs;
-        die($message);
-
         //next dd;
         $class=(isset($res[1]['class'])? "| Class: ".$res[1]["class"]:"");
         $triggered_from="Message triggered on Method: ".$res[1]['function']."\t".$class;

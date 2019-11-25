@@ -214,7 +214,7 @@ class Strings extends Str{
         }
 
         return $string;
-        
+
     }
 
 
