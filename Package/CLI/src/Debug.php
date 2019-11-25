@@ -25,11 +25,16 @@ class Debug   {
         dd();
     }
     public static function log($message){
+
+        die($message);
+
         $string_class=new Strings();
         $res=debug_backtrace();
         $cliStyle=new CliStyle();
         $tabs=$string_class->get_total_tabs($message);
         $message=$message.$tabs;
+
+        //next dd;
         $class=(isset($res[1]['class'])? "| Class: ".$res[1]["class"]:"");
         $triggered_from="Message triggered on Method: ".$res[1]['function']."\t".$class;
         $tabs=$string_class->get_total_tabs($triggered_from);
