@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf84a4b786c5bf9642a43596f6274241",
+    "content-hash": "688661e80828c65e3b6637f2c4ca8ddf",
     "packages": [
         {
             "name": "ROBOAMP/Axton",
@@ -121,7 +121,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/strings.git",
-                "reference": "eed73276e6343577e8a322fe85f6c08b16d3a592"
+                "reference": "52936df99ece74eee53c4c1b92d241b745f31bb3"
             },
             "type": "library",
             "extra": {
@@ -146,7 +146,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-11-25 21:31:42"
+            "time": "2019-11-25 21:38:27"
         },
         {
             "name": "beberlei/assert",
@@ -4791,6 +4791,42 @@
     ],
     "packages-dev": [
         {
+            "name": "ROBOAMP/CLI",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/ROBO_CLI.git",
+                "reference": "a0a8f08e64a1511a57f8614bbf4eaea35ff07792"
+            },
+            "require": {
+                "roboamp/strings": "@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ROBOAMP\\CLI\\CLIServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ROBOAMP\\": "src/"
+                }
+            },
+            "license": [
+                "ROBOAMP"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Inetti",
+                    "email": "roberto@roboamp.com"
+                }
+            ],
+            "description": "CLI Styling,Logging errors and other tools",
+            "time": "2019-11-25T11:16:15+00:00"
+        },
+        {
             "name": "ROBOAMP/Directory",
             "version": "v1.0.24",
             "source": {
@@ -7025,7 +7061,8 @@
         "roboamp/seeder": 20,
         "roboamp/robocore": 20,
         "roboamp/myarray": 20,
-        "roboamp/db": 20
+        "roboamp/db": 20,
+        "roboamp/cli": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

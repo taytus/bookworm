@@ -62,7 +62,9 @@
         "roboamp/Seeder": "dev-master",
         "roboamp/ROBOCORE": "dev-master",
         "roboamp/MyArray": "dev-master",
-        "roboamp/DB": "dev-master"
+        "roboamp/DB": "dev-master",
+        "roboamp/CLI": "dev-master"
+
 
 
 

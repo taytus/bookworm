@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use ROBOAMP\Strings;
+use ROBOAMP\CLI\Debug as CliDebug;
 
 class debug extends Command
 {
@@ -38,12 +39,12 @@ class debug extends Command
      */
     public function handle(){
 
-
+        $log=new CliDebug();
 
         $str_class = new Strings();
         $strs = ["1","22","333","4444","55555","666666","7777777","88888888","999999999","1000000000"];
         for ($i = 0; $i < count($strs); $i++) {
-            echo "\n".$str_class->get_total_tabs($strs[$i]);
+            $log::log($strs[$i]);
         }
 
 
