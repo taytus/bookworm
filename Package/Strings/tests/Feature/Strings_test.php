@@ -199,7 +199,8 @@ class Strings_test extends Str{
             $spaces++;
         }
 
-        return $string_size." | ".strlen($string)." | ".$spaces;
+        return $string;
+        //return $string_size." | ".strlen($string)." | ".$spaces;
 
 
 
