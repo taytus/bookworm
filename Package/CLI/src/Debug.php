@@ -22,7 +22,7 @@ class Debug   {
         $cliStyle->error_message($triggered_from);
         $cliStyle->error_message($called_from);
 
-        dd();
+        die();
     }
     public static function log($message){
 
