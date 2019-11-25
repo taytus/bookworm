@@ -207,7 +207,8 @@ class Strings_test extends Str{
                 }
             }
         }else{
-            for ($i = 0; $i < $total_tabs-1; $i++) {
+            $total_tabs--;
+            for ($i = 0; $i < $total_tabs; $i++) {
                 for ($j = 0; $j < $tabs_size; $j++) {
                     $str .= " ";
                 }

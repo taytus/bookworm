@@ -50,25 +50,7 @@ class test extends Command
      */
     public function handle(){
 
-        $test=0;
 
-        if($test) {
-
-            $str_class = new Strings();
-            $strs = ["0"];
-            for ($i = 0; $i < 10; $i++) {
-                $string = $strs[$i] . strval($i + 1);
-                $strs[] = $string;
-            }
-
-            foreach ($strs as $item) {
-                echo "\n" . $str_class->get_total_tabs($item).$item."\n";
-
-            }
-
-
-            die('bye');
-        }
 
 
         $my_array=new MyArray();
