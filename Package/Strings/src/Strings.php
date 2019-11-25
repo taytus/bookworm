@@ -195,7 +195,7 @@ class Strings extends Str{
 
         $extra_chars=$total_chars%$tabs_size;
 
-        $total_tabs=$total_chars/$tabs_size;
+        $total_tabs=floor($total_chars/$tabs_size);
 
         return $total_tabs ."   |   ".$extra_chars;
 

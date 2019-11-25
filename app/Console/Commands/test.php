@@ -10,6 +10,7 @@ use ROBOAMP\Files;
 use App\Test as test_class;
 use ROBOAMP\MyArray;
 use ROBOAMP\Strings;
+use Symfony\Component\Process\Process;
 
 class test extends Command
 {
@@ -103,6 +104,9 @@ class test extends Command
 
         if($res)$this->commit($package_path,$package_name);
 
+        $process= new Process('composer update');
+
+        $process->run();
 
         $this->warn($this->testing_message);
 
