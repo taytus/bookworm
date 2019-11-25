@@ -217,7 +217,7 @@ class Strings_test extends Str{
             }
         }
 
-        return $total_tabs." | ".$extra_chars." | ".strlen($str);
+        //return $total_tabs." | ".$extra_chars." | ".strlen($str);
         return $str;
     }
 
