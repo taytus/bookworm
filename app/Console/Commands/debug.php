@@ -42,9 +42,8 @@ class debug extends Command
 
         $str_class = new Strings();
         $strs = ["0"];
-        for ($i = 0; $i < 10; $i++) {
-            $string = $strs[$i] . strval($i + 1);
-            $strs[] = $string;
+        for ($i = 0; $i < 20; $i++) {
+            $strs[] = strval((intval($strs[$i]))+($i+1));
         }
 
         foreach ($strs as $item) {
