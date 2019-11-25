@@ -215,8 +215,8 @@ class Strings_test extends Str{
                 }
             }
             $str_val=strlen($str);
-            for($j=$extra_chars;$j>0;$j--){
-                $str=rtrim($str);
+            for($j=0;$j<$extra_chars;$j++){
+                $str.=" ";
             }
         }
 
