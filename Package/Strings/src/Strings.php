@@ -221,7 +221,7 @@ class Strings extends Str{
 
         }
 
-       return $total_tabs." | ".$extra_chars." | ".strlen($str)." | ".$string_size-$str_val." | ".$string_size." | ".$string;
+       return $total_tabs." | ".$extra_chars." | ".strlen($str)." | ".($string_size - $str_val)." | ".$string_size." | ".$string;
         return $str;
     }
 
