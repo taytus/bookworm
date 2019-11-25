@@ -26,12 +26,25 @@ class Debug   {
     }
     public static function log($message){
 
-
         $string_class=new Strings();
         $res=debug_backtrace();
         $cliStyle=new CliStyle();
-        $tabs=$string_class->get_total_tabs($message);
-        $message=$message.$tabs;
+
+        //check if messages is multiline
+        if($string_class->multi_line($message)){
+            $res=explode("\n",$message);
+            foreach ($res as $item){
+                $tabs=$string_class->get_total_tabs($item)."\n";
+                $message.=$message.$tabs;
+            }
+        }else{
+            $tabs=$string_class->get_total_tabs($message);
+            $message=$message.$tabs;
+        }
+
+
+
+
         $tab="     ";
         $class=(isset($res[1]['class'])? "| Class: ".$res[1]["class"]:"");
         $triggered_from="Message triggered on Method: ".$res[1]['function'].$tab.$class;
@@ -39,9 +52,9 @@ class Debug   {
         $tabs=$string_class->get_total_tabs($triggered_from);
         $triggered_from=$triggered_from.$tabs;
 
-
         $cliStyle->log_message($message);
         $cliStyle->log_message($triggered_from);
+
 
     }
 
