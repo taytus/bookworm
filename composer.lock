@@ -4890,7 +4890,7 @@
                 }
             ],
             "description": "Provides Server info used for debugging",
-            "time": "2019-10-06T07:14:56+00:00"
+            "time": "2019-10-06 07:14:56"
         },
         {
             "name": "ROBOAMP/Server",
@@ -6943,6 +6943,7 @@
         "roboamp/files": 20,
         "roboamp/myclass": 20,
         "roboamp/url": 20,
+        "roboamp/validator": 20,
         "roboamp/server": 20,
         "roboamp/seeder": 20,
         "roboamp/robocore": 20,
