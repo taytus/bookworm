@@ -110,7 +110,7 @@ class Files_test{
         fclose($handle);
     }
     private  function extract_method(){
-
+        //demo
         dd($this->cursor,"HERE COMES THE MAGIC");
         //$search_result=self::check_for_string_in_array($first_line_of_method, $arrayOfLines,$debug
 
@@ -228,13 +228,23 @@ class Files_test{
 
     //double underscores is used to separate timestamps from file names
     //I.E. 2019_11_04_10_31_40__filename
-    //the destination path only requires the folder's destination
+    //the destination path only requires the folder's destination because
+    // it will copy the file into that folder
 
     public function copy_file_with_timestamp(string $origin_path,string $destination_path,$placeholder=null,$str=null,$cleanup=1){
-        $timestamp=$this->format_time_to_file_name()."__";
-        $file_name_destination=$timestamp.$this->get_file_name_from_path($origin_path);
+        $timestamp=$this->format_time_to_file_name();
+        $file_info=pathinfo($origin_path);
+        $file_name=$file_info['filename'];
+        $file_extension=".".$file_info['extension'];
+
+
+        $file_name_destination=$file_name."__".$timestamp.$file_extension;
         $destination_path.=$file_name_destination;
+        //if $str is "auto" that means it needs to be replaced with timestamp
+        if($str=="auto") $str=$placeholder."__".$timestamp;
+
         $this->copy_file($origin_path,$destination_path,$placeholder,$str,$cleanup);
+
     }
 
     public function get_file_name_from_path($file_path,$include_extension=1){

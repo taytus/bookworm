@@ -11,7 +11,7 @@ class URLServiceProvider extends ServiceProvider{
     public function register(){
         $this->app->singleton(URL::class, function () {
 
-
+            //something
             return new URL();
         });
 

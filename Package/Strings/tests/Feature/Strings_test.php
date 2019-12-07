@@ -180,6 +180,42 @@ class Strings_test extends Str{
         $second_half = ($second_half?$other_part = implode(" ", array_splice($pieces, 0)):null);
         return (is_null($second_half)?$first_part:[$first_part,$second_half]);
 
+    }
+
+    public function create_string($char,$length){
+        $str="";
+        for($i=0;$i<$length;$i++){
+            $str.=$char;
+        }
+        return $char;
+    }
+    //creates a string with the same length but with spaces instead of characters
+    public function create_empty_string_from_string($string){
+        $length=strlen($string);
+        return $this->create_string(" ",$length);
+    }
+
+    public function multi_line($string){
+        $res=explode("\n",$string);
+        return is_array($res);
+    }
+    //depending on how long a string is, returns how many tabs needs
+    //to be added to the line. This is used for CLI applications
+    public function get_total_tabs( $string, $max_tabs=18, $tabs_size=5){
+
+        $max_chars_per_line=$tabs_size*$max_tabs;
+
+        $string_size=strlen($string);
+
+        $total_chars=$max_chars_per_line-$string_size;
+        $string="";
+        $spaces=0;
+        while(($spaces<$total_chars) && (strlen($string)<$total_chars)){
+            $string.=" ";
+            $spaces++;
+        }
+
+        return $string;
 
     }
 

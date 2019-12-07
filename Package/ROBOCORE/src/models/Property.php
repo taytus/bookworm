@@ -17,7 +17,7 @@ use ROBOAMP\MyArray;
 
 //////
 ///
-use ROBOAMP\URL;
+use ROBOAMP\CLI;
 
  class Property extends Model
 {
@@ -46,7 +46,7 @@ use ROBOAMP\URL;
 
 
     public function get_property_name(){
-        $url=new URL();
+        $url=new CLI();
         return $url->get_url_name($this->url);
     }
 
@@ -60,7 +60,7 @@ use ROBOAMP\URL;
      }
      public function get_domain($property_id){
         $res=$this::where('id',$property_id)->first();
-        return URL::get_domain($res->url);
+        return CLI::get_domain($res->url);
      }
 
      public static function domain_exist(){

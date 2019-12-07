@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ROBOAMP\URL;
+use ROBOAMP\CLI;
 use ROBOAMP\Validator;
 use ROBOAMP\Seeder as myStrings;
 

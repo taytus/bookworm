@@ -3,7 +3,7 @@
 namespace ROBOAMP\ROBOCORE;
 
 use Illuminate\Support\Facades\DB;
-use ROBOAMP\URL;
+use ROBOAMP\CLI;
 use Carbon\Carbon;
 use Webpatser\Uuid\Uuid;
 use Illuminate\Database\Eloquent\Model;
@@ -54,7 +54,7 @@ class Page extends Model{
 
         foreach ($urls as &$url){
 
-            $url = URL::make_amp_url($property_id,urldecode($url));
+            $url = CLI::make_amp_url($property_id,urldecode($url));
 
         }
 
@@ -98,7 +98,7 @@ class Page extends Model{
         if($create_folder){
             $file=new Files();
 
-            $url=URL::get_domain($property->url);
+            $url=CLI::get_domain($property->url);
 
             //I want to save everything under the first website URL for each users
 

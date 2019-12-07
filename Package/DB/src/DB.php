@@ -7,6 +7,7 @@ use PDO;
 use PDOException;
 use Symfony\Component\Console\Command\Command;
 use Eloquent;
+use Illuminate\Database\Query\Expression;
 
 
 class DB extends Command {
@@ -14,10 +15,23 @@ class DB extends Command {
     private $error_manager;
     public function __construct(){
         parent::__construct();
-        $this->error_manager=new Errors();
-
     }
 
+    //this is used primarily on migrations. It's a shortcut to get
+    //the connection and table name
+    //it assumes the model is under App folder
+    public static function get_table_name_from_model($model){
+        $model=ucfirst(strtolower($model));
+        $class="App\\".$model;
+        $model_table=new $class();
+        $db_name=$model_table->getConnection()->getDatabaseName();
+        $table_name=$model_table->get_table_name();
+        return new Expression($db_name.'.'.$table_name);
+    }
+
+    //this method first check if there is a connection passed to it
+    //and if so, uses that connection
+    //it also checks if the table exists before trying to create it
     public static function create($table,$callable,$connection=null){
 
         if(!is_null($connection)) {
