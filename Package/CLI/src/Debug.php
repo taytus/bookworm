@@ -29,34 +29,37 @@ class Debug   {
         $string_class=new Strings();
         $res=debug_backtrace();
         $cliStyle=new CliStyle();
-
         //check if messages is multiline
         if($string_class->multi_line($message)){
+
             $lines=explode("\n",$message);
-            $message="";
-            dd($lines);
+            $tmp_message="";
             foreach ($lines as $item){
-                $tabs=$string_class->get_total_tabs($item)."\n";
-                $message.=$message.$tabs;
+                if($item!="") {
+                    $tabs = $string_class->get_total_tabs($item);
+                    $tmp_message .= $tmp_message . $tabs;
+                    $cliStyle->log_message($item.$tabs);
+                }
             }
+
         }else{
             $tabs=$string_class->get_total_tabs($message);
-            $message=$message.$tabs;
+            $tmp_message=$message.$tabs;
+            $cliStyle->log_message($tmp_message);
+
         }
 
-
-
+        $starting_index=2;
 
         $tab="     ";
-        $class=(isset($res[1]['class'])? "| Class: ".$res[1]["class"]:"");
-        $triggered_from="Message triggered on Method: ".$res[1]['function'].$tab.$class;
+        $class=(isset($res[$starting_index]['class'])? "| Class: ".$res[$starting_index]["class"]:"");
+        $triggered_from="Message triggered on Method: ".$res[$starting_index]['function'].$tab.$class;
 
         $tabs=$string_class->get_total_tabs($triggered_from);
         $triggered_from=$triggered_from.$tabs;
 
-        $cliStyle->log_message($message);
         $cliStyle->log_message($triggered_from);
-
+        
 
     }
 
