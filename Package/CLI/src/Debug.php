@@ -59,7 +59,7 @@ class Debug   {
         $triggered_from=$triggered_from.$tabs;
 
         $cliStyle->log_message($triggered_from);
-        
+
 
     }
 
