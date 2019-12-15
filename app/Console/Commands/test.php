@@ -86,6 +86,8 @@ class test extends Command
 
         if($res)$this->commit($package_path,$package_name);
 
+        dd($res);
+
         $this->warn("UPDATING COMPOSER");
 
         $process= new Process('composer update');
