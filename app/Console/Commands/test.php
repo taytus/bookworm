@@ -84,7 +84,7 @@ class test extends Command
 
         $res=$this->run_test();
 
-        if($res)$this->commit($package_path,$package_name);
+        if($res)$res=$this->commit($package_path,$package_name);
 
         dd($res);
 
