@@ -218,6 +218,20 @@ class Strings extends Str{
         return $string;
 
     }
+    public function get_line_number_x($string,$position,$delimiter="\n"){
+        $arr=explode($delimiter,$string);
+
+        if($position==-1) return$arr[count($arr)];
+
+        return $arr[$position-1];
+    }
+    public function get_last_line($string,$delimiter="\n"){
+        return $this->get_line_number_x($string,-1,$delimiter);
+    }
+    public function get_first_line($string,$delimiter="\n"){
+        return $this->get_line_number_x($string,1,$delimiter);
+    }
+
 
 
 

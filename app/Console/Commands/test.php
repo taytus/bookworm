@@ -84,15 +84,15 @@ class test extends Command
 
         $res=$this->run_test();
 
-        if($res)$blue=$this->commit($package_path,$package_name);
+        if($res)$res=$this->commit($package_path,$package_name);
 
-        dd($res,$blue);
+        if($res) {
+            $this->warn("UPDATING COMPOSER");
 
-        $this->warn("UPDATING COMPOSER");
+            $process = new Process('composer update');
 
-        $process= new Process('composer update');
-
-        $process->run();
+            $process->run();
+        }
 
         $this->warn($this->testing_message);
 
@@ -109,10 +109,17 @@ class test extends Command
 
         chdir($package_path."/src");
         $res=shell_exec("git add -A;git commit -m 'update'; git push origin; ./tag.sh");
-
+        if($this->everything_up_to_date($res))return false;
         //$result=Strings::find_string_in_string($res,"nothing to commit, working tree clean");
         return $this->commit_bookworm($package_name);
 
+
+    }
+    private function everything_up_to_date($res){
+        $string_class=new Strings();
+        $clean_tree_msg="nothing to commit, working tree clean";
+        if($string_class->get_line_number_x($res,4)==$clean_tree_msg)return true;
+        return false;
 
     }
     private function commit_bookworm($package_name){
