@@ -84,9 +84,9 @@ class test extends Command
 
         $res=$this->run_test();
 
-        if($res)$res=$this->commit($package_path,$package_name);
+        if($res)$blue=$this->commit($package_path,$package_name);
 
-        dd($res);
+        dd($res,$blue);
 
         $this->warn("UPDATING COMPOSER");
 
