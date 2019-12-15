@@ -4876,7 +4876,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_files.git",
-                "reference": "e07f4b8d63810f67fa83c41a759d2e8905cc816c"
+                "reference": "763134195fef854397047349fd9528ad9784be44"
             },
             "require": {
                 "roboamp/directory": "@dev",
@@ -4906,7 +4906,7 @@
                 }
             ],
             "description": "Move, copy, update, etc. Everything Files related",
-            "time": "2019-11-09 02:24:32"
+            "time": "2019-12-15T10:22:57+00:00"
         },
         {
             "name": "ROBOAMP/MyClass",

@@ -165,6 +165,7 @@ class test extends Command
                 if ($no_tests == "No tests executed!" && force)
                     echo $res;
                 echo "\nCommit has been canceled\n";
+                dd($no_tests,$res,__METHOD__);
                 return $result;
             }
             $this->testing_message=$this->get_last_line_of_test_output($res);

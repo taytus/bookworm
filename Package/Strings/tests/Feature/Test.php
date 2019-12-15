@@ -102,6 +102,15 @@ class Test extends TestCase
 
     }
 
+    ///lines
+    ///
+    function test_get_line_number_x(){
+        $strings=new Strings_test();
+        $str="this \n is\na\nnice\day";
+        $res=$strings->get_line_number_x($str,1);
+        $this->assertEquals($res,"this ");
+    }
+
 
 
 }

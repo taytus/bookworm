@@ -195,8 +195,8 @@ class Strings extends Str{
         return $this->create_string(" ",$length);
     }
 
-    public function multi_line($string){
-        $res=explode("\n",$string);
+    public function multi_line($string,$delimiter="\n"){
+        $res=explode($delimiter,$string);
         return is_array($res);
     }
     //depending on how long a string is, returns how many tabs needs
