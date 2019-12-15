@@ -88,7 +88,6 @@ class test extends Command
 
         $str=new Strings();
 
-        dd($res,$str->get_first_line($res),$str->get_last_line($res));
         if($res) {
             $this->warn("UPDATING COMPOSER");
 
@@ -174,6 +173,7 @@ class test extends Command
         return true;
     }
     private function get_last_line_of_test_output($res){
+
         $res=explode("\n",$res);
         return $res[6];
     }
