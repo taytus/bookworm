@@ -108,7 +108,9 @@ class Test extends TestCase
         $strings=new Strings_test();
         $str="this \n is\na\nnice\day";
         $res=$strings->get_line_number_x($str,1);
+
         $this->assertEquals($res,"this ");
+        $this->assertNotEquals($res,"this");
     }
 
 

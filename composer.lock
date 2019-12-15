@@ -121,7 +121,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/strings.git",
-                "reference": "e47176f7dba02f67493a66fc5c49fd9f45963052"
+                "reference": "8b59d48a876307aec91fde30543df78267c6cc8a"
             },
             "type": "library",
             "extra": {
@@ -146,7 +146,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-12-15 10:13:43"
+            "time": "2019-12-15 10:41:17"
         },
         {
             "name": "beberlei/assert",
@@ -4906,7 +4906,7 @@
                 }
             ],
             "description": "Move, copy, update, etc. Everything Files related",
-            "time": "2019-12-15T10:22:57+00:00"
+            "time": "2019-12-15 10:22:57"
         },
         {
             "name": "ROBOAMP/MyClass",
