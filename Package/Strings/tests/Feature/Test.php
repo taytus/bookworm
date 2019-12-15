@@ -107,10 +107,10 @@ class Test extends TestCase
     function test_get_line_number_x(){
         $strings=new Strings_test();
         $str="this \n is\na\nnice\nday";
-        $res=$strings->get_line_number_x($str,1);
+        $res=$strings->get_line_number_x($str,2);
 
-        $this->assertEquals($res,"this ");
-        $this->assertNotEquals($res,"this");
+        $this->assertEquals($res," is");
+        $this->assertNotEquals($res," is ");
     }
     function test_get_last_line(){
         $strings=new Strings_test();
@@ -119,6 +119,14 @@ class Test extends TestCase
 
         $this->assertEquals($res,"day ");
         $this->assertNotEquals($res,"day");
+    }
+    function test_get_first_line(){
+        $strings=new Strings_test();
+        $str="this \n is\na\nnice\nday ";
+        $res=$strings->get_first_line($str);
+
+        $this->assertEquals($res,"this ");
+        $this->assertNotEquals($res,"this");
     }
 
 
