@@ -86,6 +86,9 @@ class test extends Command
 
         if($res)$res=$this->commit($package_path,$package_name);
 
+        $str=new Strings();
+
+        dd($res,$str->get_first_line($res),$str->get_last_line($res));
         if($res) {
             $this->warn("UPDATING COMPOSER");
 

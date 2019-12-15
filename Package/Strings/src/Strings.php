@@ -221,7 +221,7 @@ class Strings extends Str{
     public function get_line_number_x($string,$position,$delimiter="\n"){
         $arr=explode($delimiter,$string);
 
-        if($position==-1) return$arr[count($arr)];
+        if($position==-1) return$arr[count($arr)-1];
 
         return $arr[$position-1];
     }
