@@ -69,9 +69,10 @@ class MyArray{
 
     }
     public function flatten_array_with_one_key($array){
-        $key=array_keys($array);
+        $key=array_keys($array[0]);
+
         foreach ($array as $item){
-            $this->arr_tmp[]=$key[0];
+            $this->arr_tmp[]=$item[$key];
         }
         return $this->arr_tmp;
     }

@@ -85,7 +85,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_MyArray.git",
-                "reference": "de806236a5bbe1932d0876c04854609bdad35783"
+                "reference": "57cab759442727477de0242eedbe1d39bc51a489"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -113,7 +113,7 @@
                 }
             ],
             "description": "All type of string validations",
-            "time": "2019-12-16 10:11:51"
+            "time": "2019-12-16 10:16:40"
         },
         {
             "name": "ROBOAMP/Strings",
