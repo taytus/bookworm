@@ -7,6 +7,7 @@ class MyArray{
 
     private $marray;
     private $deleted_indexes=array();
+    private $arr_tmp=array();
 
     public function __construct($array = null){
 
@@ -67,11 +68,18 @@ class MyArray{
         return array_filter($data);
 
     }
+    public function flatten_array_with_one_key($array){
+        $key=array_keys($array);
+        foreach ($array as $item){
+            $this->arr_tmp[]=$key[0];
+        }
+        return $this->arr_tmp;
+    }
     public static function fully_array_flatten($array) {
         $return = array();
         foreach ($array as $key => $value) {
             if (is_array($value)){
-                $return = array_merge($return, array_flatten($value));
+                $return = array_merge($return, self::array_flatten($value));
             } else {
                 $return[$key] = $value;
             }
@@ -281,19 +289,18 @@ class MyArray{
         return $tmp_array;
     }
 
-    function arrayOrderBy(array &$arr, $order = null) {
-        if (is_null($order)) {
-            return $arr;
-        }
-        $orders = explode(',', $order);
-        usort($arr, function($a, $b) use($orders) {
+    function arrayOrderBy(array &$arr, $field,$order = 'asc') {
+        if (is_null($order))return $arr;
+
+        usort($arr, function($a, $b) use($arr,$field,$order) {
             $result = array();
-            foreach ($orders as $value) {
-                list($field, $sort) = array_map('trim', explode(' ', trim($value)));
+            foreach ($arr as $value) {
+                //list($field, $sort) = array_map('trim', explode(' ', trim($value)));
+                //dd($field,$sort,__METHOD__);
                 if (!(isset($a[$field]) && isset($b[$field]))) {
                     continue;
                 }
-                if (strcasecmp($sort, 'desc') === 0) {
+                if (strcasecmp($field, 'desc') === 0) {
                     $tmp = $a;
                     $a = $b;
                     $b = $tmp;

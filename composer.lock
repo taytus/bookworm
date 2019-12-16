@@ -85,7 +85,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_MyArray.git",
-                "reference": "547deed8092da3023246675df5977b7f3803aec3"
+                "reference": "de806236a5bbe1932d0876c04854609bdad35783"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -113,7 +113,7 @@
                 }
             ],
             "description": "All type of string validations",
-            "time": "2019-11-07 06:31:57"
+            "time": "2019-12-16 10:11:51"
         },
         {
             "name": "ROBOAMP/Strings",
@@ -121,7 +121,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/strings.git",
-                "reference": "3d7581cb3b16d3fa03ddf5e13d34e26c2cca067e"
+                "reference": "06ce75c1f2eb48aa1cade6562d4a9fffcb58a6b6"
             },
             "type": "library",
             "extra": {
@@ -146,7 +146,7 @@
                 }
             ],
             "description": "Library to work everything related to Strings Manipulations",
-            "time": "2019-12-15 10:48:13"
+            "time": "2019-12-15 10:51:30"
         },
         {
             "name": "beberlei/assert",
@@ -2469,16 +2469,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "100a25207566930efd926cf205542946aa692e01"
+                "reference": "77f7c4d2e65413aff5b5a8cc8b3caf7a28d81959"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/100a25207566930efd926cf205542946aa692e01",
-                "reference": "100a25207566930efd926cf205542946aa692e01",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/77f7c4d2e65413aff5b5a8cc8b3caf7a28d81959",
+                "reference": "77f7c4d2e65413aff5b5a8cc8b3caf7a28d81959",
                 "shasum": ""
             },
             "require": {
@@ -2520,7 +2520,7 @@
                 "php",
                 "type"
             ],
-            "time": "2019-12-14T13:46:39+00:00"
+            "time": "2019-12-15T19:35:24+00:00"
         },
         {
             "name": "psr/container",
@@ -4807,7 +4807,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/ROBO_CLI.git",
-                "reference": "e3cda4fe4ff3e491cb7ef65c6b7ae387772b4426"
+                "reference": "1bb599c3ff8a7813711a0231b334892bb7042f71"
             },
             "require": {
                 "roboamp/strings": "@dev"
@@ -4835,7 +4835,7 @@
                 }
             ],
             "description": "CLI Styling,Logging errors and other tools",
-            "time": "2019-12-15 09:26:37"
+            "time": "2019-12-16 09:38:49"
         },
         {
             "name": "ROBOAMP/Directory",
@@ -5584,16 +5584,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.9.3",
+            "version": "1.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "007c053ae6f31bba39dfa19a7726f56e9763bbea"
+                "reference": "579bb7356d91f9456ccd505f24ca8b667966a0a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/007c053ae6f31bba39dfa19a7726f56e9763bbea",
-                "reference": "007c053ae6f31bba39dfa19a7726f56e9763bbea",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/579bb7356d91f9456ccd505f24ca8b667966a0a7",
+                "reference": "579bb7356d91f9456ccd505f24ca8b667966a0a7",
                 "shasum": ""
             },
             "require": {
@@ -5628,7 +5628,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2019-08-09T12:45:53+00:00"
+            "time": "2019-12-15T19:12:40+00:00"
         },
         {
             "name": "nunomaduro/collision",

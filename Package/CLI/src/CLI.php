@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP\CLI;
+namespace ROBOAMP;
 
 
 class CLI {

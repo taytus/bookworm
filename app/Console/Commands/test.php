@@ -2,10 +2,8 @@
 
 namespace App\Console\Commands;
 
-use function GuzzleHttp\Psr7\str;
 use Illuminate\Console\Command;
 use App\MyClasses\Directory;
-use Illuminate\Support\Facades\Log;
 use ROBOAMP\Files;
 use App\Test as test_class;
 use ROBOAMP\MyArray;
@@ -33,6 +31,7 @@ class test extends Command
     private $dirs;
     private $feature_path;
     private $testing_message="";
+    private $arr_methods_in_class=array();
     /**
      * Create a new command instance.
      *
@@ -158,6 +157,22 @@ class test extends Command
 
         $res=shell_exec('vendor/bin/phpunit Package/'.$this->class_name);
 
+        $class_name="\ROBOAMP\\".$this->class_name;
+
+        //total methods in $this->class_name
+        $class_methods = get_class_methods($class_name);
+        $methods_in_class=[];
+        foreach ($class_methods as $method_name) {
+            $methods_in_class[]['method_name']=$method_name;
+        }
+        $my_array=new MyArray();
+        $methods_in_class=$my_array->arrayOrderBy($methods_in_class,'method_name');
+       // array_walk($methods_in_class,array('self','walk_function'));
+        $this->arr_methods_in_class=$my_array->flatten_array_with_one_key($methods_in_class);
+        dd($this->arr_methods_in_class);
+        //$methods_in_class=$my_array::fully_array_flatten($methods_in_class);
+        dd($methods_in_class,__METHOD__);
+
         $str_res=strpos($res,"OK");
 
             if ($str_res == false) {
@@ -172,6 +187,9 @@ class test extends Command
 
 
         return true;
+    }
+    private function walk_function($data){
+        $this->arr_methods_in_class[]=$data['method_name'];
     }
     private function get_last_line_of_test_output($res){
 
@@ -194,6 +212,16 @@ class test extends Command
         //grab the file and copy it into the test folder
         $files=new Files();
         $origin_file=$package_full_path."/src/".$this->class_name.".php";
+
+
+
+        $res=include $origin_file;
+        $class_name="\ROBOAMP\\".$this->class_name;
+        $class_instance=new $class_name();
+      //  dd(get_class_methods($class_instance));
+       // dd($this->class_name,__METHOD__);
+       // dd("BOOO");
+
         $this->feature_path=$package_full_path."/tests/Feature/";
 
         $this->testing_file_path=$this->feature_path.$this->class_name."_test.php";
