@@ -6,6 +6,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\ConsoleInput;
+use ROBOAMP\Strings;
 
 
 
@@ -37,8 +38,21 @@ class CliStyle extends Command {
     public function success_message($message){
         $this->output_text($message,'success');
     }
-    public function log_message($message){
+    public function log_message($message,$extra_padding=false){
+
+        if($extra_padding)return $this->log_message_with_extra_padding($message);
+
         $this->output_text($message,'log');
+
+    }
+    public function log_message_with_extra_padding($message){
+        $padding_space=Strings::get_spaces_from_string($message);
+
+        $this->output_text($padding_space,'log');
+
+        $this->output_text($message,'log');
+
+        $this->output_text($padding_space,'log');
     }
 
 

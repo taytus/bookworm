@@ -103,6 +103,24 @@ class DB extends Command {
         LDB::statement('SET FOREIGN_KEY_CHECKS='.$foreign_key_checks.';');
     }
 
+    //takes a model and an array and create new records for every array entry
+    //@doc https://robowiki.kanuca.com/books/myarray/page/create_items_from_array
+    //if the arrays is one level only, it assumes the value passes is the "name" field
+    public static function insert_items_from_array($model,$array,$default_field='name'){
+        $class =  ucfirst($model);
+        foreach ($array as $item){
+            $model= new $class();
+            if(is_array($item)) {
+                foreach ($item as $obj => $val) {
+                    $model->$obj = $val;
+                }
+            }else{
+                $model->$default_field = $item;
+            }
+            $model->save();
+        };
+    }
+
 
 
 

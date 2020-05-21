@@ -2,6 +2,7 @@
 namespace ROBOAMP;
 
 use ROBOAMP\Strings;
+use ROBOAMP\URL;
 
 class Validator{
 
@@ -97,7 +98,7 @@ class Validator{
             $this->display_error_message('required',$error_message);
         }else{
 
-            return (CLI::is_valid_url($string)?$string:$this->display_error_message('url',$error_message));
+            return (URL::is_valid_url($string)?$string:$this->display_error_message('url',$error_message));
 
         }
     }

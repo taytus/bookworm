@@ -1,8 +1,6 @@
 <?php
 namespace ROBOAMP;
 
-use ROBOAMP\Seeder;
-
 class MyArray{
 
     private $marray;
@@ -13,6 +11,13 @@ class MyArray{
 
         $this->setArray($array);
     }
+    public static function unset_first_and_reset_index($array){
+        return self::unset_x_position_and_reset_index(0,$array);
+    }
+    public static function unset_x_position_and_reset_index(int $array_index,array $array){
+        unset($array[$array_index]);
+        return array_values($array);
+    }
 
     public function move_to_top_by_index($array, $index) {
         array_unshift($array,$array[$index]);
@@ -21,7 +26,21 @@ class MyArray{
         return $array;
     }
 
-    //this works with one and two levels array
+    public static function remove_prefix(array $array, string $prefix=""){
+
+        $return = array();
+        foreach ($array as $key => $value) {
+            if (strpos($key, $prefix) === 0)$key = substr($key);
+
+            if (is_array($value))$value = removePrefix($value);
+
+            $return[$key] = $value;
+        }
+        return $return;
+    }
+
+
+//this works with one and two levels array
     public static function add_prefix_to_array_elements($array,$prefix){
         $new_array=[];
         if(is_array($array[0])){
@@ -68,8 +87,15 @@ class MyArray{
         return array_filter($data);
 
     }
+    /*
+     * $arr[0]=["name"=>"peter"];
+     * $arr[1]=["name"=>"maria"];
+     *
+     * returns ["peter","maria];
+     */
     public function flatten_array_with_one_key($array){
         $key=array_keys($array[0]);
+        $key=$key[0];
 
         foreach ($array as $item){
             $this->arr_tmp[]=$item[$key];
@@ -317,7 +343,7 @@ class MyArray{
         return $arr;
     }
 
-    public static function array_exclude_keys($array, Array $exclude_keys,$reset = null){
+    public function array_exclude_keys($array, Array $exclude_keys,$reset = null){
 
         // array_diff_key() expected an associative array.
         $assocKeys = array();
@@ -354,23 +380,7 @@ class MyArray{
         return $array;
     }
 
-    //takes a model and an array and create new records for every array entry
-    //@doc https://robowiki.kanuca.com/books/myarray/page/create_items_from_array
-    //if the arrays is one level only, it assumes the value passes is the "name" field
-    public static function create_items_from_array($model,$array,$default_field='name'){
-        $class =  ucfirst($model);
-        foreach ($array as $item){
-            $model= new $class();
-            if(is_array($item)) {
-                foreach ($item as $obj => $val) {
-                    $model->$obj = $val;
-                }
-            }else{
-                $model->$default_field = $item;
-            }
-            $model->save();
-        };
-    }
+
 
 
 

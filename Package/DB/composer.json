@@ -9,6 +9,9 @@
             "email": "roberto@roboamp.com"
         }
     ],
+    "require": {
+        "ROBOAMP/files": "@dev"
+    },
 
     "autoload": {
 

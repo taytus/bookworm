@@ -15,7 +15,7 @@
     return view('welcome');
 });
 */
-
+/*
 Route::group(['namespace'=>'ROBOAMP\Axton\Http\Controllers'],function() {
 
 
@@ -29,3 +29,4 @@ Route::group(['namespace'=>'ROBOAMP\Axton\Http\Controllers'],function() {
 
 
 });
+*/

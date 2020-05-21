@@ -14,6 +14,7 @@ use App\Platform;
 use DB;
 use App\Customer;
 use ROBOAMP\MyArray;
+use ROBOAMP\URL;
 
 //////
 ///
@@ -29,7 +30,23 @@ use ROBOAMP\CLI;
     protected $keyType = 'string';
     public $incrementing = false;
 
+//returns a boolean and checks for matchs on domain and subdomain
+    public function domain_match($domain){
 
+        if($this->url==$domain || $this->subdomain==$domain) return true;
+
+        return false;
+    }
+    public function find_by_url($url){
+        $domain=URL::get_domain($url);
+        $http="htpp://".$domain;
+        $https="https://".$domain;
+
+        $res=self::where('url',$http)->orWhere('url',$https)
+            ->orWhere('subdomain',$http)->orWhere('subdomain',$https)->first();
+
+        return ($res!=null?true:false);
+    }
     public function slugs(){
         return $this->hasMany('App\SlugFilter');
     }

@@ -32,6 +32,7 @@ class test extends Command
     private $feature_path;
     private $testing_message="";
     private $arr_methods_in_class=array();
+
     /**
      * Create a new command instance.
      *
@@ -52,7 +53,6 @@ class test extends Command
 
 
 
-        $my_array=new MyArray();
         $file=new Files();
 
 
@@ -85,7 +85,6 @@ class test extends Command
 
         if($res)$res=$this->commit($package_path,$package_name);
 
-        $str=new Strings();
 
         if($res) {
             $this->warn("UPDATING COMPOSER");
@@ -95,8 +94,21 @@ class test extends Command
             $process->run();
         }
 
+        $this->list_untested_methods();
+
         $this->warn($this->testing_message);
 
+
+    }
+    private function list_untested_methods(){
+        $this->warn("Untested Methods");
+        $headers = ['Class', 'Method'];
+
+        foreach ($this->arr_methods_in_class as $item){
+            $obj[]=['class'=>$this->class_name,'method'=>$item];
+        }
+
+        $this->table($headers, $obj);
 
     }
     public function warn($string, $verbosity = null){
@@ -157,27 +169,13 @@ class test extends Command
 
         $res=shell_exec('vendor/bin/phpunit Package/'.$this->class_name);
 
-        $class_name="\ROBOAMP\\".$this->class_name;
-
-        //total methods in $this->class_name
-        $class_methods = get_class_methods($class_name);
-        $methods_in_class=[];
-        foreach ($class_methods as $method_name) {
-            $methods_in_class[]['method_name']=$method_name;
-        }
-        $my_array=new MyArray();
-        $methods_in_class=$my_array->arrayOrderBy($methods_in_class,'method_name');
-       // array_walk($methods_in_class,array('self','walk_function'));
-        $this->arr_methods_in_class=$my_array->flatten_array_with_one_key($methods_in_class);
-        dd($this->arr_methods_in_class);
-        //$methods_in_class=$my_array::fully_array_flatten($methods_in_class);
-        dd($methods_in_class,__METHOD__);
+        $this->get_untested_methods();
 
         $str_res=strpos($res,"OK");
 
             if ($str_res == false) {
                 $no_tests = $this->get_last_line_of_test_output($res);
-                if ($no_tests == "No tests executed!" && force)
+                if ($no_tests == "No tests executed!" && $forced)
                     echo $res;
                 echo "\nCommit has been canceled\n";
                 dd($no_tests,$res,__METHOD__);
@@ -188,9 +186,25 @@ class test extends Command
 
         return true;
     }
-    private function walk_function($data){
-        $this->arr_methods_in_class[]=$data['method_name'];
+    private function get_untested_methods(){
+        $my_array=new MyArray();
+        $class_name="\ROBOAMP\\".$this->class_name;
+
+        //total methods in $this->class_name
+        $class_methods = get_class_methods($class_name);
+        $parent_class=get_parent_class($class_name);
+        $parent_class_methods=get_class_methods($parent_class);
+
+        $class_methods=array_diff($class_methods,$parent_class_methods);
+
+        $methods_in_class=[];
+        foreach ($class_methods as $method_name) {
+            $methods_in_class[]['method_name']=$method_name;
+        }
+        $methods_in_class=$my_array->arrayOrderBy($methods_in_class,'method_name');
+        $this->arr_methods_in_class=$my_array->flatten_array_with_one_key($methods_in_class);
     }
+
     private function get_last_line_of_test_output($res){
 
         $res=explode("\n",$res);

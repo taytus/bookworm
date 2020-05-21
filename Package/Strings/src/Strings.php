@@ -149,6 +149,16 @@ class Strings extends Str{
         if($first===$init_str && $last===$end_str)return true;
     }
 
+    //return as many spaces as characters in that string
+    public static function get_spaces_from_string(string $string){
+        $total_spaces=strlen($string);
+        $str="";
+        for($j=0;$j<$total_spaces;$j++){
+            $str.=" ";
+        }
+        return $str;
+    }
+
     //get_string_between("thisawesomeday","this","day") will return "awesome"
     public static function get_string_between($string, $start, $end){
         $string = ' ' . $string;

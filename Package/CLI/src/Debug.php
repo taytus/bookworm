@@ -24,7 +24,7 @@ class Debug   {
 
         die();
     }
-    public static function log($message){
+    public static function log($message,$extra_padding=false){
 
         $string_class=new Strings();
         $res=debug_backtrace();
@@ -58,7 +58,7 @@ class Debug   {
         $tabs=$string_class->get_total_tabs($triggered_from);
         $triggered_from=$triggered_from.$tabs;
 
-        $cliStyle->log_message($triggered_from);
+        $cliStyle->log_message($triggered_from,$extra_padding);
 
 
     }

@@ -35,6 +35,10 @@ class Files{
 
     }
 
+    public function backup_file_with_timestamp($file_path){
+        $this->copy_file_and_add_timestamp_to_its_name($file_path,$file_path);
+    }
+
 
     public function delete_file($file_path,$show_message=false){
         if($this->myFile->exists($file_path)){
@@ -200,25 +204,24 @@ class Files{
         return $this->method['code'];
     }
 
-    //double underscores is used to separate timestamps from file names
-    //I.E. 2019_11_04_10_31_40__filename
-    //the destination path only requires the folder's destination because
-    // it will copy the file into that folder
+    //copy origin/filename.extension to demo/prefix_filename__timestamp.extension
+    //$prefix is optional
 
-    public function copy_file_with_timestamp(string $origin_path,string $destination_path,$placeholder=null,$str=null,$cleanup=1){
-        $timestamp=$this->format_time_to_file_name();
+
+    public function copy_file_and_add_timestamp_to_its_name(string $origin_path,string $destination_path,$prefix=null,$cleanup=0){
+        $prefix=(is_null($prefix)?"":$prefix."_");
+        $timestamp=str_replace(".","",microtime(true));
         $file_info=pathinfo($origin_path);
         $file_name=$file_info['filename'];
         $file_extension=".".$file_info['extension'];
 
 
-        $file_name_destination=$file_name."__".$timestamp.$file_extension;
-        $destination_path.=$file_name_destination;
-        //if $str is "auto" that means it needs to be replaced with timestamp
-        if($str=="auto") $str=$placeholder."__".$timestamp;
+        $file_name_destination=$prefix.$file_name."__".$timestamp.$file_extension;
+        $destination_path.="/".$file_name_destination;
 
-        $this->copy_file($origin_path,$destination_path,$placeholder,$str,$cleanup);
+        $this->copy_file($origin_path,$destination_path,null,null,$cleanup);
 
+        return $destination_path;
     }
 
     public function get_file_name_from_path($file_path,$include_extension=1){
@@ -228,10 +231,10 @@ class Files{
     }
 
 
-    public function copy_file($origin_path,$destination_path,$placeholder=null,$str=null,$cleanup=1){
+    public function copy_file($origin_path,$destination_path,$placeholder=null,$replacement=null,$cleanup=0){
         $path_parts=pathinfo($origin_path);
         //DEBUG THIS
-        if(!$cleanup){
+        if($cleanup){
             $folders=new Directory();
             $folders->delete_duplicated_files($path_parts['basename'],dirname($origin_path));
         }
@@ -246,7 +249,7 @@ class Files{
 
             $this->myFile->copy($origin_path,$tmp_path_to_template);
             //Now I have a copy of a temporary file I can edit. And then, copy that edited file
-            $content=$this->replace_placeholder($placeholder,$str,$tmp_path_to_template);
+            $content=$this->replace_placeholder($placeholder,$replacement,$tmp_path_to_template);
             //now move it to their final location
             $this->myFile->move($tmp_path_to_template,$destination_path);
         }
@@ -320,7 +323,9 @@ class Files{
         return $this->myFile->get($path_to_template);
 
     }
-    private function format_time_to_file_name($char_replacement="_"){
+
+    //grabs the current time and returns a string to be used as filename
+    public function format_time_to_file_name($char_replacement="_"){
         $now=  Carbon::now('US/Central');
 
         $chars_array=[" ","-",":"];
@@ -329,6 +334,7 @@ class Files{
 
         return $time;
     }
+
 
     public function copy_template($type,$destination_path){
         switch($type){

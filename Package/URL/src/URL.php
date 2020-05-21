@@ -54,9 +54,42 @@ class URL extends Lara_URLs{
             return ["error_message"=>"AMP CODE HAS NOT BEEN FOUNDED"];
         }
     }
+    public static function get_last_slug(){
+        return self::get_slug_by_number(count(request()->segments()));
+    }
+    public static function get_slug_by_number($segment_number){
+        return  request()->segment($segment_number);
+
+    }
+    public static function get_slugs($after_url=true){
+        //remove the first two because
+        //#1 is the property ID
+        //#2 is the protocol
+        //#3 is the URL
+        $res=request()->segments();
+        if(!$after_url) return $res;
+
+        unset ($res[0]);
+        unset ($res[1]);
+        unset ($res[2]);
+
+        return array_values ($res);
+
+    }
+    public static function get_first_slug(){
+        return self::get_slug_by_number(1);
+    }
+
+    public static function get_slug_count(){
+        return count(request()->segments());
+    }
     public static function remove_trailing_slash($url){
         if(substr($url, -1) == '/') {
             $url=  substr($url, 0, -1);
+        }
+        //also checks for encoded URLs
+        if(substr($url, -3) == '%2F') {
+            $url=  substr($url, 0, -3);
         }
         return $url;
     }
@@ -64,6 +97,8 @@ class URL extends Lara_URLs{
     public static  function get_url_without_www($url){
         $host=parse_url($url);
         $host['path']=(isset($host['path'])?$host['path']:'');
+        if(!isset($host['scheme'])) $host['scheme']="http";
+        if(!isset($host['host'])) $host['host']="";
         return $host['scheme']."://".str_replace('www.','',$host['host']).$host['path'];
     }
 
@@ -90,13 +125,14 @@ class URL extends Lara_URLs{
         return ucfirst($res[0]);
     }
 
-    public function get_domain_info($domain){
-        $data['url_name']=$this->get_url_name($domain);
-        $data['full_domain']=$this->get_full_domain($domain);
-        $data['scheme']=$this->get_scheme($domain);
-        $data['full_domain_with_schema']=$this->get_full_domain_with_scheme($domain);
-        $data['full_domain_without_www']=self::get_url_without_www($domain);
-        $data['full_url_without_schema']=$this->get_full_url_without_scheme($data['full_domain_without_www']);
+    public function get_domain_info($url){
+        $url=self::remove_trailing_slash($url);
+        $data['url_name']=$this->get_url_name($url);
+        $data['full_domain']=$this->get_full_domain($url);
+        $data['scheme']=$this->get_scheme($url);
+        $data['full_domain_with_schema']=$this->get_full_domain_with_scheme($url);
+        $data['full_url_without_www']=self::get_url_without_www($data['full_domain_with_schema']);
+        $data['full_url_without_schema']=$this->get_full_url_without_scheme($data['full_url_without_www']);
         return $data;
 
     }
