@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/MyClass",
+    "name": "roboamp/myclass",
     "description": "Library to work everything related to class and method instances",
     "type": "library",
     "license": "ROBOAMP",
@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\MyClass\\MyClassServiceProvider"
+                "roboamp\\myclass\\MyClassServiceProvider"
             ]
         }
     }

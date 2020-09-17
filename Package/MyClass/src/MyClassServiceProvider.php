@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP\MyClass;
+namespace roboamp\MyClass;
 use Illuminate\Support\ServiceProvider;
 
 use ROBOAMP\Axton;

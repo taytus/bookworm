@@ -7,7 +7,7 @@ use App\MyClasses\Directory;
 use ROBOAMP\Files;
 use App\Test as test_class;
 use ROBOAMP\MyArray;
-use ROBOAMP\Strings;
+use ROBOAMP\Batman;
 use Symfony\Component\Process\Process;
 
 class test extends Command
@@ -129,7 +129,7 @@ class test extends Command
 
     }
     private function everything_up_to_date($res){
-        $string_class=new Strings();
+        $string_class=new Batman();
         $clean_tree_msg="nothing to commit, working tree clean";
         if($string_class->get_line_number_x($res,4)==$clean_tree_msg)return true;
         return false;
@@ -155,7 +155,7 @@ class test extends Command
 
         $result=false;
 
-        $str=new Strings();
+        $str=new Batman();
 
             if (!file_exists($this->feature_path . "Test.php")) {
                 echo "\nThere is no testing file for package " . $this->class_name . "\n";

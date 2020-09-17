@@ -4,7 +4,7 @@ namespace roboamp;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 
-class Strings extends Str{
+class Batman extends Str{
 
 
     public function get_x_last_chars($strings,$limit=null){

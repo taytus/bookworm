@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP\Seeder;
+namespace roboamp\Seeder;
 use Illuminate\Support\ServiceProvider;
 
 

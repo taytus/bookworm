@@ -1,10 +1,10 @@
 <?php
-namespace roboamp;
+
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 
-class Strings extends Str{
+class Strings_test extends Str{
 
 
     public function get_x_last_chars($strings,$limit=null){
@@ -17,7 +17,6 @@ class Strings extends Str{
 
     public function get_uuid(){
         return (string) self::uuid();
-        //push
     }
 
     public function has_special_chars($string, $allow_spaces=true){
@@ -148,16 +147,6 @@ class Strings extends Str{
         $first=substr($string,0,1);
         $last=substr($string,-1);
         if($first===$init_str && $last===$end_str)return true;
-    }
-
-    //return as many spaces as characters in that string
-    public static function get_spaces_from_string(string $string){
-        $total_spaces=strlen($string);
-        $str="";
-        for($j=0;$j<$total_spaces;$j++){
-            $str.=" ";
-        }
-        return $str;
     }
 
     //get_string_between("thisawesomeday","this","day") will return "awesome"

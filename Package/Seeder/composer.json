@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/Seeder",
+    "name": "roboamp/seeder",
     "description": "Provides Server info used for debugging",
     "type": "library",
     "license": "ROBOAMP",
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "ROBOAMP/MyArray":"@dev"
+        "roboamp/myarray":"@dev"
     },
     "autoload": {
 
@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\Seeder\\SeederServiceProvider"
+                "roboamp\\seeder\\SeederServiceProvider"
             ]
         }
     }

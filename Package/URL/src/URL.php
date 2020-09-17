@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP;
+namespace roboamp;
 
 use ROBOAMP\Seeder;
 use Illuminate\Support\Facades\URL as Lara_URLS;

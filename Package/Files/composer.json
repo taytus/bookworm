@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/Files",
+    "name": "roboamp/files",
     "description": "Move, copy, update, etc. Everything Files related",
     "type": "library",
     "license": "ROBOAMP",
@@ -10,9 +10,9 @@
         }
     ],
     "require": {
-        "ROBOAMP/Strings":"@dev",
-        "ROBOAMP/MyArray":"@dev",
-        "ROBOAMP/Directory":"@dev"
+        "roboamp/strings":"@dev",
+        "roboamp/myarray":"@dev",
+        "roboamp/directory":"@dev"
     },
     "autoload": {
 
@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\Files\\FilesServiceProvider"
+                "roboamp\\files\\FilesServiceProvider"
             ]
         }
     }

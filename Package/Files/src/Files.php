@@ -1,14 +1,11 @@
 <?php
-namespace ROBOAMP;
+namespace roboamp;
 
 
 use Illuminate\Filesystem\Filesystem as File;
 
-use ROBOAMP\MyArray;
-use ROBOAMP\Seeder;
 use Carbon\Carbon;
-use ROBOAMP\Directory;
-use FilesystemIterator;
+
 
 class Files{
 
@@ -20,7 +17,6 @@ class Files{
     private $array_of_lines=[];
     private $method;
     private $cursor=0;
-    private $myFile;
 
     public function __construct ($file_name=null,$file_type='Controller'){
 
@@ -31,19 +27,44 @@ class Files{
 
         }
         $this->file_type=$file_type;
-        $this->myFile=new File();
 
+    }
+    public function delete_all_backups($file_path){
+        $dirname=$this->get_folder_from_file_path($file_path);
+        $prefix=$this->get_prefix_for_backup_files($file_path);
+
+        foreach (glob($dirname."/".$prefix."__*.php") as $filename) {
+            $this->delete_file($filename);
+        }
+    }
+
+    public function get_prefix_for_backup_files($file_path){
+        $filename=$this->get_file_name_from_path($file_path);
+        $filename_array=explode("__",$filename);
+
+        if(count($filename_array)==1){
+            $filename_array=explode(".php",$filename);
+        }
+
+        return $filename_array[0];
     }
 
     public function backup_file_with_timestamp($file_path){
-        $this->copy_file_and_add_timestamp_to_its_name($file_path,$file_path);
+        $dirname=$this->get_folder_from_file_path($file_path);
+        return $this->copy_file_and_add_timestamp_to_its_name($file_path,$dirname);
+    }
+
+    public function get_folder_from_file_path($file_path){
+        $file_info=pathinfo($file_path);
+        return $file_info['dirname'];
     }
 
 
     public function delete_file($file_path,$show_message=false){
-        if($this->myFile->exists($file_path)){
+        $myFile= new File();
+        if($myFile->exists($file_path)){
 
-            $res=$this->myFile->delete($file_path);
+            $res=$myFile->delete($file_path);
             $message="file ".$file_path." has been deleted\n\n".$res."\n\n";
         }else{
             $message= "file ". $file_path." doesn't exist\n\n";
@@ -239,19 +260,21 @@ class Files{
             $folders->delete_duplicated_files($path_parts['basename'],dirname($origin_path));
         }
 
+        $myFile=new File();
         //just copy the file without doing any modifications to it
         if(is_null($placeholder)){
-            $this->myFile->copy($origin_path,$destination_path);
+            $myFile=new File();
+            $myFile->copy($origin_path,$destination_path);
         }else{
             $tmp_file_name=$this->get_time_based_name($path_parts['basename']);
             $tmp_path_to_template=$path_parts['dirname']."/".$tmp_file_name;
 
 
-            $this->myFile->copy($origin_path,$tmp_path_to_template);
+            $myFile->copy($origin_path,$tmp_path_to_template);
             //Now I have a copy of a temporary file I can edit. And then, copy that edited file
             $content=$this->replace_placeholder($placeholder,$replacement,$tmp_path_to_template);
             //now move it to their final location
-            $this->myFile->move($tmp_path_to_template,$destination_path);
+            $myFile->move($tmp_path_to_template,$destination_path);
         }
 
     }
@@ -287,10 +310,10 @@ class Files{
 
     }
     public function replace_all_placeholders($array_placeholders,$array_substitutions,$path_to_template,$ignore_missed_files=1){
-
+        $myFile=new File();
         if(!$this->file_exist($path_to_template,$ignore_missed_files)) return false;
 
-        $file_content=$this->myFile->get($path_to_template);
+        $file_content=$myFile->get($path_to_template);
         $content='';
         $j=0;
         foreach($array_placeholders as $placeholder){
@@ -303,7 +326,8 @@ class Files{
         //$this->re_write_file($content);
     }
     private function file_exist($path_to_file,$ignore_missed_files){
-        if(!$this->myFile->exists($path_to_file)) {
+        $myFile=new File();
+        if(!$myFile->exists($path_to_file)) {
 
             if($ignore_missed_files){
                 echo "File doesn't exist, check path:\n";
@@ -320,7 +344,8 @@ class Files{
         }
     }
     public function get_file_content($path_to_template){
-        return $this->myFile->get($path_to_template);
+        $myFile=new File();
+        return $myFile->get($path_to_template);
 
     }
 

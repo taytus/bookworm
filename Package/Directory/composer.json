@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\Directory\\DirectoryServiceProvider"
+                "roboamp\\directory\\DirectoryServiceProvider"
             ]
         }
     }

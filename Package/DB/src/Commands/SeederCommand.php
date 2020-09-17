@@ -1,10 +1,9 @@
 <?php
 
-namespace ROBOAMP\DB;
+namespace roboamp\db;
 
 use Illuminate\Console\Command;
-use ROBOAMP\Files;
-
+use roboamp\files;
 
 class SeederCommand extends Command
 {

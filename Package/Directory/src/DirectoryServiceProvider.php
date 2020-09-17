@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP\Directory;
+namespace roboamp\Directory;
 use Illuminate\Support\ServiceProvider;
 
 use ROBOAMP\Axton;

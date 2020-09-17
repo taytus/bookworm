@@ -1,6 +1,6 @@
 {
-    "name": "ROBOAMP/ROBOCORE",
-    "description": "Shared Models for ROBOAMP",
+    "name": "roboamp/batman",
+    "description": "Library to work everything related to Strings Manipulations",
     "type": "library",
     "license": "ROBOAMP",
     "authors": [
@@ -9,24 +9,18 @@
             "email": "roberto@roboamp.com"
         }
     ],
-    "require": {
-        "ROBOAMP/MyArray":"@dev",
-        "ROBOAMP/Directory":"@dev",
-        "ROBOAMP/URL":"@dev",
-        "ROBOAMP/DB":"@dev"
-
-    },
-
+    "require": {},
     "autoload": {
 
         "psr-4": {
-            "ROBOAMP\\": "src/"
+            "roboamp\\": "src/"
         }
+
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\ROBOCORE\\RobocoreServiceProvider"
+                "roboamp\\batman\\BatmanServiceProvider"
             ]
         }
     }

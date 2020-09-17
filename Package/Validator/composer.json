@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/Validator",
+    "name": "roboamp/validator",
     "description": "All type of string validations",
     "type": "library",
     "license": "ROBOAMP",
@@ -11,7 +11,6 @@
     ],
 
     "require": {
-        "ROBOAMP/Strings":"@dev"
     },
     "autoload": {
 
@@ -24,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\Validator\\ValidatorServiceProvider"
+                "roboamp\\validator\\ValidatorServiceProvider"
             ]
         }
     }

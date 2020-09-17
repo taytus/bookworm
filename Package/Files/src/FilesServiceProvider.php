@@ -1,8 +1,6 @@
 <?php
-namespace ROBOAMP\Files;
+namespace roboamp\files;
 use Illuminate\Support\ServiceProvider;
-
-use ROBOAMP\Axton;
 
 class FilesServiceProvider extends ServiceProvider{
     public function boot(){

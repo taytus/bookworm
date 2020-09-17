@@ -3,8 +3,12 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use ROBOAMP\Strings;
+use ROBOAMP\Batman;
 use ROBOAMP\CLI\Debug as CliDebug;
+use App\MyClasses\Paths;
+use App\MyClasses\Templates;
+use ROBOAMP\Files;
+
 
 class debug extends Command
 {
@@ -39,17 +43,11 @@ class debug extends Command
      */
     public function handle(){
 
-        $log=new CliDebug();
+        $file=new Files();
+        $template= new Templates();
+        $route_path=Paths::path_to_folder('routes')."/web.php";
 
-        $str_class = new Strings();
-        $strs = ["1","22","333","4444","55555","666666","7777777","88888888","999999999","1000000000"];
-        foreach($strs as $item) {
-            $log::log($item,"Taytus");
-        }
-
-
-
-        die('bye');
+        $file->backup_file_with_timestamp($route_path);
 
 
     }

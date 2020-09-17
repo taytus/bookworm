@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/DB",
+    "name": "roboamp/db",
     "description": "Basic DB Operations",
     "type": "library",
     "license": "ROBOAMP",
@@ -10,19 +10,19 @@
         }
     ],
     "require": {
-        "ROBOAMP/files": "@dev"
+        "roboamp/files": "@dev"
     },
 
     "autoload": {
 
         "psr-4": {
-            "ROBOAMP\\": "src/"
+            "roboamp\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\DB\\DBServiceProvider"
+                "roboamp\\db\\DBServiceProvider"
             ]
         }
     }

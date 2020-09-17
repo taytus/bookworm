@@ -1,5 +1,6 @@
 <?php
-namespace ROBOAMP\Strings;
+namespace roboamp\strings;
+
 use Illuminate\Support\ServiceProvider;
 
 

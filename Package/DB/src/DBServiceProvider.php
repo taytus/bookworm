@@ -1,9 +1,9 @@
 <?php
-namespace ROBOAMP\DB;
+namespace roboamp\db;
 use Illuminate\Support\ServiceProvider;
 
 
-class DBServiceProvider extends ServiceProvider{
+class DbServiceProvider extends ServiceProvider{
     public function boot(){
         if ($this->app->runningInConsole()) {
             $this->commands([
@@ -16,6 +16,7 @@ class DBServiceProvider extends ServiceProvider{
         $this->app->singleton(DB::class, function () {
             return new DB();
         });
+
 
         $this->app->alias(DB::class, 'DB');
     }

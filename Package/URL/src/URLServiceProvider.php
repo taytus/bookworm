@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP\URL;
+namespace roboamp\URL;
 use Illuminate\Support\ServiceProvider;
 
 use ROBOAMP\URL;

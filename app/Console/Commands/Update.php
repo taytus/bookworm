@@ -39,7 +39,8 @@ class Update extends Command
      */
     public function handle(){
         //get all the packages
-        $packages=Directory::get_dirs_in_dir(base_path('Package'));
+        $directory_class=new Directory();
+        $packages=$directory_class->get_dirs_in_dir(base_path('Package'));
         foreach ($packages as $item){
             echo "Starting process for package: ".$item['basename']."\n";
             chdir($item['full_path']);

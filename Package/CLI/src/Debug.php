@@ -2,8 +2,8 @@
 
 namespace ROBOAMP\CLI;
 
-use ROBOAMP\CLI\CliStyle;
-use ROBOAMP\Strings;
+use ROBOAMP\cli\clistyle;
+use ROBOAMP\Batman;
 
 class Debug   {
 
@@ -26,7 +26,7 @@ class Debug   {
     }
     public static function log($message,$extra_padding=false){
 
-        $string_class=new Strings();
+        $string_class=new Batman();
         $res=debug_backtrace();
         $cliStyle=new CliStyle();
         //check if messages is multiline

@@ -1,8 +1,6 @@
 <?php
-namespace ROBOAMP\MyArray;
+namespace roboamp\myarray;
 use Illuminate\Support\ServiceProvider;
-use ROBOAMP\MyArray;
-//use ROBOAMP\Strings\StringsServiceProvider;
 
 
 class MyArrayServiceProvider extends ServiceProvider{

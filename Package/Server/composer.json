@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "ROBOAMP/MyArray":"@dev"
+        "roboamp/myarray":"@dev"
     },
     "autoload": {
 

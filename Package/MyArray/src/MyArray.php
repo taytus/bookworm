@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP;
+namespace roboamp;
 
 class MyArray{
 

@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/URL",
+    "name": "roboamp/url",
     "description": "Library to work everything related to URLs handling",
     "type": "library",
     "license": "ROBOAMP",
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "ROBOAMP/Strings":"@dev"
+        "roboamp/strings":"@dev"
     },
     "autoload": {
 
@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\URL\\URLServiceProvider"
+                "roboamp\\url\\URLServiceProvider"
             ]
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ROBOAMP;
+namespace roboamp;
 
 use Illuminate\Database\Seeder as Laravel_seeder;
 use Symfony\Component\Console\Output\ConsoleOutput;

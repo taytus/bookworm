@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/Strings",
+    "name": "roboamp/strings",
     "description": "Library to work everything related to Strings Manipulations",
     "type": "library",
     "license": "ROBOAMP",
@@ -13,14 +13,14 @@
     "autoload": {
 
         "psr-4": {
-            "ROBOAMP\\": "src/"
+            "Roboamp\\": "src/"
         }
 
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\Strings\\StringsServiceProvider"
+                "roboamp\\strings\\StringsServiceProvider"
             ]
         }
     }

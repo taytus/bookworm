@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP;
+namespace roboamp;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\File;

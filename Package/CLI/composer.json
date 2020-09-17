@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/CLI",
+    "name": "roboamp/cli",
     "description": "CLI Styling,Logging errors and other tools",
     "type": "library",
     "license": "ROBOAMP",
@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "ROBOAMP/Strings":"@dev"
+        "roboamp/strings":"@dev"
     },
     "autoload": {
 
@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\CLI\\CLIServiceProvider"
+                "roboamp\\cli\\CLIServiceProvider"
             ]
         }
     }

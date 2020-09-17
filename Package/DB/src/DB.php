@@ -1,6 +1,6 @@
 <?php
 
-namespace ROBOAMP;
+namespace roboamp;
 use Schema;
 use DB as LDB;
 use PDO;

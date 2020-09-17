@@ -6,7 +6,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\ConsoleInput;
-use ROBOAMP\Strings;
+use ROBOAMP\Batman;
 
 
 
@@ -46,7 +46,7 @@ class CliStyle extends Command {
 
     }
     public function log_message_with_extra_padding($message){
-        $padding_space=Strings::get_spaces_from_string($message);
+        $padding_space=Batman::get_spaces_from_string($message);
 
         $this->output_text($padding_space,'log');
 

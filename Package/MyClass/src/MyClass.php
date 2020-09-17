@@ -1,5 +1,5 @@
 <?php
-namespace ROBOAMP;
+namespace roboamp;
 
 use \ReflectionMethod;
 
