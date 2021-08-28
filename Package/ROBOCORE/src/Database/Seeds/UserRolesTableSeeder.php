@@ -1,10 +1,10 @@
 <?php
 
-namespace ROBOAMP\ROBOCORE\Database\Seeds;
+namespace roboamp\robocore\Database\Seeds;
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
-use ROBOAMP\DB as myDB;
+use roboamp\DB as myDB;
 use Illuminate\Support\Facades\DB;
 class UserRolesTableSeeder extends Seeder
 {

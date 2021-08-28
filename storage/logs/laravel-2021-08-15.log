@@ -1,0 +1,390 @@
+[2021-08-15 01:38:57] local.ERROR: Non-static method App\MyClasses\Directory::get_dirs_in_dir() should not be called statically {"exception":"[object] (ErrorException(code: 0): Non-static method App\\MyClasses\\Directory::get_dirs_in_dir() should not be called statically at /Users/taytus/Projects/bookworm/app/Console/Commands/test.php:60)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(60): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8192, 'Non-static meth...', '/Users/taytus/P...', 60, Array)
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\test->handle()
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#7 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\test), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2021-08-15 01:40:07] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from `latest_tested`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from `latest_tested`) at /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php:669)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(338): Illuminate\\Database\\Connection->run('select * from `...', Array, Object(Closure))
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2159): Illuminate\\Database\\Connection->select('select * from `...', Array, true)
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2147): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2619): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2148): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(546): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(530): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(463): Illuminate\\Database\\Eloquent\\Builder->get(Array)
+#9 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(270): Illuminate\\Database\\Eloquent\\Model::all()
+#10 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(68): App\\Console\\Commands\\test->update_arr_positions()
+#11 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\test->handle()
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#14 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#15 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#16 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#17 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#18 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#19 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\test), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 {main}
+
+[previous exception] [object] (PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) at /Users/taytus/Projects/bookworm/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:40)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(40): PDO->__construct('mysql:host=127....', 'root', 'majauyus10', Array)
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): Doctrine\\DBAL\\Driver\\PDOConnection->__construct('mysql:host=127....', 'root', 'majauyus10', Array)
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', 'majauyus10', Array)
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#5 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(924): call_user_func(Object(Closure))
+#7 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(959): Illuminate\\Database\\Connection->getPdo()
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(404): Illuminate\\Database\\Connection->getReadPdo()
+#9 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(330): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#10 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select * from `...', Array)
+#11 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(338): Illuminate\\Database\\Connection->run('select * from `...', Array, Object(Closure))
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2159): Illuminate\\Database\\Connection->select('select * from `...', Array, true)
+#14 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2147): Illuminate\\Database\\Query\\Builder->runSelect()
+#15 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2619): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#16 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2148): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#17 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(546): Illuminate\\Database\\Query\\Builder->get(Array)
+#18 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(530): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
+#19 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(463): Illuminate\\Database\\Eloquent\\Builder->get(Array)
+#20 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(270): Illuminate\\Database\\Eloquent\\Model::all()
+#21 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(68): App\\Console\\Commands\\test->update_arr_positions()
+#22 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\test->handle()
+#23 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#24 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#25 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#26 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#27 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#28 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#29 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#30 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\test), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#36 {main}
+"} 
+[2021-08-15 01:40:19] local.ERROR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from `latest_tested`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) (SQL: select * from `latest_tested`) at /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php:669)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(338): Illuminate\\Database\\Connection->run('select * from `...', Array, Object(Closure))
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2159): Illuminate\\Database\\Connection->select('select * from `...', Array, true)
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2147): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2619): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2148): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(546): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(530): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(463): Illuminate\\Database\\Eloquent\\Builder->get(Array)
+#9 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(270): Illuminate\\Database\\Eloquent\\Model::all()
+#10 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(68): App\\Console\\Commands\\test->update_arr_positions()
+#11 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\test->handle()
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#14 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#15 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#16 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#17 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#18 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#19 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\test), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 {main}
+
+[previous exception] [object] (PDOException(code: 1045): SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) at /Users/taytus/Projects/bookworm/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:40)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(40): PDO->__construct('mysql:host=127....', 'root', 'majauyus10', Array)
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(67): Doctrine\\DBAL\\Driver\\PDOConnection->__construct('mysql:host=127....', 'root', 'majauyus10', Array)
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(46): Illuminate\\Database\\Connectors\\Connector->createPdoConnection('mysql:host=127....', 'root', 'majauyus10', Array)
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\\Database\\Connectors\\Connector->createConnection('mysql:host=127....', Array, Array)
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(182): Illuminate\\Database\\Connectors\\MySqlConnector->connect(Array)
+#5 [internal function]: Illuminate\\Database\\Connectors\\ConnectionFactory->Illuminate\\Database\\Connectors\\{closure}()
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(924): call_user_func(Object(Closure))
+#7 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(959): Illuminate\\Database\\Connection->getPdo()
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(404): Illuminate\\Database\\Connection->getReadPdo()
+#9 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(330): Illuminate\\Database\\Connection->getPdoForSelect(true)
+#10 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select * from `...', Array)
+#11 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Connection.php(338): Illuminate\\Database\\Connection->run('select * from `...', Array, Object(Closure))
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2159): Illuminate\\Database\\Connection->select('select * from `...', Array, true)
+#14 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2147): Illuminate\\Database\\Query\\Builder->runSelect()
+#15 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2619): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#16 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2148): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#17 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(546): Illuminate\\Database\\Query\\Builder->get(Array)
+#18 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(530): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
+#19 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(463): Illuminate\\Database\\Eloquent\\Builder->get(Array)
+#20 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(270): Illuminate\\Database\\Eloquent\\Model::all()
+#21 /Users/taytus/Projects/bookworm/app/Console/Commands/test.php(68): App\\Console\\Commands\\test->update_arr_positions()
+#22 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\test->handle()
+#23 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#24 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#25 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#26 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#27 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#28 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#29 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#30 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#31 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\test), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#36 {main}
+"} 
+[2021-08-15 02:37:19] local.ERROR: There are no commands defined in the "dusk" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"dusk\" namespace. at /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php:604)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(657): Symfony\\Component\\Console\\Application->findNamespace('dusk')
+#1 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(237): Symfony\\Component\\Console\\Application->find('dusk:chrome-dri...')
+#2 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-08-15 05:18:21] local.ERROR: Class 'App\Console\Commands\ProcessFailedException' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Console\\Commands\\ProcessFailedException' not found at /Users/taytus/Projects/bookworm/app/Console/Commands/package.php:59)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/app/Console/Commands/package.php(44): App\\Console\\Commands\\package->create_package()
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\package->handle()
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#7 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\package), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2021-08-15 05:18:42] local.ERROR: The command "'setup_repo lmao'" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Users/taytus/Projects/bookworm
+
+Output:
+================
+
+
+Error Output:
+================
+sh: line 0: exec: setup_repo lmao: not found
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"'setup_repo lmao'\" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Users/taytus/Projects/bookworm
+
+Output:
+================
+
+
+Error Output:
+================
+sh: line 0: exec: setup_repo lmao: not found
+ at /Users/taytus/Projects/bookworm/app/Console/Commands/package.php:60)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/app/Console/Commands/package.php(45): App\\Console\\Commands\\package->create_package()
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\package->handle()
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#7 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\package), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2021-08-15 05:19:31] local.ERROR: The command "'setup_repo lmao'" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Users/taytus/Projects/bookworm
+
+Output:
+================
+
+
+Error Output:
+================
+sh: line 0: exec: setup_repo lmao: not found
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"'setup_repo lmao'\" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Users/taytus/Projects/bookworm
+
+Output:
+================
+
+
+Error Output:
+================
+sh: line 0: exec: setup_repo lmao: not found
+ at /Users/taytus/Projects/bookworm/app/Console/Commands/package.php:60)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/app/Console/Commands/package.php(45): App\\Console\\Commands\\package->create_package()
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\package->handle()
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#7 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\package), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2021-08-15 05:20:03] local.ERROR: The command "'setup-repo lmao'" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Users/taytus/Projects/bookworm
+
+Output:
+================
+
+
+Error Output:
+================
+sh: line 0: exec: setup-repo lmao: not found
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"'setup-repo lmao'\" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Users/taytus/Projects/bookworm
+
+Output:
+================
+
+
+Error Output:
+================
+sh: line 0: exec: setup-repo lmao: not found
+ at /Users/taytus/Projects/bookworm/app/Console/Commands/package.php:60)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/app/Console/Commands/package.php(45): App\\Console\\Commands\\package->create_package()
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\package->handle()
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#7 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\package), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2021-08-15 05:21:51] local.ERROR: The command "'setup-repo.sh kaka'" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Users/taytus/Projects/bookworm
+
+Output:
+================
+
+
+Error Output:
+================
+sh: line 0: exec: setup-repo.sh kaka: not found
+ {"exception":"[object] (Symfony\\Component\\Process\\Exception\\ProcessFailedException(code: 0): The command \"'setup-repo.sh kaka'\" failed.
+
+Exit Code: 127(Command not found)
+
+Working directory: /Users/taytus/Projects/bookworm
+
+Output:
+================
+
+
+Error Output:
+================
+sh: line 0: exec: setup-repo.sh kaka: not found
+ at /Users/taytus/Projects/bookworm/app/Console/Commands/package.php:60)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/app/Console/Commands/package.php(45): App\\Console\\Commands\\package->create_package()
+#1 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Console\\Commands\\package->handle()
+#2 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(134): Illuminate\\Container\\Container->call(Array)
+#7 /Users/taytus/Projects/bookworm/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(1009): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(273): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\package), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /Users/taytus/Projects/bookworm/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2021-08-15 06:53:19] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}' at /Users/taytus/Projects/bookworm/app/Console/Commands/package.php:68)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/vendor/composer/ClassLoader.php(346): Composer\\Autoload\\includeFile('/Users/taytus/P...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 [internal function]: spl_autoload_call('App\\\\Console\\\\Com...')
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(239): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#4 /Users/taytus/Projects/bookworm/app/Console/Kernel.php(41): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(326): App\\Console\\Kernel->commands()
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2021-08-15 06:53:40] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}' at /Users/taytus/Projects/bookworm/app/Console/Commands/package.php:68)
+[stacktrace]
+#0 /Users/taytus/Projects/bookworm/vendor/composer/ClassLoader.php(346): Composer\\Autoload\\includeFile('/Users/taytus/P...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 [internal function]: spl_autoload_call('App\\\\Console\\\\Com...')
+#3 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(239): is_subclass_of('App\\\\Console\\\\Com...', 'Illuminate\\\\Cons...')
+#4 /Users/taytus/Projects/bookworm/app/Console/Kernel.php(41): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#5 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(326): App\\Console\\Kernel->commands()
+#6 /Users/taytus/Projects/bookworm/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /Users/taytus/Projects/bookworm/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 

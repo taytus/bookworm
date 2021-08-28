@@ -1,7 +1,7 @@
 <?php
 namespace database\seeds\amp4email;
 
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Webpatser\Uuid\Uuid;
@@ -45,9 +45,9 @@ class Ecommerce extends Seeder{
                 ['name' => 'Horn Handles', 'description' => 'Grippingly durable and stylish.', 'price' => 838, 'image' => $image_path.'product-7.jpg', 'a4e_category_id' => 3,'a4e_template_id'=>1,'created_at'=>$now,'updated_at'=>$now],
                 ['name' => 'Chain set', 'description' => 'Silver alloy construction for durability.', 'price' => 867, 'image' => $image_path.'product-3.jpg', 'a4e_category_id' => 1,'a4e_template_id'=>1,'created_at'=>$now,'updated_at'=>$now],
             ];
-        MyArray::create_items_from_array($template_model,$templates);
-        MyArray::create_items_from_array($category_model,$categories);
-        MyArray::create_items_from_array($items_model,$items);
+        Git::create_items_from_array($template_model,$templates);
+        Git::create_items_from_array($category_model,$categories);
+        Git::create_items_from_array($items_model,$items);
 
         //now create the JSON files;
         $items=new Items();

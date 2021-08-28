@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use ROBOAMP\CLI;
 use ROBOAMP\Validator;
-use ROBOAMP\Seeder as myStrings;
+use ROBOAMP\Git as myStrings;
 
 class WelcomeController extends Controller{
 

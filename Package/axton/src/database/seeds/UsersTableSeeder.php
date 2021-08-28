@@ -1,7 +1,7 @@
 <?php
 namespace ROBOAMP\Axton\Commands\Seeds;
 use Illuminate\Database\Seeder;
-use ROBOAMP\ROBOCORE;
+use ROBOAMP\Robocore;
 use App\User;
 use Faker;
 class UsersTableSeeder extends Seeder

@@ -1,5 +1,5 @@
 {
-    "name": "ROBOAMP/Server",
+    "name": "roboamp/Server",
     "description": "Provides Server info used for debugging",
     "type": "library",
     "license": "ROBOAMP",
@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\Server\\ServerServiceProvider"
+                "ROBOAMP\\ServerServiceProvider"
             ]
         }
     }

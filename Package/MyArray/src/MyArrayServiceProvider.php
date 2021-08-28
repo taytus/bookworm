@@ -1,5 +1,5 @@
 <?php
-namespace roboamp\myarray;
+namespace ROBOAMP;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -9,13 +9,13 @@ class MyArrayServiceProvider extends ServiceProvider{
     }
     public function register(){
 
-        $this->app->singleton(MyArray::class, function () {
+        $this->app->singleton(Git::class, function () {
 
 
-            return new MyArray();
+            return new Git();
         });
 
-        $this->app->alias(MyArray::class, 'MyArray');
+        $this->app->alias(Git::class, 'MyArray');
     }
 
 }

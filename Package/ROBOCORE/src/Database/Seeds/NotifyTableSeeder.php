@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\MyClasses\Seeders;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 class NotifyTableSeeder extends Seeder
 {
     /**
@@ -39,7 +39,7 @@ class NotifyTableSeeder extends Seeder
 
         ];
 
-        MyArray::create_items_from_array('App\Notify',$notifications);
+        Git::create_items_from_array('App\Notify',$notifications);
 
 
 

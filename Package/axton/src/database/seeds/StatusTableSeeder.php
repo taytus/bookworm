@@ -2,8 +2,8 @@
 namespace ROBOAMP\Axton\Commands\Seeds;
 use Illuminate\Database\Seeder;
 use ROBOAMP\Axton\W_Status as Status;
-use ROBOAMP\ROBOCORE;
-use ROBOAMP\MyArray;
+use ROBOAMP\Robocore;
+use ROBOAMP\Git;
 
 class StatusTableSeeder extends Seeder
 {
@@ -23,12 +23,12 @@ class StatusTableSeeder extends Seeder
                 ['name'=>'Finished','style'=>'badge-success'],
                 ['name'=>'Pending','style'=>'badge-warning']
             ];
-        MyArray::create_items_from_array($model,$data);
+        Git::create_items_from_array($model,$data);
 
 
-        ROBOCORE::truncate('w_status');
+        Robocore::truncate('w_status');
 
-        MyArray::create_items_from_array($model,$data);
+        Git::create_items_from_array($model,$data);
 
 
 

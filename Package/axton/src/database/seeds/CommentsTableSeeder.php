@@ -2,7 +2,7 @@
 namespace ROBOAMP\Axton\Commands\Seeds;
 use App\User;
 use Illuminate\Database\Seeder;
-use ROBOAMP\ROBOCORE;
+use ROBOAMP\Robocore;
 use Faker;
 use ROBOAMP\Axton\W_Comments as Comments;
 class CommentsTableSeeder extends Seeder
@@ -14,7 +14,7 @@ class CommentsTableSeeder extends Seeder
      */
 
     public function run(){
-        ROBOCORE::truncate('w_comments');
+        Robocore::truncate('w_comments');
         $faker = Faker\Factory::create();
 
         $users=User::where('email','like','Axton_%')->get();

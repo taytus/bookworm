@@ -1,5 +1,8 @@
 <?php
-namespace roboamp;
+namespace ROBOAMP;
+
+use ROBOAMP\Strings;
+use ROBOAMP\Files;
 
 class MyArray{
 
@@ -18,6 +21,31 @@ class MyArray{
         unset($array[$array_index]);
         return array_values($array);
     }
+
+    //this method is used for when interacting with templates.
+    //if you have an array $x in a file, this will return all the elements for such array
+
+    public function extract_content_from_defined_array_on_file($file_path,$array){
+        $file_class=new Files();
+        $file_content= $file_class->get_file_content($file_path);
+        $array_content=Strings::get_string_between($file_content,$array.'=[','];');
+        return $array_content;
+    }
+
+    public function push_into_array_on_file($file_path,$array,$elements){
+        $file_class=new Files();
+        $original_array_content=$this->extract_content_from_defined_array_on_file($file_path,$array);
+
+        //if elements is an array transform it into a string
+        if(is_array($elements)) $elements=implode('\',\'',$elements);
+
+        $new_array_content=$original_array_content.",'".$elements."'";
+
+        $file_content= $file_class->get_file_content($file_path);
+        $str=str_replace($original_array_content,$new_array_content,$file_content);
+        $file_class->save_file($file_path,$str);
+    }
+
 
     public function move_to_top_by_index($array, $index) {
         array_unshift($array,$array[$index]);
@@ -184,8 +212,10 @@ class MyArray{
     //$arr=["house"=>"banana","human"=>["blue","green"]];
     //"banana" and "green" will return 0 and 1;
     public function check_for_string_in_array($string,$array,$index=false){
+
         $i=0;
         foreach ($array as $element) {
+
             if(is_array($element)){
                 //if the element is an array, transverse the array.
                 foreach ($element as $item){
@@ -196,7 +226,8 @@ class MyArray{
                     }
                 }
             }else {
-                if ($element === $string) {
+
+                if (str_contains($element,$string)) {
                     $this->cursor = $i;
                     if ($index) return $i;
                     return true;
@@ -205,7 +236,7 @@ class MyArray{
             $i++;
         }
 
-        return null;
+        return false;
     }
 
     //search for $key = $string for an array inside an array
@@ -378,6 +409,9 @@ class MyArray{
             unset($val->$old_key_name);
         }
         return $array;
+    }
+    public static function is_multidimensional(array $array) {
+        return count($array) !== count($array, COUNT_RECURSIVE);
     }
 
 

@@ -1,6 +1,6 @@
 {
-    "name": "roboamp/myclass",
-    "description": "Library to work everything related to class and method instances",
+    "name": "roboamp/dusk",
+    "description": "Library to work everything related with Dusk",
     "type": "library",
     "license": "ROBOAMP",
     "authors": [
@@ -21,7 +21,6 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\MyClassServiceProvider"
             ]
         }
     }

@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use App\MyClasses\Directory;
 use ROBOAMP\Files;
 use App\Test as test_class;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 use ROBOAMP\Batman;
 use Symfony\Component\Process\Process;
 
@@ -50,20 +50,18 @@ class test extends Command
      */
     public function handle(){
 
-
-
-
+        $directory_class=new Directory();
         $file=new Files();
 
 
+        $this->dirs=$directory_class->get_dirs_in_dir(base_path('Package'));
 
-        $this->dirs=Directory::get_dirs_in_dir(base_path('Package'));
         $this->dir_labels=[];
 
         foreach ($this->dirs as $item) {
             $this->dir_labels[]=$item['basename'];
         }
-       // print_r($this->dirs);
+        print_r($this->dirs);
 
 
         $this->update_arr_positions();
@@ -187,7 +185,7 @@ class test extends Command
         return true;
     }
     private function get_untested_methods(){
-        $my_array=new MyArray();
+        $my_array=new Git();
         $class_name="\ROBOAMP\\".$this->class_name;
 
         //total methods in $this->class_name
@@ -269,7 +267,7 @@ class test extends Command
     private function update_arr_positions(){
 
         $test=test_class::all()->last();
-        $my_array=new MyArray();
+        $my_array=new Git();
 
         if($test!=null) {
             $position = $my_array->check_for_string_in_array($test->package, $this->dir_labels, true);

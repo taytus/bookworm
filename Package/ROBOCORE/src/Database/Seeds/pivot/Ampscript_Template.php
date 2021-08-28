@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use ROBOAMP\DB; as myDB;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 
 
 class Ampscript_Template extends Seeder{
@@ -67,6 +67,6 @@ class Ampscript_Template extends Seeder{
 
         ];
 
-        MyArray::create_items_from_array("App\Models\Pivots\Ampscript_Template", $scripts_array);
+        Git::create_items_from_array("App\Models\Pivots\Ampscript_Template", $scripts_array);
     }
 }

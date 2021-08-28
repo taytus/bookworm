@@ -10,19 +10,20 @@
         }
     ],
     "require": {
+        "roboamp/git": "@dev",
         "roboamp/files": "@dev"
     },
 
     "autoload": {
 
         "psr-4": {
-            "roboamp\\": "src/"
+            "ROBOAMP\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "roboamp\\db\\DBServiceProvider"
+                "ROBOAMP\\DBServiceProvider"
             ]
         }
     }

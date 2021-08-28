@@ -150,5 +150,14 @@ echo "
 
     }
 
+    public function check_for_null($original_question,$alternative_question){
+        $domain=$this->ask($original_question);
+        if(is_null($domain)) {
+            $domain=$this->check_for_null($alternative_question,$alternative_question);
+        }
+        return $domain;
+    }
+
+
 
 }

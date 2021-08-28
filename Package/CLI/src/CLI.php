@@ -1,8 +1,8 @@
 <?php
 namespace ROBOAMP;
+use ROBOAMP\CLIValidator;
 
-
-class CLI {
+class CLI extends CLIValidator{
 
 
 
@@ -12,4 +12,4 @@ class CLI {
 
 
 
-
+p

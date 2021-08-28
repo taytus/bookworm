@@ -1,5 +1,5 @@
 <?php
-namespace roboamp\files;
+namespace ROBOAMP;
 use Illuminate\Support\ServiceProvider;
 
 class FilesServiceProvider extends ServiceProvider{

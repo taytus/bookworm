@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 use App\NotificationsType;
 class NotificationsTypeTableSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class NotificationsTypeTableSeeder extends Seeder
                 ['name'=>'ROBOAMP code was cannot be found'],
                 ['name'=>'User has not confirmed the code']
             ];
-        MyArray::create_items_from_array('App\NotificationsType',$types);
+        Git::create_items_from_array('App\NotificationsType',$types);
 
     }
 }

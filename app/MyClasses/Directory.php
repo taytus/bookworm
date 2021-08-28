@@ -249,7 +249,7 @@ class Directory   {
         $arr=null;
         $j=0;
 
-        $array_class=new MyArray();
+        $array_class=new Git();
         foreach ($folder as $item){
             $valid_folder=!$array_class->check_for_string_in_array($item['filename'],$exclude_folders);
             if($valid_folder){

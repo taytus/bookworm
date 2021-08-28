@@ -1,6 +1,6 @@
 <?php
 
-namespace ROBOAMP\ROBOCORE;
+namespace ROBOAMP\models;
 
 use Illuminate\Support\Facades\DB;
 use ROBOAMP\CLI;

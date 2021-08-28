@@ -1,22 +1,22 @@
 <?php
-namespace roboamp\MyClass;
+namespace ROBOAMP;
+
 use Illuminate\Support\ServiceProvider;
 
-use ROBOAMP\Axton;
-use ROBOAMP\MyClass;
+
 
 class MyClassServiceProvider extends ServiceProvider{
     public function boot(){
 
     }
     public function register(){
-        $this->app->singleton(MyClass::class, function () {
+        $this->app->singleton(Dusk::class, function () {
 
 
-            return new MyClass();
+            return new Dusk();
         });
 
-        $this->app->alias(MyClass::class, 'MyClass');
+        $this->app->alias(Dusk::class, 'MyClass');
     }
 
 }

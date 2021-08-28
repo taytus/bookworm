@@ -1,6 +1,6 @@
 <?php
 
-namespace ROBOAMP\ROBOCORE;
+namespace ROBOAMP\;
 
 use App\MyClasses\Paths;
 use Illuminate\Support\Facades\Notification;
@@ -13,12 +13,12 @@ use App\MyClasses\Notifications;
 use App\Platform;
 use DB;
 use App\Customer;
-use ROBOAMP\MyArray;
-use ROBOAMP\URL;
+use roboamp\Git;
+use roboamp\URL;
 
 //////
 ///
-use ROBOAMP\CLI;
+use roboamp\CLI;
 
  class Property extends Model
 {
@@ -58,7 +58,7 @@ use ROBOAMP\CLI;
     }
 
     public function pages(){
-        return $this->hasMany('ROBOAMP\ROBOCORE\Page');
+        return $this->hasMany('roboamp\robocore\Page');
     }
 
 
@@ -134,7 +134,7 @@ use ROBOAMP\CLI;
     //search for slugs that has been marked as problematic.
      //if we find them in the right position, then we return false and the render will stop
     public function cleared_slugs($slugs){
-        $myArray= new MyArray();
+        $myArray= new Git();
         foreach ($this->slugs as $item){
             $res=$myArray->check_for_string_in_array($item->slug,$slugs,true);
             if(!is_null($res) && $item->position==$res+1){

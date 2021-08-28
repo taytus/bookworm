@@ -1,8 +1,6 @@
 <?php
-namespace roboamp\URL;
+namespace ROBOAMP;
 use Illuminate\Support\ServiceProvider;
-
-use ROBOAMP\URL;
 
 class URLServiceProvider extends ServiceProvider{
     public function boot(){
@@ -11,7 +9,6 @@ class URLServiceProvider extends ServiceProvider{
     public function register(){
         $this->app->singleton(URL::class, function () {
 
-            //something
             return new URL();
         });
 

@@ -1,7 +1,8 @@
 <?php
-namespace roboamp;
+namespace ROBOAMP;
 
 use ROBOAMP\URL;
+use ROBOAMP\Strings;
 
 class Validator{
 
@@ -41,7 +42,7 @@ class Validator{
 
     }
     public function validation_rules_required_field($string,$error_message=null){
-        $strings=new Batman();
+        $strings=new Strings();
 
         if($strings->empty_string($string)){
             $this->display_error_message('required',$error_message);
@@ -53,7 +54,7 @@ class Validator{
     //conditions:
     //can't be an empty string and can't have numbers
     public function validation_rules_alphabetic($string,$allow_numbers=false,$allow_special_chars=false,$error_message=null){
-        $strings=new Batman();
+        $strings=new Strings();
         $error="error";
 
         if($strings->has_special_chars($string) && !$allow_special_chars) return $error;

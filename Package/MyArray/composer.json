@@ -1,12 +1,12 @@
 {
     "name": "roboamp/myarray",
-    "description": "All type of string validations",
+    "description": "Array Operations",
     "type": "library",
     "license": "ROBOAMP",
     "authors": [
         {
             "name": "Roberto Inetti",
-            "email": "roberto@roboamp.com"
+            "email": "info@roboamp.com"
         }
     ],
 
@@ -16,7 +16,7 @@
     "autoload": {
 
         "psr-4": {
-            "ROBOAMP\\": "src/"
+            "ROBOAMP\\": "src"
         }
 
 
@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "roboamp\\myarray\\MyArrayServiceProvider"
+                "ROBOAMP\\MyArrayServiceProvider"
             ]
         }
     }

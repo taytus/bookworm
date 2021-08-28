@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use ROBOAMP\DB; as myDB;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 
 
 class AMPScriptsTableSeeder extends Seeder{
@@ -27,6 +27,6 @@ class AMPScriptsTableSeeder extends Seeder{
 
         ];
 
-        MyArray::create_items_from_array("App\Ampscript", $scripts_array);
+        Git::create_items_from_array("App\Ampscript", $scripts_array);
     }
 }

@@ -14,14 +14,14 @@
     "autoload": {
 
         "psr-4": {
-            "ROBOAMP\\": "src/"
+            "ROBOAMP\\": "src"
         }
 
     },
     "extra": {
         "laravel": {
             "providers": [
-                "roboamp\\myclass\\MyClassServiceProvider"
+              "DuskServiceProvider"
             ]
         }
     }

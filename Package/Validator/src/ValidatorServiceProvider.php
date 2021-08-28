@@ -1,7 +1,7 @@
 <?php
-namespace roboamp\Validator;
+namespace ROBOAMP;
+
 use Illuminate\Support\ServiceProvider;
-use ROBOAMP\Validator;
 
 
 class ValidatorServiceProvider extends ServiceProvider{

@@ -5,7 +5,7 @@ use ROBOAMP\DB; as myDB;
 use App\Page;
 use database\seeds\PagesDataSeeder;
 use App\Template;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 use App\Includes;
 
 
@@ -97,18 +97,18 @@ class PagesTableSeeder extends Seeder
             //this means the seeder is  returning templates
             if (count($new_pages) == 3) {
                 if(isset($new_pages['templates'])) {
-                    $templates_array = MyArray::fill_array_with_array($new_pages['templates'], $templates_array);
-                    $includes_array = MyArray::fill_array_with_array($new_pages['includes'], $includes_array);
+                    $templates_array = Git::fill_array_with_array($new_pages['templates'], $templates_array);
+                    $includes_array = Git::fill_array_with_array($new_pages['includes'], $includes_array);
                     foreach ($new_pages['pages'] as $item){
                         $pages_array[] = $item;
                     }
                 }else{
-                    $pages_array=MyArray::fill_array_with_array($new_pages,$pages_array);
+                    $pages_array=Git::fill_array_with_array($new_pages,$pages_array);
 
                 }
             }else{
                 
-                $pages_array=MyArray::fill_array_with_array($new_pages,$pages_array);
+                $pages_array=Git::fill_array_with_array($new_pages,$pages_array);
             }
 
         }

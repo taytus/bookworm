@@ -1,10 +1,10 @@
 <?php
-namespace ROBOAMP\Server;
+namespace ROBOAMP;
+
 use Illuminate\Support\ServiceProvider;
 
 
 class ServerServiceProvider extends ServiceProvider{
-
     public function boot(){
 
     }

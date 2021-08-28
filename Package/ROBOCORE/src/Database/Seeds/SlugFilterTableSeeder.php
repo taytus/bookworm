@@ -5,7 +5,7 @@ use ROBOAMP\DB; as myDB;
 use App\Page;
 use database\seeds\PagesDataSeeder;
 use App\Template;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 use App\Includes;
 
 
@@ -31,7 +31,7 @@ class SlugFilterTableSeeder extends Seeder
         ];
 
 
-        MyArray::create_items_from_array($slug_model,$slugs_array);
+        Git::create_items_from_array($slug_model,$slugs_array);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         ;

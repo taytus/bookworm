@@ -1,7 +1,7 @@
 <?php
 
 
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 
 
 class Server   {
@@ -24,7 +24,7 @@ class Server   {
 
         $availabe_environments[]="local";
 
-        $my_array=new MyArray();
+        $my_array=new Git();
         //all the branches this route will be available too
         $dev_branches=["testing","payne_mitchel","wp_engine"];
         $this->current_environment=env('APP_ENV');

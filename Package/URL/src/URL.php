@@ -1,7 +1,7 @@
 <?php
-namespace roboamp;
+namespace ROBOAMP;
 
-use ROBOAMP\Seeder;
+use ROBOAMP\Git;
 use Illuminate\Support\Facades\URL as Lara_URLS;
 
 class URL extends Lara_URLs{
@@ -33,7 +33,7 @@ class URL extends Lara_URLs{
     public function check_for_roboamp_code($url,$property=null){
 
         $HTML=self::curl($url);
-        $amp_code=Seeder::get_string_between($HTML,"<link rel='amphtml' href=",'>');
+        $amp_code=Git::get_string_between($HTML,"<link rel='amphtml' href=",'>');
         if($amp_code!=""){
             $amp_code_url_info=self::get_property_info_from_roboamp_install_code($amp_code);
 

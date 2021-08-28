@@ -1,5 +1,5 @@
 <?php
-namespace roboamp;
+namespace ROBOAMP;
 
 
 use Illuminate\Filesystem\Filesystem as File;
@@ -18,6 +18,7 @@ class Files{
     private $method;
     private $cursor=0;
 
+
     public function __construct ($file_name=null,$file_type='Controller'){
 
         $this->file_type=$file_type;
@@ -29,6 +30,12 @@ class Files{
         $this->file_type=$file_type;
 
     }
+
+    public function save_file($path,$content){
+        $fs=new File();
+        return $fs->put($path,$content);
+    }
+
     public function delete_all_backups($file_path){
         $dirname=$this->get_folder_from_file_path($file_path);
         $prefix=$this->get_prefix_for_backup_files($file_path);
@@ -87,7 +94,7 @@ class Files{
         fclose($handle);
     }
     public  function add_line_to_method($method_target,$code_to_be_added,$debug=0){
-        $myStrings=new Seeder();
+        $myStrings=new Git();
 
         $ignore_debug=1;
         $first_line_of_method=$method_target['first_line_declaration'];
@@ -174,7 +181,7 @@ class Files{
 
     //$method is the whole method string, $controller_name is the file without extension
     private  function method_exist($debug=0){
-        $myArray=new MyArray();
+        $myArray=new Git();
 
         //used to compare with the array containing all the file's lines
 
@@ -294,7 +301,7 @@ class Files{
     }
     public function replace_placeholder($placeholder, $str, $tmp_path_to_template, $ignore_missed_files = 0)
     {
-        if(is_array($str))$str=MyArray::fully_array_flatten($str);
+        if(is_array($str))$str=Git::fully_array_flatten($str);
 
         if ($this->file_exist($tmp_path_to_template, $ignore_missed_files)) {
             $my_file = new File();

@@ -1,5 +1,5 @@
 <?php
-namespace roboamp;
+namespace ROBOAMP;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;

@@ -1,7 +1,6 @@
 <?php
-namespace ROBOAMP\ROBOCORE;
+namespace ROBOAMP;
 use Illuminate\Support\ServiceProvider;
-use ROBOAMP\ROBOCORE;
 
 
 class RobocoreServiceProvider extends ServiceProvider{
@@ -9,7 +8,7 @@ class RobocoreServiceProvider extends ServiceProvider{
 
 
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/views','ROBOCORE');
+        $this->loadViewsFrom(__DIR__.'/views','robocore');
         $this->loadMigrationsFrom(__DIR__ . '/Database/migrations');
 
 
@@ -20,27 +19,16 @@ class RobocoreServiceProvider extends ServiceProvider{
             __DIR__.'/models' => $this->app->basePath('app/'),
         ]);
 
-        /*
-         * $this->publishes([
-            __DIR__.'/config/robocore.php' => config_path('robocore.php'),
-        ]);
-        $this->publishes([
-            __DIR__.'/assets' => public_path('ROBOCORE/assets'),
-        ], 'public');
 
-         $this->publishes([
-            __DIR__ . '/Database/migrations' => $this->app->databasePath() . '/migrations'
-        ], 'migrations');
-        */
 
     }
     public function register(){
 
-        $this->app->singleton(ROBOCORE::class, function () {
-            return new ROBOCORE();
+        $this->app->singleton(Robocore::class, function () {
+            return new Robocore();
         });
 
-        $this->app->alias(ROBOCORE::class, 'ROBOCORE');
+        $this->app->alias(Robocore::class, 'ROBOCORE');
     }
 
 }

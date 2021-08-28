@@ -1,5 +1,5 @@
 <?php
-namespace roboamp;
+namespace ROBOAMP;
 
 use \ReflectionMethod;
 
@@ -7,8 +7,8 @@ use \ReflectionMethod;
 class MyClass{
 
 
-    //create_class_from_string("Taytus","lol") will return "\App\MyClasses\lol\CliTaytus"
-    public static function create_class_from_string($string,$path="Cli",$prefix="Cli",$output){
+    //create_class_from_string("lol","ROBOAMP") will return "\App\MyClasses\lol\ROBOAMP"
+    public static function create_class_from_string($path,$string,$prefix=NULL,$output=NULL){
 
         $my_class= "\\App\\MyClasses\\".$path."\\".$prefix.ucfirst($string);
         $my_class= new $my_class($output);

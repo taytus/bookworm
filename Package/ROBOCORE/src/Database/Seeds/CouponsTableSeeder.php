@@ -6,7 +6,7 @@ use App\MyClasses\Seeders;
 use App\MyClasses\Server;
 use App\MyClasses\Stripe\RoboStripeCouponsCli as Coupons;
 use ROBOAMP\DB; as myDB;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 
 class CouponsTableSeeder extends Seeder
 {
@@ -36,7 +36,7 @@ class CouponsTableSeeder extends Seeder
 
 
         if($server->testing_server()) {
-           MyArray::create_items_from_array('App\Coupon', $coupons);
+           Git::create_items_from_array('App\Coupon', $coupons);
         }
 
 

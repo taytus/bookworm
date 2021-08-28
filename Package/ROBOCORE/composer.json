@@ -1,8 +1,8 @@
 {
-    "name": "ROBOAMP/ROBOCORE",
-    "description": "Shared Models for ROBOAMP",
+    "name": "roboamp/robocore",
+    "description": "Shared Models for roboamp",
     "type": "library",
-    "license": "ROBOAMP",
+    "license": "roboamp",
     "authors": [
         {
             "name": "Roberto Inetti",
@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "ROBOAMP/MyArray":"@dev",
-        "ROBOAMP/Directory":"@dev",
-        "ROBOAMP/URL":"@dev",
-        "ROBOAMP/DB":"@dev"
+        "roboamp/myarray":"@dev",
+        "roboamp/directory":"@dev",
+        "roboamp/url":"@dev",
+        "roboamp/db":"@dev"
 
     },
 
@@ -26,7 +26,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\ROBOCORE\\RobocoreServiceProvider"
+                "ROBOAMP\\RobocoreServiceProvider"
             ]
         }
     }

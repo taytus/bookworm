@@ -1,15 +1,15 @@
 <?php
-namespace roboamp\db;
+namespace ROBOAMP;
 use Illuminate\Support\ServiceProvider;
 
 
-class DbServiceProvider extends ServiceProvider{
+class DBServiceProvider extends ServiceProvider{
     public function boot(){
-        if ($this->app->runningInConsole()) {
+        /*if ($this->app->runningInConsole()) {
             $this->commands([
                 SeederCommand::class,
             ]);
-        }
+        }*/
     }
     public function register(){
 

@@ -5,7 +5,7 @@ use Carbon\Carbon;
 use App\MyClasses\Seeders;
 use App\MyClasses\Server;
 use ROBOAMP\DB; as myDB;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
 
 class CustomersTableSeeder extends Seeder
 {
@@ -58,7 +58,7 @@ class CustomersTableSeeder extends Seeder
         if($server->testing_server()) {
 
 
-            MyArray::create_items_from_array('App\Customer', $customers);
+            Git::create_items_from_array('App\Customer', $customers);
 
 
             factory(App\User::class, 10)->create()->each(function ($u) {

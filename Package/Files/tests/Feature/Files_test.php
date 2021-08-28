@@ -4,8 +4,8 @@
 
 use Illuminate\Filesystem\Filesystem as File;
 
-use ROBOAMP\MyArray;
-use ROBOAMP\Seeder;
+use ROBOAMP\Git;
+use ROBOAMP\Git;
 use Carbon\Carbon;
 use ROBOAMP\Directory;
 use FilesystemIterator;
@@ -62,7 +62,7 @@ class Files_test{
         fclose($handle);
     }
     public  function add_line_to_method($method_target,$code_to_be_added,$debug=0){
-        $myStrings=new Seeder();
+        $myStrings=new Git();
 
         $ignore_debug=1;
         $first_line_of_method=$method_target['first_line_declaration'];
@@ -149,7 +149,7 @@ class Files_test{
 
     //$method is the whole method string, $controller_name is the file without extension
     private  function method_exist($debug=0){
-        $myArray=new MyArray();
+        $myArray=new Git();
 
         //used to compare with the array containing all the file's lines
 
@@ -268,7 +268,7 @@ class Files_test{
     }
     public function replace_placeholder($placeholder, $str, $tmp_path_to_template, $ignore_missed_files = 0)
     {
-        if(is_array($str))$str=MyArray::fully_array_flatten($str);
+        if(is_array($str))$str=Git::fully_array_flatten($str);
 
         if ($this->file_exist($tmp_path_to_template, $ignore_missed_files)) {
             $my_file = new File();

@@ -1,7 +1,7 @@
 <?php
-
 namespace ROBOAMP;
-use ROBOAMP\MyArray;
+use ROBOAMP\Git;
+use ROBOAMP\MyArray as MyArray;
 
 
 class Server   {
@@ -24,7 +24,7 @@ class Server   {
 
         $availabe_environments[]="local";
 
-        $my_array=new MyArray();
+        $my_array=new Git();
         //all the branches this route will be available too
         $dev_branches=["testing","payne_mitchel","wp_engine"];
         $this->current_environment=env('APP_ENV');
@@ -116,9 +116,10 @@ class Server   {
     }
 
     public function is_local_server(){
-        // dd($this->current_environment);
         return ($this->current_environment=='local' && $this->get_server_expected_environment()=='local'?true:false);
     }
+
+
 
     public function get_git_branch(){
         $shellOutput = [];
@@ -130,6 +131,44 @@ class Server   {
         }
         return null;
     }
+
+
+
+    public function command_is_running($command){
+        $myArray=new MyArray();
+
+        $shellOutput = $this->get_procesess_running();
+
+        return $myArray->check_for_string_in_array($command,$shellOutput);
+
+    }
+
+    public function websockets_is_running(){
+        $command='php artisan websockets:serve';
+        return $this->command_is_running($command);
+    }
+
+    public function queue_is_running(){
+        $command='php artisan queue:work';
+        return $this->command_is_running($command);
+    }
+    public function windows(){
+        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
+    }
+
+    public function get_procesess_running() {
+
+        if($this->windows()) {
+
+            exec('powershell "Get-WmiObject -Class win32_process -Filter \"Name = \'php.exe\'\""', $shellOutput);
+            $shellOutput= preg_replace('/\s\s+/', ' ', $shellOutput);
+
+        }else{
+            exec(' ps aux | grep php', $shellOutput);
+        }
+        return $shellOutput;
+    }
+
 
 
 

@@ -4,7 +4,7 @@ namespace ROBOAMP;
 
 
 
-class ROBOCORE  {
+class Robocore  {
 
 
 
