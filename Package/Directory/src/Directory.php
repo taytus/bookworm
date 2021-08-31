@@ -13,13 +13,6 @@ class Directory{
     private $template_name;
 
     public function __construct(){
-        /* $this->type=$type;
-         $this->short_path=$short_path;
-         $this->template_name=$template_name;
-
-         call_user_func(array($this,$type));
-        */
-
 
     }
 
@@ -79,8 +72,7 @@ class Directory{
      * deletes all the directories and files except itself
      */
 
-    public function delete(){
-        $path=$this->get_path();
+    public function delete_everything_inside_dir($path){
         File::deleteDirectory($path, true);
     }
 
@@ -221,7 +213,20 @@ class Directory{
         }
         return $manuals;
     }
-    public static function get_dirs_in_dir($directory){
+
+    public function get_dirs_in_dir_recursevily($base_dir) {
+        $directories = array();
+        foreach(scandir($base_dir) as $file) {
+            if($file == '.' || $file == '..') continue;
+            $dir = $base_dir.DIRECTORY_SEPARATOR.$file;
+            if(is_dir($dir)) {
+                $directories []= $dir;
+                $directories = array_merge($directories, $this->get_dirs_in_dir_recursevily($dir));
+            }
+        }
+        return $directories;
+    }
+    public  function get_dirs_in_dir($directory){
         if(!is_dir($directory)) return $directory .' is not a valid Directory';
         $manuals = [];
 
@@ -328,19 +333,18 @@ class Directory{
     }
     function get_all_files_in_directory_recursively($dir, &$results = array()){
         $files = scandir($dir);
-
+        $files_only=[];
         foreach($files as $key => $value){
             $path = realpath($dir.DIRECTORY_SEPARATOR.$value);
             if(!is_dir($path)) {
                 $results[] = $path;
             } else if($value != "." && $value != "..") {
-                $this->getDirContents($path, $results);
-                $results[] = $path;
+                $this->get_all_files_in_directory_recursively($path, $results);
             }
         }
-
         return $results;
     }
+
     public static  function copy_directory($origin,$destination){
         $res=File::copyDirectory($origin,$destination);
     }

@@ -32,6 +32,11 @@ class Git{
 
     }
 
+    public function init(){
+        shell_exec('git init');
+        shell_exec('git add .');
+        shell_exec('git commit -m "first commit"');
+    }
     public function process_list_as_array($array){
         $arr= new MyArray();
         $str=explode("\n",$array);

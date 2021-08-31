@@ -13,7 +13,7 @@ class Update extends Command
      *
      * @var string
      */
-    protected $signature = 'Bookworm:update';
+    protected $signature = 'update';
 
     /**
      * The console command description.
