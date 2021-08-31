@@ -31,7 +31,8 @@
         {"type": "git", "url": "git@github.com:taytus/robo_directory.git"},
         {"type": "git", "url": "git@github.com:taytus/robo_files.git"},
         {"type": "git", "url": "git@github.com:taytus/robocore.git"},
-        {"type": "git", "url": "git@github.com:taytus/robo_git.git"}
+        {"type": "git", "url": "git@github.com:taytus/robo_git.git"},
+        {"type": "git", "url": "git@github.com:taytus/hello.git"}
 
 
     ],
@@ -49,7 +50,9 @@
         "roboamp/myclass": "dev-master",
         "roboamp/url": "dev-master",
         "roboamp/validator": "dev-master",
-        "roboamp/git": "dev-master"
+        "roboamp/git": "dev-master",
+        "roboamp/hello": "dev-master"
+
 
 
 

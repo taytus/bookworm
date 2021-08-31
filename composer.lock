@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "452ed3eb622d6d743aeed5a0388fc62b",
+    "content-hash": "c69fbfe9d7bdf7f061ccfd24b5607b47",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -7264,6 +7264,40 @@
             "time": "2020-01-08T08:45:45+00:00"
         },
         {
+            "name": "roboamp/Hello",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/hello.git",
+                "reference": "aa0ae4a95bbd5691faf361ef177e6fd176cdc69f"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ROBOAMP\\HelloServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ROBOAMP\\": "src"
+                }
+            },
+            "license": [
+                "ROBOAMP"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Inetti",
+                    "email": "roberto@roboamp.com"
+                }
+            ],
+            "description": "Move, copy, update, etc. Everything Hello related",
+            "time": "2021-08-31T23:22:18+00:00"
+        },
+        {
             "name": "roboamp/db",
             "version": "dev-master",
             "source": {
@@ -8441,7 +8475,8 @@
         "roboamp/myclass": 20,
         "roboamp/url": 20,
         "roboamp/validator": 20,
-        "roboamp/git": 20
+        "roboamp/git": 20,
+        "roboamp/hello": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

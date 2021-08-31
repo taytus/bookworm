@@ -1,6 +1,6 @@
 {
-    "name": "roboamp/directory",
-    "description": "Move, copy, update, etc. Everything Directory related",
+    "name": "roboamp/$$package_name$$",
+    "description": "Move, copy, update, etc. Everything $$package_name$$ related",
     "type": "library",
     "license": "ROBOAMP",
     "authors": [
@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ROBOAMP\\DirectoryServiceProvider"
+                "ROBOAMP\\$$package_name$$ServiceProvider"
             ]
         }
     }

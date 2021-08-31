@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\MyClasses\Files;
 use App\MyClasses\Git;
+use App\MyClasses\Templates;
 use Illuminate\Console\Command;
 use App\MyClasses\Directory;
 use ROBOAMP\Strings;
@@ -20,7 +21,7 @@ class package extends Command
      */
     protected $signature = 'package {debug?}';
     private $debug,$tmp_path;
-
+    private $file_names_array=[];
     /**
      * The console command description.
      *
@@ -53,40 +54,43 @@ class package extends Command
     }
     private function create_package(){
         $this->clone_package_directory_to_tmp_directory();
-        $this->update_package_with_new_name();
-
-        dd('end');
+        $this->update_directories_with_new_name();
+        $this->update_files_with_new_name();
         $this->create_repo();
         $this->clone_package_directory_to_package_directory();
         $this->cleanup_tmp_packages_directory();
 
-        dd("done!");
+        $this->debug_message('Package has been created');
     }
 
-    private function get_all_files(){
-        $directory=new Directory();
-        $package_path=$this->tmp_path.$this->package_name;
-        return $directory->get_all_files_in_directory_recursively($package_path);
+    private function update_files_with_new_name(){
+        $this->debug_message('Updating files with new Package\'s name');
+        $files=new Files();
+        $placeholder='$$package_name$$';
+        foreach ($this->file_names_array as $item){
+            $files->replace_placeholder($placeholder,ucfirst($this->package_name),$item);
+        }
     }
-    private function update_package_with_new_name()
+    private function update_directories_with_new_name()
     {
         $this->debug_message('Updating Template with new Package Name');
         $string_class=new Strings();
         $default_template_name="Directory";
-        $new_file_names=[];
 
         $files=$this->get_all_files();
 
         //rename every file to the new package name
         foreach ($files as $item){
             $tmp_file_name=$string_class->replaceFirst($default_template_name,ucfirst($this->package_name),$item);
-            $new_file_names[]=$tmp_file_name;
+            $this->file_names_array[]=$tmp_file_name;
             rename($item,$tmp_file_name);
         }
 
-
-        dd($files,$new_file_names);
-
+    }
+    private function get_all_files(){
+        $directory=new \ROBOAMP\Directory();
+        $package_path=$this->tmp_path.$this->package_name;
+        return $directory->get_all_files_in_directory_recursively($package_path);
     }
 
 
