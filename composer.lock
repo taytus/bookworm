@@ -7303,7 +7303,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:taytus/robo_db.git",
-                "reference": "a95704ccc0f0b976d2f059402bae194f7b36135a"
+                "reference": "fe6fa3e541575c2179d87b9a2db60b8a97d81470"
             },
             "require": {
                 "roboamp/files": "@dev"
@@ -7332,7 +7332,7 @@
                 }
             ],
             "description": "Basic DB Operations",
-            "time": "2021-01-23T00:31:36+00:00"
+            "time": "2021-09-01T00:14:40+00:00"
         },
         {
             "name": "roboamp/directory",

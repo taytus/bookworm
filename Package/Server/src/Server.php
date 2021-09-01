@@ -1,7 +1,5 @@
 <?php
 namespace ROBOAMP;
-use ROBOAMP\Git;
-use ROBOAMP\MyArray as MyArray;
 
 
 class Server   {
@@ -24,7 +22,7 @@ class Server   {
 
         $availabe_environments[]="local";
 
-        $my_array=new Git();
+        $my_array=new MyArray();
         //all the branches this route will be available too
         $dev_branches=["testing","payne_mitchel","wp_engine"];
         $this->current_environment=env('APP_ENV');
@@ -35,12 +33,7 @@ class Server   {
                 $this->enable_route=true;
             }
         }
-        //dd($this->current_environment,$current_branch,$my_array->check_for_string_in_array($current_branch,$dev_branches));
-        //dd('popo');
 
-
-
-        // dd($this->current_environment);
 
         $this->testing_server=($this->current_environment=='live'?false:true);
         $this->info=$this->server_info();
@@ -120,7 +113,6 @@ class Server   {
     }
 
 
-
     public function get_git_branch(){
         $shellOutput = [];
         exec('git branch | ' . "grep ' * '", $shellOutput);
@@ -131,7 +123,6 @@ class Server   {
         }
         return null;
     }
-
 
 
     public function command_is_running($command){
@@ -168,9 +159,6 @@ class Server   {
         }
         return $shellOutput;
     }
-
-
-
 
 }
 

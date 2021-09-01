@@ -5,11 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 class DBServiceProvider extends ServiceProvider{
     public function boot(){
-        /*if ($this->app->runningInConsole()) {
-            $this->commands([
-                SeederCommand::class,
-            ]);
-        }*/
+
     }
     public function register(){
 
