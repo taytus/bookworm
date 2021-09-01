@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c69fbfe9d7bdf7f061ccfd24b5607b47",
+    "content-hash": "1e86a2a0b8a8e0d19cdca1c5e52d953b",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -7264,19 +7264,22 @@
             "time": "2020-01-08T08:45:45+00:00"
         },
         {
-            "name": "roboamp/Hello",
+            "name": "roboamp/Env",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:taytus/hello.git",
-                "reference": "aa0ae4a95bbd5691faf361ef177e6fd176cdc69f"
+                "url": "git@github.com:taytus/env.git",
+                "reference": "23d8c63ae5feef6aa83a3950e8c194a6f68066da"
+            },
+            "require": {
+                "roboamp/server": "@dev"
             },
             "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "ROBOAMP\\HelloServiceProvider"
+                        "ROBOAMP\\EnvServiceProvider"
                     ]
                 }
             },
@@ -7294,8 +7297,45 @@
                     "email": "roberto@roboamp.com"
                 }
             ],
-            "description": "Move, copy, update, etc. Everything Hello related",
-            "time": "2021-08-31T23:22:18+00:00"
+            "description": "Prints out ENV vairables to check if everything is as expected",
+            "time": "2021-09-01T05:41:12+00:00"
+        },
+        {
+            "name": "roboamp/Server",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:taytus/robo_server.git",
+                "reference": "150ecd065141397bbb27b822433802d3989572a7"
+            },
+            "require": {
+                "roboamp/myarray": "@dev"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ROBOAMP\\ServerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ROBOAMP\\": "src/"
+                }
+            },
+            "license": [
+                "ROBOAMP"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Inetti",
+                    "email": "roberto@roboamp.com"
+                }
+            ],
+            "description": "Provides Server info used for debugging",
+            "time": "2021-09-01T05:19:34+00:00"
         },
         {
             "name": "roboamp/db",
@@ -8476,7 +8516,8 @@
         "roboamp/url": 20,
         "roboamp/validator": 20,
         "roboamp/git": 20,
-        "roboamp/hello": 20
+        "roboamp/server": 20,
+        "roboamp/env": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

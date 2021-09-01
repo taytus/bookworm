@@ -32,7 +32,9 @@
         {"type": "git", "url": "git@github.com:taytus/robo_files.git"},
         {"type": "git", "url": "git@github.com:taytus/robocore.git"},
         {"type": "git", "url": "git@github.com:taytus/robo_git.git"},
-        {"type": "git", "url": "git@github.com:taytus/hello.git"}
+        {"type": "git", "url": "git@github.com:taytus/robo_server.git"},
+        {"type": "git", "url": "git@github.com:taytus/env.git"}
+
 
 
     ],
@@ -51,10 +53,8 @@
         "roboamp/url": "dev-master",
         "roboamp/validator": "dev-master",
         "roboamp/git": "dev-master",
-        "roboamp/hello": "dev-master"
-
-
-
+        "roboamp/server": "dev-master",
+        "roboamp/env": "dev-master"
 
     },
     "autoload": {
