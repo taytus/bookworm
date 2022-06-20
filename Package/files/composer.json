@@ -1,0 +1,32 @@
+{
+    "name": "roboamp/files",
+    "description": "Move, copy, update, etc. Everything Files related",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+        "roboamp/strings":"@dev",
+        "roboamp/myarray":"@dev",
+        "roboamp/directory":"@dev"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\FilesServiceProvider"
+            ]
+        }
+    }
+
+}

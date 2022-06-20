@@ -1,0 +1,30 @@
+{
+    "name": "roboamp/Env",
+    "description": "Prints out ENV vairables to check if everything is as expected",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+        "roboamp/server":"@dev"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\EnvServiceProvider"
+            ]
+        }
+    }
+
+}

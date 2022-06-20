@@ -1,0 +1,30 @@
+{
+    "name": "roboamp/url",
+    "description": "Library to work everything related to URLs handling",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+        "roboamp/strings":"@dev"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\URLServiceProvider"
+            ]
+        }
+    }
+
+}

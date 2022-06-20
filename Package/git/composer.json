@@ -1,0 +1,33 @@
+{
+    "name": "roboamp/git",
+    "description": "Simplified git operations",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "info@roboamp.com"
+        }
+    ],
+
+    "require": {
+        "roboamp/strings":"@dev",
+        "roboamp/myarray":"@dev"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src"
+        }
+
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\GitServiceProvider"
+            ]
+        }
+    }
+
+}

@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+use ROBOAMP\DB;
+
+
+class CreateA4ECategoriesTable extends Migration
+{
+    private $table_name='a4e_categories';
+
+    public function up()
+    {
+        return;
+        Schema::create($this->table_name, function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        DB::drop($this->table_name);
+    }
+}

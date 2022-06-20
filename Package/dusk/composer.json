@@ -1,0 +1,28 @@
+{
+    "name": "roboamp/dusk",
+    "description": "Library to work everything related with Dusk",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+            ]
+        }
+    }
+
+}

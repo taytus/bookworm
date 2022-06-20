@@ -1,0 +1,31 @@
+{
+    "name": "ROBOAMP/Axton",
+    "description": "Control Panel",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+        "ROBOAMP/DB":"@dev",
+        "ROBOAMP/MyArray":"@dev"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src/"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+
+            ]
+        }
+    }
+
+}

@@ -1,0 +1,29 @@
+{
+    "name": "roboamp/demo",
+    "description": "Move, copy, update, etc. Everything Directory related",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src/"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "roboamp\\demo\\DemoServiceProvider"
+            ]
+        }
+    }
+
+}

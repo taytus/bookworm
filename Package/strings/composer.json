@@ -1,0 +1,29 @@
+{
+    "name": "roboamp/strings",
+    "description": "Library to work everything related to Strings Manipulations",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\Strings": "src",
+            "ROBOAMP\\Strings\\Tests\\": "tests/"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\StringsServiceProvider"
+            ]
+        }
+    }
+
+}

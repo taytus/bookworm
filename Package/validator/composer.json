@@ -1,0 +1,31 @@
+{
+    "name": "roboamp/validator",
+    "description": "All type of string validations",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+
+    "require": {
+    },
+    "autoload": {
+
+        "psr-4": {
+            "ROBOAMP\\": "src/"
+        }
+
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ROBOAMP\\ValidatorServiceProvider"
+            ]
+        }
+    }
+
+}

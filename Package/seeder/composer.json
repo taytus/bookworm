@@ -1,0 +1,30 @@
+{
+    "name": "roboamp/seeder",
+    "description": "Provides Server info used for debugging",
+    "type": "library",
+    "license": "ROBOAMP",
+    "authors": [
+        {
+            "name": "Roberto Inetti",
+            "email": "roberto@roboamp.com"
+        }
+    ],
+    "require": {
+        "roboamp/myarray":"@dev"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "roboamp\\seeder\\": "src/"
+        }
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "roboamp\\seeder\\SeederServiceProvider"
+            ]
+        }
+    }
+
+}
