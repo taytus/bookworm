@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "roboamp/strings":"@dev"
+        "roboamp/strings":"@dev",
+        "utopia-php/domains": "@dev"
     },
     "autoload": {
 

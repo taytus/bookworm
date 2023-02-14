@@ -10,13 +10,13 @@ class MyClassServiceProvider extends ServiceProvider{
 
     }
     public function register(){
-        $this->app->singleton(Dusk::class, function () {
+        $this->app->singleton(MyClassServiceProvider::class, function () {
 
 
             return new Dusk();
         });
 
-        $this->app->alias(Dusk::class, 'MyClass');
+        $this->app->alias(MyClass::class, 'MyClass');
     }
 
 }

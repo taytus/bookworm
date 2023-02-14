@@ -1,9 +1,9 @@
 <?php
 namespace ROBOAMP;
 
-use ROBOAMP\Git;
-use ROBOAMP\Slugs;
 use Illuminate\Support\Facades\URL as Lara_URLS;
+use Utopia\Domains\Domain;
+
 
 class URL extends Lara_URLs{
 
@@ -100,13 +100,17 @@ class URL extends Lara_URLs{
     public static function get_url_name($url){
         $domain=self::get_domain($url);
         $res=explode(".",$domain);
-        return ucfirst($res[0]);
+        return strtolower($res[0]);
     }
 
     public static function get_domain_info($url){
         $url=self::remove_trailing_slash($url);
         $data['url_name']=self::get_url_name($url);
         $data['full_domain']=self::get_full_domain($url);
+        $domain= new Domain($data['full_domain']);
+        $data['domain']=self::get_full_domain($url);
+        $data['original_url']=$url;
+        $data['tld']=$domain->getTLD();
         $data['scheme']=self::get_scheme($url);
         $data['full_domain_with_schema']=self::get_full_domain_with_scheme($url);
         $data['full_url_without_www']=self::get_url_without_www($data['full_domain_with_schema']);
@@ -222,6 +226,14 @@ class URL extends Lara_URLs{
 
 
     }
+	public static function set_default_scheme($url,$https=0){
+		$urlobj=parse_url($url);
+		if(isset($urlobj['scheme'])){
+			return $url;
+		}else{
+			return ($https==0?'http://':'https://').$url;
+		}
+	}
     public static function get_scheme($url,$https=0,$search_on_pages=false,$property_id=null){
 
         $urlobj=parse_url($url);
@@ -244,11 +256,15 @@ class URL extends Lara_URLs{
 
         return ($https==0?'http://':'https://');
     }
+    public static function init_domain(String $url){
+        $url=self::remove_trailing_slash($url);
+        $tmp_domain=parse_url($url);
+        return new Domain($tmp_domain['host']);
+    }
 
     public static function get_full_domain($url){
-        $host=parse_url($url);
-        return (isset($host['host'])?$host['host']:$host['path']);
-
+        $domain_instance=self::init_domain($url);
+        return $domain_instance->getName().".".$domain_instance->getTLD();
     }
     public static function get_full_domain_with_scheme($url,$https=0,$property_id=null){
         if(is_null($property_id)) {
