@@ -226,13 +226,32 @@ class URL extends Lara_URLs{
 
 
     }
-	public static function set_default_scheme($url,$https=0){
+	public static function set_default_scheme($url,$https=1){
 		$urlobj=parse_url($url);
 		if(isset($urlobj['scheme'])){
 			return $url;
 		}else{
-			return ($https==0?'http://':'https://').$url;
+			return ($https==1?'https://':'http://').$url;
 		}
+	}
+	public static function set_default_tld($url,$tld='com'){
+		$urlobj=parse_url($url);
+		if(isset($urlobj['host'])){
+			$host=$urlobj['host'];
+			$host_parts=explode('.',$host);
+			if(count($host_parts)==1){
+				return $url.".".$tld;
+			}else{
+				return $url;
+			}
+		}else{
+			return $url;
+		}
+	}
+	public static function set_default_scheme_and_tld($url,$https=1,$tld='com'){
+		$url=self::set_default_scheme($url,$https);
+		$url=self::set_default_tld($url,$tld);
+		return $url;
 	}
     public static function get_scheme($url,$https=0,$search_on_pages=false,$property_id=null){
 

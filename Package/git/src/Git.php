@@ -56,9 +56,7 @@ class Git{
     }
     public function create_branch($branch){
         $res=$this->checkout($branch,"-b");
-
-        dd($res,__METHOD__);
-        $this->output("Branch ".$branch." has been created");
+		$this->output("Branch ".$branch." has been created");
         return true;
     }
     public function clone_remote_branch($branch_origin,$repo_url){

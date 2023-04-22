@@ -110,7 +110,7 @@ class Directory{
     }
 
     //copy all the files from one directory to another
-    public function copy_files_recursively($source,$dest){
+    public function copy_all_files_from_a_directory_to_another($source,$dest){
         if(!is_dir($dest)) {
             mkdir($dest, 0755);
         }
@@ -143,6 +143,15 @@ class Directory{
         }
 
     }
+	public static function create($folder_path,$debug=false,$cli=null){
+		$result=false;
+		if(!is_dir($folder_path)) {
+			if($cli) $cli->show_error("\nFolder ".$folder_path." has been created");
+			$res=File::makeDirectory($folder_path, 0777, true);
+			if($debug) echo "\nRES ".$res."\n\n";
+		}
+		return $result;
+	}
 
 
     public function create_directory($directory_name,$type=null,$mode=0775,$delete_if_exist=false){

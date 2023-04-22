@@ -257,6 +257,15 @@ class Files{
         $extension=($include_extension?".".$res['extension']:"");
         return $res['filename'].$extension;
     }
+	public function get_file_name_from_class_instance($class_instance, $include_extension=0){
+		$extension=($include_extension?".php":"");
+		$class_name = get_class($class_instance);
+		$class_path = str_replace('\\', '/', $class_name);
+		$filename = basename($class_path);
+		return $filename.$extension;
+	}
+
+
 
 
     public function copy_file($origin_path,$destination_path,$placeholder=null,$replacement=null,$cleanup=0){
