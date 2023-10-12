@@ -10,7 +10,7 @@ use App\MyClasses\Paths;
 use App\MyClasses\Templates;
 use ROBOAMP\Files;
 use ROBOAMP\Git;
-
+use ROBOAMP\MyArray;
 class debug extends Command
 {
     /**
@@ -43,6 +43,12 @@ class debug extends Command
      * @return mixed
      */
     public function handle(){
+
+		$arr_class= new MyArray();
+		$demo=["hi","Bye"];
+		$arr_class->check_for_string_in_array("hello",$demo);
+		dd($arr_class);
+
 
         $dir_class=new Directory();
         $res=$dir_class->get_dirs_in_dir(base_path('app'));

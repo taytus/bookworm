@@ -1,277 +1,343 @@
 <?php
-namespace ROBOAMP;
-
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Str;
-
-class Strings extends Str{
-
-
-    public function get_x_last_chars($strings,$limit=null){
-
-        if(!$limit || $limit==1) return substr($strings, -1);
-
-        return substr($strings, $limit);
-
-    }
-
-    public function get_uuid(){
-        return (string) self::uuid();
-        //push
-    }
-
-    public function has_special_chars($string, $allow_spaces=true){
-
-        $pattern=($allow_spaces)? '/[^a-zA-Z0-9 ]/':'/[^a-zA-Z0-9]/';
-
-        $clean_string= preg_replace($pattern, '', $string);
-        if($string!=$clean_string) return true;
-
-        return false;
-    }
-
-    public static function delete_tabs($string){
-        if(is_string($string)) {
-            return trim(preg_replace('/\t+/', '', $string));
-        }
-        return $string;
-    }
-
-    //you pass the starting words you want to keep and the slug
-    public static function shorten_string_by_word($string,$limit=20,$length=10,$slug=null){
-        $offset=(is_null($slug)?5:strlen($slug));
-        if (strlen($string) >= $limit) {
-            echo substr($string, 0, $length). " ... " . substr($string, -$offset);
-        }
-        else {
-            echo $string;
-        }
-    }
-
-    //returns an object with the file content and a boolean flag
-    public static function find_string_in_file($string,$file_path,$case_sensitive=true){
-        $obj= new \stdClass();
-        if(file_exists($file_path)) {
-            $obj->file_content = self::get_file_content($file_path);
-            $obj->status = self::find_string_in_string($obj->file_content, $string,$case_sensitive);
-        }else{
-            $obj->status="error";
-            $obj->error="File Not Found";
-            $obj->error_message="File not found on path: ".$file_path;
-        }
-        return $obj;
-    }
-
-    public static function remove_non_aphanumeric_chars($string){
-        return preg_replace("/[^A-Za-z0-9 ]/", '', $string);
-    }
-
-    //replace one of the spaces with the separator or
-    //if no separator is passed, remove all the spaces
-    public static function remove_multiple_spaces($string,$separator=""){
-        return preg_replace('/\s\s+/', $separator, $string);
-    }
-
-    // "de*m()()o" will return "demo"
-    // "d e       mo" will return "d_e_mo"
-
-    public static function get_method_name($string){
-        $string=strtolower(trim($string));
-        $string=self::remove_non_aphanumeric_chars($string);
-        $string=self::remove_multiple_spaces($string,"_");
-        $string=str_replace(" ","_",$string);
-        return $string;
-    }
-
-    //NON tested Methods
-
-
-    public static function hex2dec($hex,$format=null){
-        list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
-        if (is_null($format)){
-            return "(".$r.",".$g.",".$b.")";
-        }
-    }
-
-    public static function get_file_content($file_path){
-        $file_content= new Filesystem();
-        return $file_content->get($file_path);
-    }
-
-
-
-
-
-
-    public function minify($input_file,$output_file=null){
-
-        $options =" --remove-tag-whitespace --collapse-whitespace -o ".$output_file;
-        $command="html-minifier ".$input_file." ".$options;
-        $res=shell_exec($command);
-    }
-
-
-    // returns true if $needle is a substring of $haystack
-    public static function find_string_in_string($haystack,$needle,$case_sensitive=true){
-        $obj= new \stdClass();
-
-        if($case_sensitive){
-            $obj->status=strpos($haystack, $needle) !== false;
-        }else{
-            $obj->status=stripos($haystack, $needle) !== false;
-        }
-
-        return $obj->status;
-    }
-
-
-    public function empty_string($string){
-        if (!is_null($string)){
-            if(!empty($string)){
-                return false;
-            }
-        }
-        return true;
-    }
-
-    //take a separator string, breaks the string and make every word uppercase
-    //"alpha_charlie_bravo" will return "Alpha Charlie Bravo"
-    public static function uppercase_separator($string,$separator){
-        $words= str_replace($separator," ",$string);
-        return ucwords($words);
-    }
-    //detects numbers on the strings and returns false if they are founded
-    public static function string_without_numbers($string){
-
-        if (preg_match('~[0-9]+~', $string)) return false;
-
-        return true;
-    }
-
-    //str_to_method_name("This IS spartA") will return this_is_sparta
-    public static function str_to_method_name($str){
-
-    }
-
-    // is_string_between("lol","l","l") ==> true
-    // is_string_between("lol","l","a") ==> false
-    public static function is_string_between_strings($string,$init_str,$end_str){
-        $first=substr($string,0,1);
-        $last=substr($string,-1);
-        if($first===$init_str && $last===$end_str)return true;
-    }
-
-    //return as many spaces as characters in that string
-    public static function get_spaces_from_string(string $string){
-        $total_spaces=strlen($string);
-        $str="";
-        for($j=0;$j<$total_spaces;$j++){
-            $str.=" ";
-        }
-        return $str;
-    }
-
-    //get_string_between("thisawesomeday","this","day") will return "awesome"
-    public static function get_string_between($string, $start, $end){
-        $string = ' ' . $string;
-        $ini = strpos($string, $start);
-        if ($ini == 0) return '';
-        $ini += strlen($start);
-        $len = strpos($string, $end, $ini) - $ini;
-        return substr($string, $ini, $len);
-    }
-    public static function roboamp_code_has_been_inserted($url,$property_id){
-
-    }
-
-    public static function insert_string_in_file_after_string($string,$target_string,$file_path){
-        $target_string_exist= self::find_string_in_file($target_string,$file_path);
-
-        if(!$target_string_exist->status)dd("Target string:",$target_string,"coudln't be found in file",$file_path);
-
-        $new_string=$target_string." \n".$string;
-
-        $res=str_replace($target_string,$new_string,$target_string_exist->file_content);
-
-        return $res;
-    }
-    //receives how many words and what's the string to pull the words from
-    //$second_half returns an array with the first and the second part of the string's split
-    public static function get_X_first_words_from_string($string,$number_of_words,$second_half=0){
-        return self::get_X_first_words_from_string_with_separator($string,$number_of_words," ",$second_half);
-
-    }
-    //receives how many words and what's the string to pull the words from and what's the separator
-    //$second_half returns an array with the first and the second part of the string's split
-    public static function get_X_first_words_from_string_with_separator($string,$number_of_words,$separator,$second_half=0){
-        $pieces = explode($separator, $string);
-        $first_part = implode($separator, array_splice($pieces, 0, $number_of_words));
-        $second_half = ($second_half?$other_part = implode($separator, array_splice($pieces, 0)):null);
-        return (is_null($second_half)?$first_part:[$first_part,$second_half]);
-
-    }
-    //$full_array returns all the words within the string as an array
-    public static function get_x_word_from_string_with_separator($string,$word_index,$separator,$full_array=null){
-        $words = explode($separator, $string);
-        return (is_null($full_array)?$words[$word_index]:$words);
-    }
-    public static function get_x_word_from_string($string,$word_index,$full_array=null){
-        return self::get_x_word_from_string_with_separator($string,$word_index," ",$full_array);
-
-    }
-
-    public function create_string($char,$length){
-        $str="";
-        for($i=0;$i<$length;$i++){
-            $str.=$char;
-        }
-        return $char;
-    }
-    //creates a string with the same length but with spaces instead of characters
-    public function create_empty_string_from_string($string){
-        $length=strlen($string);
-        return $this->create_string(" ",$length);
-    }
-
-    public function multi_line($string,$delimiter="\n"){
-        $res=explode($delimiter,$string);
-        return is_array($res);
-    }
-    //depending on how long a string is, returns how many tabs needs
-    //to be added to the line. This is used for CLI applications
-    public function get_total_tabs( $string, $max_tabs=18, $tabs_size=7){
-
-        $max_chars_per_line=$tabs_size*$max_tabs;
-
-        $string_size=strlen($string);
-
-        $total_chars=$max_chars_per_line-$string_size;
-        $string="";
-        $spaces=0;
-        while(($spaces<$total_chars) && (strlen($string)<$total_chars)){
-            $string.=" ";
-            $spaces++;
-        }
-
-        return $string;
-
-    }
-    public function get_line_number_x($string,$position,$delimiter="\n"){
-        $arr=explode($delimiter,$string);
-
-        if($position==-1) return$arr[count($arr)-1];
-
-        return $arr[$position-1];
-    }
-    public function get_last_line($string,$delimiter="\n"){
-        return $this->get_line_number_x($string,-1,$delimiter);
-    }
-    public function get_first_line($string,$delimiter="\n"){
-        return $this->get_line_number_x($string,1,$delimiter);
-    }
-
-
-
-
-
-}
+		
+		namespace ROBOAMP;
+		
+		use Illuminate\Filesystem\Filesystem;
+		use Illuminate\Support\Str;
+		
+		class Strings extends Str {
+				
+				
+				public function get_x_last_chars($strings, $limit = null) {
+						
+						if (!$limit || $limit == 1) {
+								return substr($strings, -1);
+						}
+						
+						return substr($strings, $limit);
+						
+				}
+				
+				public function get_uuid() {
+						return (string)self::uuid();
+						//push
+				}
+				
+				public function has_special_chars($string, $allow_spaces = true) {
+						
+						$pattern = ($allow_spaces) ? '/[^a-zA-Z0-9 ]/' : '/[^a-zA-Z0-9]/';
+						
+						$clean_string = preg_replace($pattern, '', $string);
+						if ($string != $clean_string) {
+								return true;
+						}
+						
+						return false;
+				}
+				
+				public static function delete_tabs($string) {
+						if (is_string($string)) {
+								return trim(preg_replace('/\t+/', '', $string));
+						}
+						return $string;
+				}
+				
+				/**
+				 * Get the content between two HTML tags.
+				 *
+				 * @param string $subject The HTML string to search within.
+				 * @param string $initial_tag The opening HTML tag.
+				 * @param string $final_tag The closing HTML tag.
+				 * @return string The content between the tags, or the original subject if either tag is empty.
+				 */
+				public static function get_content_between_html_tags($subject, $initial_tag, $final_tag) {
+						// If either tag is empty, return the original subject as is
+						if ($initial_tag === '' || $final_tag === '') {
+								return $subject;
+						}
+						
+						// Find the position of the initial tag
+						$start_position = strpos($subject, $initial_tag);
+						
+						// Find the position of the final tag
+						$end_position = strpos($subject, $final_tag, $start_position);
+						
+						// If either tag is not found, return the original subject as is
+						if ($start_position === false || $end_position === false) {
+								return $subject;
+						}
+						
+						// Extract the content between the tags
+						$content_start_position = $start_position + strlen($initial_tag);
+						$content_length = $end_position - $content_start_position;
+						$content = substr($subject, $content_start_position, $content_length);
+						
+						// Return the content
+						return $content;
+				}
+				
+				/**
+				 * This function takes in a string and a character limit. If the string length exceeds
+				 * the limit, it trims it down to that limit and adds a character set to it.
+				 *
+				 * @param string $string
+				 * @param int $limit
+				 * @param int $string_to_append ;
+				 * @return string
+				 */
+				public function shorten_string(string $string, $limit, $string_to_append="") {
+						if (strlen($string) > $limit) {
+								return substr($string, 0, $limit) . $string_to_append;
+						}
+						
+						return $string;
+				}
+				
+				//you pass the starting words you want to keep and the slug
+				public static function shorten_string_by_word($string, $limit = 20, $length = 10, $slug = null) {
+						$offset = (is_null($slug) ? 5 : strlen($slug));
+						if (strlen($string) >= $limit) {
+								echo substr($string, 0, $length) . " ... " . substr($string, -$offset);
+						} else {
+								echo $string;
+						}
+				}
+				
+				//returns an object with the file content and a boolean flag
+				public static function find_string_in_file($string, $file_path, $case_sensitive = true) {
+						$obj = new \stdClass();
+						if (file_exists($file_path)) {
+								$obj->file_content = self::get_file_content($file_path);
+								$obj->status = self::find_string_in_string($obj->file_content, $string, $case_sensitive);
+						} else {
+								$obj->status = "error";
+								$obj->error = "File Not Found";
+								$obj->error_message = "File not found on path: " . $file_path;
+						}
+						return $obj;
+				}
+				
+				public static function remove_non_aphanumeric_chars($string) {
+						return preg_replace("/[^A-Za-z0-9 ]/", '', $string);
+				}
+				
+				//replace one of the spaces with the separator or
+				//if no separator is passed, remove all the spaces
+				public static function remove_multiple_spaces($string, $separator = "") {
+						return preg_replace('/\s\s+/', $separator, $string);
+				}
+				
+				// "de*m()()o" will return "demo"
+				// "d e       mo" will return "d_e_mo"
+				
+				public static function get_method_name($string) {
+						$string = strtolower(trim($string));
+						$string = self::remove_non_aphanumeric_chars($string);
+						$string = self::remove_multiple_spaces($string, "_");
+						$string = str_replace(" ", "_", $string);
+						return $string;
+				}
+				
+				//NON tested Methods
+				
+				
+				public static function hex2dec($hex, $format = null) {
+						list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+						if (is_null($format)) {
+								return "(" . $r . "," . $g . "," . $b . ")";
+						}
+				}
+				
+				public static function get_file_content($file_path) {
+						$file_content = new Filesystem();
+						return $file_content->get($file_path);
+				}
+				
+				
+				public function minify($input_file, $output_file = null) {
+						
+						$options = " --remove-tag-whitespace --collapse-whitespace -o " . $output_file;
+						$command = "html-minifier " . $input_file . " " . $options;
+						$res = shell_exec($command);
+				}
+				
+				
+				// returns true if $needle is a substring of $haystack
+				public static function find_string_in_string($haystack, $needle, $case_sensitive = true) {
+						$obj = new \stdClass();
+						
+						if ($case_sensitive) {
+								$obj->status = strpos($haystack, $needle) !== false;
+						} else {
+								$obj->status = stripos($haystack, $needle) !== false;
+						}
+						
+						return $obj->status;
+				}
+				
+				
+				public function empty_string($string) {
+						if (!is_null($string)) {
+								if (!empty($string)) {
+										return false;
+								}
+						}
+						return true;
+				}
+				
+				//take a separator string, breaks the string and make every word uppercase
+				//"alpha_charlie_bravo" will return "Alpha Charlie Bravo"
+				public static function uppercase_separator($string, $separator) {
+						$words = str_replace($separator, " ", $string);
+						return ucwords($words);
+				}
+				
+				//detects numbers on the strings and returns false if they are founded
+				public static function string_without_numbers($string) {
+						
+						if (preg_match('~[0-9]+~', $string)) {
+								return false;
+						}
+						
+						return true;
+				}
+				
+				//str_to_method_name("This IS spartA") will return this_is_sparta
+				public static function str_to_method_name($str) {
+				
+				}
+				
+				// is_string_between("lol","l","l") ==> true
+				// is_string_between("lol","l","a") ==> false
+				public static function is_string_between_strings($string, $init_str, $end_str) {
+						$first = substr($string, 0, 1);
+						$last = substr($string, -1);
+						if ($first === $init_str && $last === $end_str) {
+								return true;
+						}
+				}
+				
+				//return as many spaces as characters in that string
+				public static function get_spaces_from_string(string $string) {
+						$total_spaces = strlen($string);
+						$str = "";
+						for ($j = 0; $j < $total_spaces; $j++) {
+								$str .= " ";
+						}
+						return $str;
+				}
+				
+				//get_string_between("thisawesomeday","this","day") will return "awesome"
+				public static function get_string_between($string, $start, $end) {
+						$string = ' ' . $string;
+						$ini = strpos($string, $start);
+						if ($ini == 0) {
+								return '';
+						}
+						$ini += strlen($start);
+						$len = strpos($string, $end, $ini) - $ini;
+						return substr($string, $ini, $len);
+				}
+				
+				public static function roboamp_code_has_been_inserted($url, $property_id) {
+				
+				}
+				
+				public static function insert_string_in_file_after_string($string, $target_string, $file_path) {
+						$target_string_exist = self::find_string_in_file($target_string, $file_path);
+						
+						if (!$target_string_exist->status) {
+								dd("Target string:", $target_string, "coudln't be found in file", $file_path);
+						}
+						
+						$new_string = $target_string . " \n" . $string;
+						
+						$res = str_replace($target_string, $new_string, $target_string_exist->file_content);
+						
+						return $res;
+				}
+				//receives how many words and what's the string to pull the words from
+				//$second_half returns an array with the first and the second part of the string's split
+				public static function get_X_first_words_from_string($string, $number_of_words, $second_half = 0) {
+						return self::get_X_first_words_from_string_with_separator($string, $number_of_words, " ", $second_half);
+						
+				}
+				//receives how many words and what's the string to pull the words from and what's the separator
+				//$second_half returns an array with the first and the second part of the string's split
+				public static function get_X_first_words_from_string_with_separator($string, $number_of_words, $separator, $second_half = 0) {
+						$pieces = explode($separator, $string);
+						$first_part = implode($separator, array_splice($pieces, 0, $number_of_words));
+						$second_half = ($second_half ? $other_part = implode($separator, array_splice($pieces, 0)) : null);
+						return (is_null($second_half) ? $first_part : [$first_part, $second_half]);
+						
+				}
+				
+				//$full_array returns all the words within the string as an array
+				public static function get_x_word_from_string_with_separator($string, $word_index, $separator, $full_array = null) {
+						$words = explode($separator, $string);
+						return (is_null($full_array) ? $words[$word_index] : $words);
+				}
+				
+				public static function get_x_word_from_string($string, $word_index, $full_array = null) {
+						return self::get_x_word_from_string_with_separator($string, $word_index, " ", $full_array);
+						
+				}
+				
+				public function create_string($char, $length) {
+						$str = "";
+						for ($i = 0; $i < $length; $i++) {
+								$str .= $char;
+						}
+						return $char;
+				}
+				
+				//creates a string with the same length but with spaces instead of characters
+				public function create_empty_string_from_string($string) {
+						$length = strlen($string);
+						return $this->create_string(" ", $length);
+				}
+				
+				public function multi_line($string, $delimiter = "\n") {
+						$res = explode($delimiter, $string);
+						return is_array($res);
+				}
+				//depending on how long a string is, returns how many tabs needs
+				//to be added to the line. This is used for CLI applications
+				public function get_total_tabs($string, $max_tabs = 18, $tabs_size = 7) {
+						
+						$max_chars_per_line = $tabs_size * $max_tabs;
+						
+						$string_size = strlen($string);
+						
+						$total_chars = $max_chars_per_line - $string_size;
+						$string = "";
+						$spaces = 0;
+						while (($spaces < $total_chars) && (strlen($string) < $total_chars)) {
+								$string .= " ";
+								$spaces++;
+						}
+						
+						return $string;
+						
+				}
+				
+				public function get_line_number_x($string, $position, $delimiter = "\n") {
+						$arr = explode($delimiter, $string);
+						
+						if ($position == -1) {
+								return $arr[count($arr) - 1];
+						}
+						
+						return $arr[$position - 1];
+				}
+				
+				public function get_last_line($string, $delimiter = "\n") {
+						return $this->get_line_number_x($string, -1, $delimiter);
+				}
+				
+				public function get_first_line($string, $delimiter = "\n") {
+						return $this->get_line_number_x($string, 1, $delimiter);
+				}
+				
+				
+		}

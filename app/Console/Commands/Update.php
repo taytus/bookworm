@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\MyClasses\Directory;
+use ROBOAMP\MyArray;
 
 
 class Update extends Command
@@ -38,6 +39,7 @@ class Update extends Command
      * @return mixed
      */
     public function handle(){
+
         $j=0;
         echo "\n\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
         echo "\n\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n\n";

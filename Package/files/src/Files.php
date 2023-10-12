@@ -30,11 +30,36 @@ class Files{
         $this->file_type=$file_type;
 
     }
-
-    public function save_file($path,$content){
-        $fs=new File();
-        return $fs->put($path,$content);
-    }
+	
+	/**
+	 * Saves data to a file, creating any necessary directories along the path.
+	 *
+	 * @param string $file_path The path to the file.
+	 * @param string $data The data to be written to the file.
+	 * @return bool Returns true on success, false on failure.
+	 */
+	public function save_file(string $file_path, string $data): bool
+	{
+		// Extract the directory path from the file path
+		$directory_path = dirname($file_path);
+		
+		// Check if the directory exists, create it if necessary
+		if (!is_dir($directory_path)) {
+			if (!mkdir($directory_path, 0777, true)) {
+				// Directory creation failed
+				return false;
+			}
+		}
+		
+		// Attempt to write the data to the file
+		if (file_put_contents($file_path, $data) === false) {
+			// File write failed
+			return false;
+		}
+		
+		// File write succeeded
+		return true;
+	}
 
     public function delete_all_backups($file_path){
         $dirname=$this->get_folder_from_file_path($file_path);
